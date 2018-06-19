@@ -12,259 +12,258 @@ And since it single-thread, it will take a lot of time to run it. So I run it at
 
 ## NipponColors
 
-Colors from [nipponcolors.com](http://nipponcolors.com) :
-|                  Name                   |       Roma        |  C   |  M   |  Y   |  K   |   RGB    |              View               |
-| :-------------------------------------: | :---------------: | :--: | :--: | :--: | :--: | :------: | :-----------------------------: |
-|    <font color="#DC9FB4">撫子</font>    |     NADESHIKO     | 002  | 043  | 003  | 000  | \#DC9FB4 | <font color="#DC9FB4>■■■</font> |
-|    <font color="#E16B8C">紅梅</font>    |      KOHBAI       | 000  | 073  | 024  | 000  | \#E16B8C | <font color="#E16B8C>■■■</font> |
-|    <font color="#8E354A">蘇芳</font>    |       SUOH        | 051  | 093  | 058  | 010  | \#8E354A | <font color="#8E354A>■■■</font> |
-|    <font color="#F8C3CD">退紅</font>    |      TAIKOH       | 000  | 031  | 009  | 000  | \#F8C3CD | <font color="#F8C3CD>■■■</font> |
-|   <font color="#F4A7B9">一斥染</font>   |     IKKONZOME     | 000  | 048  | 015  | 000  | \#F4A7B9 | <font color="#F4A7B9>■■■</font> |
-|    <font color="#64363C">桑染</font>    |     KUWAZOME      | 069  | 086  | 065  | 035  | \#64363C | <font color="#64363C>■■■</font> |
-|     <font color="#F596AA">桃</font>     |       MOMO        | 000  | 055  | 019  | 000  | \#F596AA | <font color="#F596AA>■■■</font> |
-|     <font color="#B5495B">苺</font>     |      ICHIGO       | 002  | 070  | 038  | 030  | \#B5495B | <font color="#B5495B>■■■</font> |
-|    <font color="#E87A90">薄紅</font>    |      USUBENI      | 000  | 064  | 026  | 000  | \#E87A90 | <font color="#E87A90>■■■</font> |
-|    <font color="#D05A6E">今様</font>    |      IMAYOH       | 000  | 075  | 038  | 020  | \#D05A6E | <font color="#D05A6E>■■■</font> |
-|    <font color="#DB4D6D">中紅</font>    |     NAKABENI      | 005  | 083  | 040  | 000  | \#DB4D6D | <font color="#DB4D6D>■■■</font> |
-|     <font color="#FEDFE1">桜</font>     |      SAKURA       | 000  | 017  | 006  | 000  | \#FEDFE1 | <font color="#FEDFE1>■■■</font> |
-|    <font color="#9E7A7A">梅鼠</font>    |     UMENEZUMI     | 048  | 059  | 049  | 000  | \#9E7A7A | <font color="#9E7A7A>■■■</font> |
-|   <font color="#D0104C">韓紅花</font>   |    KARAKURENAI    | 015  | 098  | 061  | 000  | \#D0104C | <font color="#D0104C>■■■</font> |
-|    <font color="#9F353A">燕脂</font>    |       ENJI        | 042  | 093  | 068  | 006  | \#9F353A | <font color="#9F353A>■■■</font> |
-|     <font color="#CB1B45">紅</font>     |      KURENAI      | 000  | 100  | 065  | 010  | \#CB1B45 | <font color="#CB1B45>■■■</font> |
-|     <font color="#EEA9A9">鴇</font>     |       TOKI        | 002  | 045  | 027  | 000  | \#EEA9A9 | <font color="#EEA9A9>■■■</font> |
-|    <font color="#BF6766">長春</font>    |     CYOHSYUN      | 025  | 070  | 053  | 000  | \#BF6766 | <font color="#BF6766>■■■</font> |
-|    <font color="#86473F">深緋</font>    |      KOKIAKE      | 054  | 075  | 065  | 014  | \#86473F | <font color="#86473F>■■■</font> |
-|    <font color="#B19693">桜鼠</font>    |   SAKURANEZUMI    | 034  | 046  | 039  | 000  | \#B19693 | <font color="#B19693>■■■</font> |
-|   <font color="#EB7A77">甚三紅</font>   |     JINZAMOMI     | 000  | 065  | 046  | 000  | \#EB7A77 | <font color="#EB7A77>■■■</font> |
-|    <font color="#954A45">小豆</font>    |       AZUKI       | 048  | 078  | 066  | 010  | \#954A45 | <font color="#954A45>■■■</font> |
-|   <font color="#A96360">蘇芳香</font>   |      SUOHKOH      | 042  | 070  | 058  | 001  | \#A96360 | <font color="#A96360>■■■</font> |
-|    <font color="#CB4042">赤紅</font>    |      AKABENI      | 015  | 085  | 068  | 000  | \#CB4042 | <font color="#CB4042>■■■</font> |
-|    <font color="#AB3B3A">真朱</font>    |      SHINSYU      | 035  | 085  | 070  | 002  | \#AB3B3A | <font color="#AB3B3A>■■■</font> |
-|    <font color="#D7C4BB">灰桜</font>    |     HAIZAKURA     | 002  | 012  | 012  | 010  | \#D7C4BB | <font color="#D7C4BB>■■■</font> |
-|    <font color="#904840">栗梅</font>    |      KURIUME      | 050  | 078  | 068  | 013  | \#904840 | <font color="#904840>■■■</font> |
-|   <font color="#734338">海老茶</font>   |      EBICHA       | 055  | 077  | 068  | 027  | \#734338 | <font color="#734338>■■■</font> |
-|    <font color="#C73E3A">銀朱</font>    |      GINSYU       | 016  | 086  | 070  | 000  | \#C73E3A | <font color="#C73E3A>■■■</font> |
-|    <font color="#554236">黒鳶</font>    |     KUROTOBI      | 071  | 074  | 069  | 041  | \#554236 | <font color="#554236>■■■</font> |
-|    <font color="#994639">紅鳶</font>    |     BENITOBI      | 045  | 082  | 072  | 011  | \#994639 | <font color="#994639>■■■</font> |
-|     <font color="#F19483">曙</font>     |      AKEBONO      | 000  | 057  | 047  | 000  | \#F19483 | <font color="#F19483>■■■</font> |
-|    <font color="#B54434">紅樺</font>    |     BENIKABA      | 035  | 087  | 079  | 001  | \#B54434 | <font color="#B54434>■■■</font> |
-|   <font color="#B9887D">水がき</font>   |     MIZUGAKI      | 030  | 054  | 046  | 000  | \#B9887D | <font color="#B9887D>■■■</font> |
-|   <font color="#F17C67">珊瑚朱</font>   |     SANGOSYU      | 000  | 065  | 058  | 000  | \#F17C67 | <font color="#F17C67>■■■</font> |
-|   <font color="#884C3A">紅檜皮</font>   |    BENIHIWADA     | 052  | 074  | 070  | 018  | \#884C3A | <font color="#884C3A>■■■</font> |
-|   <font color="#E83015">猩猩緋</font>   |     SYOJYOHI      | 000  | 089  | 079  | 000  | \#E83015 | <font color="#E83015>■■■</font> |
-|    <font color="#D75455">鉛丹</font>    |       ENTAN       | 000  | 072  | 063  | 007  | \#D75455 | <font color="#D75455>■■■</font> |
-|   <font color="#B55D4C">芝翫茶</font>   |     SHIKANCHA     | 037  | 072  | 068  | 000  | \#B55D4C | <font color="#B55D4C>■■■</font> |
-|    <font color="#854836">檜皮</font>    |      HIWADA       | 049  | 073  | 070  | 018  | \#854836 | <font color="#854836>■■■</font> |
-|    <font color="#A35E47">柿渋</font>    |     KAKISHIBU     | 043  | 072  | 071  | 004  | \#A35E47 | <font color="#A35E47>■■■</font> |
-|     <font color="#CC543A">緋</font>     |        AKE        | 017  | 079  | 074  | 000  | \#CC543A | <font color="#CC543A>■■■</font> |
-|     <font color="#724832">鳶</font>     |       TOBI        | 058  | 073  | 070  | 026  | \#724832 | <font color="#724832>■■■</font> |
-|    <font color="#F75C2F">紅緋</font>    |      BENIHI       | 000  | 075  | 074  | 000  | \#F75C2F | <font color="#F75C2F>■■■</font> |
-|   <font color="#6A4028">栗皮茶</font>   |    KURIKAWACHA    | 058  | 074  | 072  | 030  | \#6A4028 | <font color="#6A4028>■■■</font> |
-|    <font color="#9A5034">弁柄</font>    |      BENGARA      | 044  | 074  | 075  | 012  | \#9A5034 | <font color="#9A5034>■■■</font> |
-|    <font color="#C46243">照柿</font>    |     TERIGAKI      | 024  | 072  | 072  | 000  | \#C46243 | <font color="#C46243>■■■</font> |
-|   <font color="#AF5F3C">江戸茶</font>   |      EDOCHA       | 038  | 070  | 071  | 003  | \#AF5F3C | <font color="#AF5F3C>■■■</font> |
-|    <font color="#FB966E">洗朱</font>    |      ARAISYU      | 000  | 054  | 056  | 000  | \#FB966E | <font color="#FB966E>■■■</font> |
-|   <font color="#724938">百塩茶</font>   |    MOMOSHIOCHA    | 061  | 070  | 068  | 025  | \#724938 | <font color="#724938>■■■</font> |
-|    <font color="#B47157">唐茶</font>    |      KARACHA      | 038  | 064  | 065  | 000  | \#B47157 | <font color="#B47157>■■■</font> |
-| <font color="#DB8E71">ときがら茶</font> |    TOKIGARACHA    | 010  | 055  | 057  | 000  | \#DB8E71 | <font color="#DB8E71>■■■</font> |
-|    <font color="#F05E1C">黄丹</font>    |       OHNI        | 000  | 072  | 090  | 000  | \#F05E1C | <font color="#F05E1C>■■■</font> |
-|     <font color="#ED784A">纁</font>     |       SOHI        | 000  | 065  | 073  | 000  | \#ED784A | <font color="#ED784A>■■■</font> |
-|   <font color="#CA7853">遠州茶</font>   |     ENSYUCHA      | 021  | 064  | 067  | 000  | \#CA7853 | <font color="#CA7853>■■■</font> |
-|    <font color="#B35C37">樺茶</font>    |      KABACHA      | 036  | 072  | 076  | 002  | \#B35C37 | <font color="#B35C37>■■■</font> |
-|    <font color="#563F2E">焦茶</font>    |      KOGECHA      | 068  | 073  | 071  | 040  | \#563F2E | <font color="#563F2E>■■■</font> |
-|    <font color="#E3916E">赤香</font>    |      AKAKOH       | 005  | 055  | 060  | 000  | \#E3916E | <font color="#E3916E>■■■</font> |
-|    <font color="#8F5A3C">雀茶</font>    |     SUZUMECHA     | 052  | 069  | 073  | 015  | \#8F5A3C | <font color="#8F5A3C>■■■</font> |
-|     <font color="#F0A986">宍</font>     |      SHISHI       | 000  | 047  | 050  | 000  | \#F0A986 | <font color="#F0A986>■■■</font> |
-|  <font color="#A0674B">宗伝唐茶</font>  |   SODENKARACHA    | 048  | 066  | 070  | 006  | \#A0674B | <font color="#A0674B>■■■</font> |
-|     <font color="#C1693C">樺</font>     |       KABA        | 026  | 070  | 078  | 000  | \#C1693C | <font color="#C1693C>■■■</font> |
-|   <font color="#FB9966">深支子</font>   |  KOKIKUCHINASHI   | 000  | 053  | 065  | 000  | \#FB9966 | <font color="#FB9966>■■■</font> |
-|    <font color="#947A6D">胡桃</font>    |      KURUMI       | 051  | 056  | 057  | 001  | \#947A6D | <font color="#947A6D>■■■</font> |
-|    <font color="#A36336">代赭</font>    |      TAISYA       | 038  | 067  | 082  | 003  | \#A36336 | <font color="#A36336>■■■</font> |
-|    <font color="#E79460">洗柿</font>    |     ARAIGAKI      | 000  | 053  | 067  | 000  | \#E79460 | <font color="#E79460>■■■</font> |
-|   <font color="#7D532C">黄櫨染</font>   |     KOHROZEN      | 055  | 068  | 078  | 023  | \#7D532C | <font color="#7D532C>■■■</font> |
-|   <font color="#C78550">赤朽葉</font>   |    AKAKUCHIBA     | 005  | 052  | 070  | 014  | \#C78550 | <font color="#C78550>■■■</font> |
-|    <font color="#985F2A">礪茶</font>    |      TONOCHA      | 048  | 066  | 079  | 007  | \#985F2A | <font color="#985F2A>■■■</font> |
-|   <font color="#E1A679">赤白橡</font>   | AKASHIROTSURUBAMI | 006  | 042  | 055  | 000  | \#E1A679 | <font color="#E1A679>■■■</font> |
-|    <font color="#855B32">煎茶</font>    |      SENCHA       | 055  | 066  | 075  | 014  | \#855B32 | <font color="#855B32>■■■</font> |
-|    <font color="#FC9F4D">萱草</font>    |       KANZO       | 000  | 049  | 072  | 000  | \#FC9F4D | <font color="#FC9F4D>■■■</font> |
-|   <font color="#FFBA84">洒落柿</font>   |     SHAREGAKI     | 000  | 036  | 053  | 000  | \#FFBA84 | <font color="#FFBA84>■■■</font> |
-|   <font color="#E98B2A">紅鬱金</font>   |     BENIUKON      | 000  | 052  | 080  | 000  | \#E98B2A | <font color="#E98B2A>■■■</font> |
-|    <font color="#E9A368">梅染</font>    |      UMEZOME      | 003  | 045  | 062  | 000  | \#E9A368 | <font color="#E9A368>■■■</font> |
-|   <font color="#B17844">枇杷茶</font>   |      BIWACHA      | 035  | 058  | 075  | 000  | \#B17844 | <font color="#B17844>■■■</font> |
-|   <font color="#96632E">丁子茶</font>   |     CHOJICHA      | 050  | 061  | 076  | 009  | \#96632E | <font color="#96632E>■■■</font> |
-|   <font color="#43341B">憲法染</font>   |    KENPOHZOME     | 076  | 071  | 073  | 047  | \#43341B | <font color="#43341B>■■■</font> |
-|    <font color="#CA7A2C">琥珀</font>    |      KOHAKU       | 020  | 058  | 085  | 000  | \#CA7A2C | <font color="#CA7A2C>■■■</font> |
-|    <font color="#ECB88A">薄柿</font>    |      USUGAKI      | 000  | 034  | 052  | 000  | \#ECB88A | <font color="#ECB88A>■■■</font> |
-|    <font color="#78552B">伽羅</font>    |       KYARA       | 058  | 062  | 072  | 016  | \#78552B | <font color="#78552B>■■■</font> |
-|   <font color="#B07736">丁子染</font>   |     CHOJIZOME     | 036  | 057  | 079  | 000  | \#B07736 | <font color="#B07736>■■■</font> |
-|    <font color="#967249">柴染</font>    |     FUSHIZOME     | 050  | 056  | 071  | 005  | \#967249 | <font color="#967249>■■■</font> |
-|    <font color="#E2943B">朽葉</font>    |      KUCHIBA      | 007  | 049  | 080  | 000  | \#E2943B | <font color="#E2943B>■■■</font> |
-|    <font color="#C7802D">金茶</font>    |      KINCHA       | 020  | 056  | 089  | 000  | \#C7802D | <font color="#C7802D>■■■</font> |
-|     <font color="#9B6E23">狐</font>     |      KITSUNE      | 046  | 057  | 080  | 004  | \#9B6E23 | <font color="#9B6E23>■■■</font> |
-|    <font color="#6E552F">煤竹</font>    |     SUSUTAKE      | 062  | 063  | 073  | 021  | \#6E552F | <font color="#6E552F>■■■</font> |
-|    <font color="#EBB471">薄香</font>    |      USUKOH       | 000  | 034  | 060  | 000  | \#EBB471 | <font color="#EBB471>■■■</font> |
-|    <font color="#D7B98E">砥粉</font>    |      TONOKO       | 005  | 020  | 038  | 015  | \#D7B98E | <font color="#D7B98E>■■■</font> |
-|   <font color="#82663A">銀煤竹</font>   |    GINSUSUTAKE    | 054  | 058  | 076  | 010  | \#82663A | <font color="#82663A>■■■</font> |
-|    <font color="#B68E55">黄土</font>    |       OHDO        | 031  | 045  | 066  | 000  | \#B68E55 | <font color="#B68E55>■■■</font> |
-|    <font color="#BC9F77">白茶</font>    |     SHIRACHA      | 032  | 040  | 057  | 000  | \#BC9F77 | <font color="#BC9F77>■■■</font> |
-|    <font color="#876633">媚茶</font>    |      KOBICHA      | 058  | 059  | 078  | 014  | \#876633 | <font color="#876633>■■■</font> |
-|   <font color="#C18A26">黄唐茶</font>   |     KIGARACHA     | 028  | 048  | 083  | 000  | \#C18A26 | <font color="#C18A26>■■■</font> |
-|    <font color="#FFB11B">山吹</font>    |     YAMABUKI      | 000  | 037  | 087  | 000  | \#FFB11B | <font color="#FFB11B>■■■</font> |
-|   <font color="#D19826">山吹茶</font>   |    YAMABUKICHA    | 017  | 044  | 089  | 000  | \#D19826 | <font color="#D19826>■■■</font> |
-|    <font color="#DDA52D">櫨染</font>    |     HAJIZOME      | 008  | 040  | 083  | 000  | \#DDA52D | <font color="#DDA52D>■■■</font> |
-|    <font color="#C99833">桑茶</font>    |      KUWACHA      | 025  | 044  | 083  | 000  | \#C99833 | <font color="#C99833>■■■</font> |
-|    <font color="#F9BF45">玉子</font>    |      TAMAGO       | 000  | 029  | 074  | 000  | \#F9BF45 | <font color="#F9BF45>■■■</font> |
-|    <font color="#DCB879">白橡</font>    |  SHIROTSURUBAMI   | 016  | 030  | 060  | 000  | \#DCB879 | <font color="#DCB879>■■■</font> |
-|    <font color="#BA9132">黄橡</font>    |    KITSURUBAMI    | 031  | 044  | 077  | 000  | \#BA9132 | <font color="#BA9132>■■■</font> |
-|   <font color="#E8B647">玉蜀黍</font>   |   TAMAMOROKOSHI   | 004  | 029  | 071  | 000  | \#E8B647 | <font color="#E8B647>■■■</font> |
-|    <font color="#F7C242">花葉</font>    |      HANABA       | 000  | 025  | 072  | 000  | \#F7C242 | <font color="#F7C242>■■■</font> |
-|    <font color="#7D6C46">生壁</font>    |     NAMAKABE      | 058  | 056  | 070  | 008  | \#7D6C46 | <font color="#7D6C46>■■■</font> |
-|   <font color="#DAC9A6">鳥の子</font>   |     TORINOKO      | 014  | 020  | 039  | 000  | \#DAC9A6 | <font color="#DAC9A6>■■■</font> |
-|    <font color="#FAD689">浅黄</font>    |       USUKI       | 000  | 017  | 053  | 000  | \#FAD689 | <font color="#FAD689>■■■</font> |
-|   <font color="#D9AB42">黄朽葉</font>   |     KIKUCHIBA     | 014  | 033  | 075  | 000  | \#D9AB42 | <font color="#D9AB42>■■■</font> |
-|    <font color="#F6C555">梔子</font>    |    KUCHINASHI     | 000  | 025  | 070  | 000  | \#F6C555 | <font color="#F6C555>■■■</font> |
-|    <font color="#FFC408">籐黄</font>    |       TOHOH       | 000  | 025  | 086  | 000  | \#FFC408 | <font color="#FFC408>■■■</font> |
-|    <font color="#EFBB24">鬱金</font>    |       UKON        | 003  | 029  | 088  | 000  | \#EFBB24 | <font color="#EFBB24>■■■</font> |
-|    <font color="#CAAD5F">芥子</font>    |      KARASHI      | 000  | 016  | 070  | 027  | \#CAAD5F | <font color="#CAAD5F>■■■</font> |
-|  <font color="#8D742A">肥後煤竹</font>  |   HIGOSUSUTAKE    | 055  | 053  | 082  | 007  | \#8D742A | <font color="#8D742A>■■■</font> |
-|  <font color="#B4A582">利休白茶</font>  |   RIKYUSHIRACHA   | 036  | 033  | 054  | 000  | \#B4A582 | <font color="#B4A582>■■■</font> |
-|    <font color="#877F6C">灰汁</font>    |        AKU        | 058  | 051  | 060  | 001  | \#877F6C | <font color="#877F6C>■■■</font> |
-|   <font color="#897D55">利休茶</font>   |     RIKYUCHA      | 057  | 050  | 070  | 003  | \#897D55 | <font color="#897D55>■■■</font> |
-|   <font color="#74673E">路考茶</font>   |     ROKOHCHA      | 064  | 057  | 073  | 010  | \#74673E | <font color="#74673E>■■■</font> |
-|   <font color="#A28C37">菜種油</font>   |     NATANEYU      | 046  | 042  | 084  | 000  | \#A28C37 | <font color="#A28C37>■■■</font> |
-|    <font color="#6C6024">鶯茶</font>    |     UGUISUCHA     | 064  | 056  | 078  | 016  | \#6C6024 | <font color="#6C6024>■■■</font> |
-|  <font color="#867835">黄海松茶</font>  |     KIMIRUCHA     | 057  | 048  | 078  | 006  | \#867835 | <font color="#867835>■■■</font> |
-|   <font color="#62592C">海松茶</font>   |      MIRUCHA      | 068  | 059  | 075  | 022  | \#62592C | <font color="#62592C>■■■</font> |
-|    <font color="#E9CD4C">刈安</font>    |     KARIYASU      | 007  | 015  | 074  | 000  | \#E9CD4C | <font color="#E9CD4C>■■■</font> |
-|   <font color="#F7D94C">菜の花</font>   |     NANOHANA      | 002  | 011  | 075  | 000  | \#F7D94C | <font color="#F7D94C>■■■</font> |
-|    <font color="#FBE251">黄蘗</font>    |      KIHADA       | 000  | 005  | 073  | 000  | \#FBE251 | <font color="#FBE251>■■■</font> |
-|    <font color="#D9CD90">蒸栗</font>    |     MUSHIKURI     | 016  | 015  | 052  | 000  | \#D9CD90 | <font color="#D9CD90>■■■</font> |
-|   <font color="#ADA142">青朽葉</font>   |     AOKUCHIBA     | 038  | 031  | 076  | 000  | \#ADA142 | <font color="#ADA142>■■■</font> |
-|   <font color="#DDD23B">女郎花</font>   |     OMINAESHI     | 016  | 009  | 082  | 000  | \#DDD23B | <font color="#DDD23B>■■■</font> |
-|    <font color="#A5A051">鶸茶</font>    |      HIWACHA      | 045  | 033  | 076  | 000  | \#A5A051 | <font color="#A5A051>■■■</font> |
-|     <font color="#BEC23F">鶸</font>     |       HIWA        | 032  | 015  | 085  | 000  | \#BEC23F | <font color="#BEC23F>■■■</font> |
-|     <font color="#6C6A2D">鶯</font>     |      UGUISU       | 067  | 054  | 084  | 014  | \#6C6A2D | <font color="#6C6A2D>■■■</font> |
-|    <font color="#939650">柳茶</font>    |     YANAGICHA     | 052  | 037  | 073  | 000  | \#939650 | <font color="#939650>■■■</font> |
-|     <font color="#838A2D">苔</font>     |       KOKE        | 062  | 041  | 083  | 002  | \#838A2D | <font color="#838A2D>■■■</font> |
-|    <font color="#B1B479">麹塵</font>    |      KIKUJIN      | 037  | 023  | 063  | 000  | \#B1B479 | <font color="#B1B479>■■■</font> |
-|   <font color="#616138">璃寛茶</font>   |     RIKANCHA      | 072  | 058  | 073  | 019  | \#616138 | <font color="#616138>■■■</font> |
-|   <font color="#4B4E2A">藍媚茶</font>   |     AIKOBICHA     | 076  | 061  | 074  | 030  | \#4B4E2A | <font color="#4B4E2A>■■■</font> |
-|    <font color="#5B622E">海松</font>    |       MIRU        | 072  | 056  | 078  | 020  | \#5B622E | <font color="#5B622E>■■■</font> |
-|   <font color="#4D5139">千歳茶</font>   |     SENSAICHA     | 077  | 061  | 070  | 030  | \#4D5139 | <font color="#4D5139>■■■</font> |
-|   <font color="#89916B">梅幸茶</font>   |     BAIKOCHA      | 057  | 038  | 063  | 000  | \#89916B | <font color="#89916B>■■■</font> |
-|   <font color="#90B44B">鶸萌黄</font>   |     HIWAMOEGI     | 056  | 013  | 077  | 000  | \#90B44B | <font color="#90B44B>■■■</font> |
-|    <font color="#91AD70">柳染</font>    |    YANAGIZOME     | 056  | 024  | 065  | 000  | \#91AD70 | <font color="#91AD70>■■■</font> |
-|    <font color="#B5CAA0">裏柳</font>    |     URAYANAGI     | 036  | 010  | 045  | 000  | \#B5CAA0 | <font color="#B5CAA0>■■■</font> |
-|   <font color="#646A58">岩井茶</font>   |      IWAICHA      | 069  | 052  | 063  | 007  | \#646A58 | <font color="#646A58>■■■</font> |
-|    <font color="#7BA23F">萌黄</font>    |       MOEGI       | 070  | 023  | 086  | 000  | \#7BA23F | <font color="#7BA23F>■■■</font> |
-|     <font color="#86C166">苗</font>     |        NAE        | 057  | 001  | 072  | 000  | \#86C166 | <font color="#86C166>■■■</font> |
-|   <font color="#4A593D">柳煤竹</font>   |  YANAGISUSUTAKE   | 076  | 057  | 070  | 017  | \#4A593D | <font color="#4A593D>■■■</font> |
-|    <font color="#42602D">松葉</font>    |      MATSUBA      | 080  | 055  | 079  | 020  | \#42602D | <font color="#42602D>■■■</font> |
-|    <font color="#516E41">青丹</font>    |       AONI        | 076  | 051  | 075  | 012  | \#516E41 | <font color="#516E41>■■■</font> |
-|    <font color="#91B493">薄青</font>    |       USUAO       | 057  | 019  | 052  | 000  | \#91B493 | <font color="#91B493>■■■</font> |
-|    <font color="#808F7C">柳鼠</font>    |   YANAGINEZUMI    | 061  | 041  | 053  | 000  | \#808F7C | <font color="#808F7C>■■■</font> |
-|    <font color="#1B813E">常磐</font>    |      TOKIWA       | 082  | 000  | 078  | 040  | \#1B813E | <font color="#1B813E>■■■</font> |
-|    <font color="#5DAC81">若竹</font>    |     WAKATAKE      | 068  | 013  | 059  | 000  | \#5DAC81 | <font color="#5DAC81>■■■</font> |
-|   <font color="#36563C">千歳緑</font>   |   CHITOSEMIDORI   | 083  | 055  | 069  | 022  | \#36563C | <font color="#36563C>■■■</font> |
-|     <font color="#227D51">緑</font>     |      MIDORI       | 086  | 036  | 070  | 000  | \#227D51 | <font color="#227D51>■■■</font> |
-|    <font color="#A8D8B9">白緑</font>    |     BYAKUROKU     | 044  | 000  | 037  | 000  | \#A8D8B9 | <font color="#A8D8B9>■■■</font> |
-|    <font color="#6A8372">老竹</font>    |      OITAKE       | 071  | 046  | 060  | 002  | \#6A8372 | <font color="#6A8372>■■■</font> |
-|    <font color="#2D6D4B">木賊</font>    |      TOKUSA       | 086  | 046  | 070  | 008  | \#2D6D4B | <font color="#2D6D4B>■■■</font> |
-|  <font color="#465D4C">御納戸茶</font>  |     ONANDOCHA     | 081  | 060  | 068  | 022  | \#465D4C | <font color="#465D4C>■■■</font> |
-|    <font color="#24936E">緑青</font>    |     ROKUSYOH      | 083  | 023  | 063  | 000  | \#24936E | <font color="#24936E>■■■</font> |
-|   <font color="#86A697">錆青磁</font>   |     SABISEIJI     | 058  | 030  | 045  | 000  | \#86A697 | <font color="#86A697>■■■</font> |
-|    <font color="#00896C">青竹</font>    |      AOTAKE       | 092  | 028  | 067  | 000  | \#00896C | <font color="#00896C>■■■</font> |
-|  <font color="#096148">ビロード</font>  |      VELUDO       | 093  | 054  | 071  | 020  | \#096148 | <font color="#096148>■■■</font> |
-|    <font color="#20604F">虫襖</font>    |      MUSHIAO      | 089  | 055  | 067  | 017  | \#20604F | <font color="#20604F>■■■</font> |
-|  <font color="#0F4C3A">藍海松茶</font>  |     AIMIRUCHA     | 089  | 060  | 067  | 030  | \#0F4C3A | <font color="#0F4C3A>■■■</font> |
-|   <font color="#4F726C">沈香茶</font>   |     TONOCHA2      | 077  | 050  | 057  | 004  | \#4F726C | <font color="#4F726C>■■■</font> |
-|    <font color="#00AA90">青緑</font>    |     AOMIDORI      | 088  | 000  | 053  | 000  | \#00AA90 | <font color="#00AA90>■■■</font> |
-|    <font color="#69B0AC">青磁</font>    |       SEIJI       | 061  | 014  | 034  | 000  | \#69B0AC | <font color="#69B0AC>■■■</font> |
-|     <font color="#26453D">鉄</font>     |       TETSU       | 090  | 063  | 066  | 030  | \#26453D | <font color="#26453D>■■■</font> |
-|   <font color="#66BAB7">水浅葱</font>   |     MIZUASAGI     | 068  | 010  | 033  | 000  | \#66BAB7 | <font color="#66BAB7>■■■</font> |
-|    <font color="#268785">青碧</font>    |      SEIHEKI      | 085  | 035  | 050  | 000  | \#268785 | <font color="#268785>■■■</font> |
-| <font color="#405B55">錆鉄御納戸</font> |  SABITETSUONANDO  | 083  | 059  | 060  | 013  | \#405B55 | <font color="#405B55>■■■</font> |
-|  <font color="#305A56">高麗納戸</font>  |    KORAINANDO     | 088  | 058  | 061  | 015  | \#305A56 | <font color="#305A56>■■■</font> |
-|    <font color="#78C2C4">白群</font>    |     BYAKUGUN      | 052  | 000  | 020  | 000  | \#78C2C4 | <font color="#78C2C4>■■■</font> |
-|   <font color="#376B6D">御召茶</font>   |     OMESHICHA     | 087  | 054  | 054  | 005  | \#376B6D | <font color="#376B6D>■■■</font> |
-|    <font color="#A5DEE4">瓶覗</font>    |    KAMENOZOKI     | 042  | 000  | 011  | 000  | \#A5DEE4 | <font color="#A5DEE4>■■■</font> |
-|   <font color="#77969A">深川鼠</font>   |  FUKAGAWANEZUMI   | 063  | 038  | 040  | 000  | \#77969A | <font color="#77969A>■■■</font> |
-|   <font color="#6699A1">錆浅葱</font>   |     SABIASAGI     | 066  | 030  | 034  | 000  | \#6699A1 | <font color="#6699A1>■■■</font> |
-|     <font color="#81C7D4">水</font>     |       MIZU        | 055  | 006  | 017  | 000  | \#81C7D4 | <font color="#81C7D4>■■■</font> |
-|    <font color="#33A6B8">浅葱</font>    |       ASAGI       | 082  | 018  | 027  | 000  | \#33A6B8 | <font color="#33A6B8>■■■</font> |
-|   <font color="#0C4842">御納戸</font>   |      ONANDO       | 092  | 065  | 062  | 025  | \#0C4842 | <font color="#0C4842>■■■</font> |
-|     <font color="#0D5661">藍</font>     |        AI         | 095  | 063  | 056  | 017  | \#0D5661 | <font color="#0D5661>■■■</font> |
-|    <font color="#0089A7">新橋</font>    |     SHINBASHI     | 095  | 031  | 030  | 000  | \#0089A7 | <font color="#0089A7>■■■</font> |
-|  <font color="#336774">錆御納戸</font>  |    SABIONANDO     | 087  | 056  | 052  | 006  | \#336774 | <font color="#336774>■■■</font> |
-|  <font color="#255359">鉄御納戸</font>  |    TETSUONANDO    | 090  | 063  | 059  | 021  | \#255359 | <font color="#255359>■■■</font> |
-|   <font color="#1E88A8">花浅葱</font>   |     HANAASAGI     | 090  | 032  | 023  | 000  | \#1E88A8 | <font color="#1E88A8>■■■</font> |
-|    <font color="#566C73">藍鼠</font>    |     AINEZUMI      | 078  | 057  | 052  | 007  | \#566C73 | <font color="#566C73>■■■</font> |
-|    <font color="#577C8A">舛花</font>    |     MASUHANA      | 078  | 048  | 042  | 000  | \#577C8A | <font color="#577C8A>■■■</font> |
-|     <font color="#58B2DC">空</font>     |       SORA        | 072  | 013  | 007  | 000  | \#58B2DC | <font color="#58B2DC>■■■</font> |
-|  <font color="#2B5F75">熨斗目花</font>  |    NOSHIMEHANA    | 092  | 060  | 047  | 004  | \#2B5F75 | <font color="#2B5F75>■■■</font> |
-|    <font color="#3A8FB7">千草</font>    |      CHIGUSA      | 083  | 031  | 017  | 000  | \#3A8FB7 | <font color="#3A8FB7>■■■</font> |
-| <font color="#2E5C6E">御召御納戸</font> |   OMESHIONANDO    | 090  | 063  | 051  | 007  | \#2E5C6E | <font color="#2E5C6E>■■■</font> |
-|     <font color="#006284">縹</font>     |      HANADA       | 100  | 060  | 041  | 002  | \#006284 | <font color="#006284>■■■</font> |
-|   <font color="#7DB9DE">勿忘草</font>   |   WASURENAGUSA    | 052  | 010  | 000  | 000  | \#7DB9DE | <font color="#7DB9DE>■■■</font> |
-|    <font color="#51A8DD">群青</font>    |      GUNJYO       | 067  | 021  | 000  | 000  | \#51A8DD | <font color="#51A8DD>■■■</font> |
-|    <font color="#2EA9DF">露草</font>    |     TSUYUKUSA     | 073  | 020  | 000  | 000  | \#2EA9DF | <font color="#2EA9DF>■■■</font> |
-|    <font color="#0B1013">黒橡</font>    |   KUROTSURUBAMI   | 092  | 078  | 064  | 048  | \#0B1013 | <font color="#0B1013>■■■</font> |
-|     <font color="#0F2540">紺</font>     |        KON        | 100  | 085  | 050  | 024  | \#0F2540 | <font color="#0F2540>■■■</font> |
-|     <font color="#08192D">褐</font>     |       KACHI       | 100  | 086  | 060  | 045  | \#08192D | <font color="#08192D>■■■</font> |
-|    <font color="#005CAF">瑠璃</font>    |       RURI        | 097  | 065  | 000  | 000  | \#005CAF | <font color="#005CAF>■■■</font> |
-|   <font color="#0B346E">瑠璃紺</font>   |      RURIKON      | 100  | 085  | 039  | 004  | \#0B346E | <font color="#0B346E>■■■</font> |
-|    <font color="#7B90D2">紅碧</font>    |    BENIMIDORI     | 064  | 044  | 000  | 000  | \#7B90D2 | <font color="#7B90D2>■■■</font> |
-|    <font color="#6E75A4">藤鼠</font>    |    FUJINEZUMI     | 069  | 056  | 017  | 000  | \#6E75A4 | <font color="#6E75A4>■■■</font> |
-|    <font color="#261E47">鉄紺</font>    |     TETSUKON      | 080  | 065  | 000  | 077  | \#261E47 | <font color="#261E47>■■■</font> |
-|    <font color="#113285">紺青</font>    |      KONJYO       | 100  | 085  | 015  | 000  | \#113285 | <font color="#113285>■■■</font> |
-|   <font color="#4E4F97">紅掛花</font>   |   BENIKAKEHANA    | 082  | 070  | 014  | 000  | \#4E4F97 | <font color="#4E4F97>■■■</font> |
-|   <font color="#211E55">紺桔梗</font>   |     KONKIKYO      | 100  | 090  | 042  | 012  | \#211E55 | <font color="#211E55>■■■</font> |
-|     <font color="#8B81C3">藤</font>     |       FUJI        | 058  | 052  | 000  | 000  | \#8B81C3 | <font color="#8B81C3>■■■</font> |
-|    <font color="#70649A">二藍</font>    |      FUTAAI       | 072  | 067  | 021  | 000  | \#70649A | <font color="#70649A>■■■</font> |
-|     <font color="#9B90C2">楝</font>     |       OUCHI       | 042  | 042  | 000  | 000  | \#9B90C2 | <font color="#9B90C2>■■■</font> |
-|    <font color="#8A6BBE">藤紫</font>    |   FUJIMURASAKI    | 058  | 060  | 000  | 000  | \#8A6BBE | <font color="#8A6BBE>■■■</font> |
-|    <font color="#6A4C9C">桔梗</font>    |       KIKYO       | 075  | 075  | 010  | 000  | \#6A4C9C | <font color="#6A4C9C>■■■</font> |
-|    <font color="#8F77B5">紫苑</font>    |       SHION       | 055  | 058  | 001  | 000  | \#8F77B5 | <font color="#8F77B5>■■■</font> |
-|    <font color="#533D5B">滅紫</font>    |      MESSHI       | 082  | 080  | 048  | 015  | \#533D5B | <font color="#533D5B>■■■</font> |
-|     <font color="#B28FCE">薄</font>     |        USU        | 043  | 051  | 000  | 000  | \#B28FCE | <font color="#B28FCE>■■■</font> |
-|     <font color="#986DB2">半</font>     |      HASHITA      | 055  | 063  | 000  | 000  | \#986DB2 | <font color="#986DB2>■■■</font> |
-|   <font color="#77428D">江戸紫</font>   |    EDOMURASAKI    | 060  | 074  | 000  | 014  | \#77428D | <font color="#77428D>■■■</font> |
-|    <font color="#3C2F41">紫紺</font>    |      SHIKON       | 088  | 084  | 060  | 045  | \#3C2F41 | <font color="#3C2F41>■■■</font> |
-|    <font color="#4A225D">深紫</font>    |   KOKIMURASAKI    | 090  | 093  | 043  | 016  | \#4A225D | <font color="#4A225D>■■■</font> |
-|     <font color="#66327C">菫</font>     |      SUMIRE       | 074  | 083  | 022  | 000  | \#66327C | <font color="#66327C>■■■</font> |
-|     <font color="#592C63">紫</font>     |     MURASAKI      | 081  | 087  | 040  | 007  | \#592C63 | <font color="#592C63>■■■</font> |
-|    <font color="#6F3381">菖蒲</font>    |       AYAME       | 071  | 087  | 014  | 000  | \#6F3381 | <font color="#6F3381>■■■</font> |
-|   <font color="#574C57">藤煤竹</font>   |   FUJISUSUTAKE    | 075  | 070  | 057  | 025  | \#574C57 | <font color="#574C57>■■■</font> |
-|    <font color="#B481BB">紅藤</font>    |     BENIFUJI      | 038  | 060  | 000  | 000  | \#B481BB | <font color="#B481BB>■■■</font> |
-|    <font color="#3F2B36">黒紅</font>    |     KUROBENI      | 086  | 085  | 064  | 050  | \#3F2B36 | <font color="#3F2B36>■■■</font> |
-|   <font color="#572A3F">茄子紺</font>   |      NASUKON      | 040  | 073  | 010  | 073  | \#572A3F | <font color="#572A3F>■■■</font> |
-|   <font color="#5E3D50">葡萄鼠</font>   |    BUDOHNEZUMI    | 073  | 077  | 054  | 017  | \#5E3D50 | <font color="#5E3D50>■■■</font> |
-|   <font color="#72636E">鳩羽鼠</font>   |   HATOBANEZUMI    | 068  | 064  | 051  | 006  | \#72636E | <font color="#72636E>■■■</font> |
-|    <font color="#622954">杜若</font>    |    KAKITSUBATA    | 077  | 092  | 048  | 021  | \#622954 | <font color="#622954>■■■</font> |
-|    <font color="#6D2E5B">蒲葡</font>    |      EBIZOME      | 071  | 089  | 048  | 012  | \#6D2E5B | <font color="#6D2E5B>■■■</font> |
-|    <font color="#C1328E">牡丹</font>    |       BOTAN       | 025  | 091  | 008  | 000  | \#C1328E | <font color="#C1328E>■■■</font> |
-|    <font color="#A8497A">梅紫</font>    |    UMEMURASAKI    | 045  | 080  | 037  | 000  | \#A8497A | <font color="#A8497A>■■■</font> |
-|    <font color="#562E37">似紫</font>    |   NISEMURASAKI    | 075  | 084  | 062  | 042  | \#562E37 | <font color="#562E37>■■■</font> |
-|    <font color="#E03C8A">躑躅</font>    |     TSUTSUJI      | 000  | 080  | 003  | 000  | \#E03C8A | <font color="#E03C8A>■■■</font> |
-|    <font color="#60373E">紫鳶</font>    |   MURASAKITOBI    | 070  | 078  | 061  | 030  | \#60373E | <font color="#60373E>■■■</font> |
-|    <font color="#FCFAF2">白練</font>    |     SHIRONERI     | 000  | 003  | 011  | 000  | \#FCFAF2 | <font color="#FCFAF2>■■■</font> |
-|    <font color="#FFFFFB">胡粉</font>    |       GOFUN       | 000  | 000  | 002  | 000  | \#FFFFFB | <font color="#FFFFFB>■■■</font> |
-|    <font color="#BDC0BA">白鼠</font>    |    SHIRONEZUMI    | 031  | 023  | 028  | 000  | \#BDC0BA | <font color="#BDC0BA>■■■</font> |
-|    <font color="#91989F">銀鼠</font>    |     GINNEZUMI     | 052  | 039  | 036  | 000  | \#91989F | <font color="#91989F>■■■</font> |
-|     <font color="#787878">鉛</font>     |      NAMARI       | 008  | 000  | 000  | 073  | \#787878 | <font color="#787878>■■■</font> |
-|     <font color="#828282">灰</font>     |        HAI        | 000  | 000  | 000  | 070  | \#828282 | <font color="#828282>■■■</font> |
-|    <font color="#787D7B">素鼠</font>    |     SUNEZUMI      | 065  | 053  | 053  | 000  | \#787D7B | <font color="#787D7B>■■■</font> |
-|   <font color="#707C74">利休鼠</font>   |    RIKYUNEZUMI    | 066  | 050  | 054  | 001  | \#707C74 | <font color="#707C74>■■■</font> |
-|     <font color="#656765">鈍</font>     |       NIBI        | 005  | 000  | 000  | 080  | \#656765 | <font color="#656765>■■■</font> |
-|    <font color="#535953">青鈍</font>    |      AONIBI       | 078  | 063  | 062  | 020  | \#535953 | <font color="#535953>■■■</font> |
-|    <font color="#4F4F48">溝鼠</font>    |    DOBUNEZUMI     | 078  | 065  | 065  | 030  | \#4F4F48 | <font color="#4F4F48>■■■</font> |
-|   <font color="#52433D">紅消鼠</font>   |  BENIKESHINEZUMI  | 073  | 069  | 063  | 030  | \#52433D | <font color="#52433D>■■■</font> |
-|   <font color="#373C38">藍墨茶</font>   |     AISUMICHA     | 086  | 072  | 068  | 047  | \#373C38 | <font color="#373C38>■■■</font> |
-|  <font color="#3A3226">檳榔子染</font>  |    BINROJIZOME    | 079  | 072  | 072  | 050  | \#3A3226 | <font color="#3A3226>■■■</font> |
-|    <font color="#434343">消炭</font>    |     KESHIZUMI     | 000  | 000  | 000  | 088  | \#434343 | <font color="#434343>■■■</font> |
-|     <font color="#1C1C1C">墨</font>     |       SUMI        | 092  | 078  | 073  | 066  | \#1C1C1C | <font color="#1C1C1C>■■■</font> |
-|     <font color="#080808">黒</font>     |       KURO        | 091  | 084  | 074  | 071  | \#080808 | <font color="#080808>■■■</font> |
-|     <font color="#0C0C0C">呂</font>     |        RO         | 000  | 000  | 000  | 100  | \#0C0C0C | <font color="#0C0C0C>■■■</font> |
+|Name|Roma|C|M|Y|K|RGB|View|
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+|<font color="#DC9FB4">撫子</font>|NADESHIKO|002|043|003|000| \#DC9FB4|<font color="#DC9FB4>■■■</font>|
+|<font color="#E16B8C">紅梅</font>|KOHBAI|000|073|024|000| \#E16B8C|<font color="#E16B8C>■■■</font>|
+|<font color="#8E354A">蘇芳</font>|SUOH|051|093|058|010| \#8E354A|<font color="#8E354A>■■■</font>|
+|<font color="#F8C3CD">退紅</font>|TAIKOH|000|031|009|000| \#F8C3CD|<font color="#F8C3CD>■■■</font>|
+|<font color="#F4A7B9">一斥染</font>|IKKONZOME|000|048|015|000| \#F4A7B9|<font color="#F4A7B9>■■■</font>|
+|<font color="#64363C">桑染</font>|KUWAZOME|069|086|065|035| \#64363C|<font color="#64363C>■■■</font>|
+|<font color="#F596AA">桃</font>|MOMO|000|055|019|000| \#F596AA|<font color="#F596AA>■■■</font>|
+|<font color="#B5495B">苺</font>|ICHIGO|002|070|038|030| \#B5495B|<font color="#B5495B>■■■</font>|
+|<font color="#E87A90">薄紅</font>|USUBENI|000|064|026|000| \#E87A90|<font color="#E87A90>■■■</font>|
+|<font color="#D05A6E">今様</font>|IMAYOH|000|075|038|020| \#D05A6E|<font color="#D05A6E>■■■</font>|
+|<font color="#DB4D6D">中紅</font>|NAKABENI|005|083|040|000| \#DB4D6D|<font color="#DB4D6D>■■■</font>|
+|<font color="#FEDFE1">桜</font>|SAKURA|000|017|006|000| \#FEDFE1|<font color="#FEDFE1>■■■</font>|
+|<font color="#9E7A7A">梅鼠</font>|UMENEZUMI|048|059|049|000| \#9E7A7A|<font color="#9E7A7A>■■■</font>|
+|<font color="#D0104C">韓紅花</font>|KARAKURENAI|015|098|061|000| \#D0104C|<font color="#D0104C>■■■</font>|
+|<font color="#9F353A">燕脂</font>|ENJI|042|093|068|006| \#9F353A|<font color="#9F353A>■■■</font>|
+|<font color="#CB1B45">紅</font>|KURENAI|000|100|065|010| \#CB1B45|<font color="#CB1B45>■■■</font>|
+|<font color="#EEA9A9">鴇</font>|TOKI|002|045|027|000| \#EEA9A9|<font color="#EEA9A9>■■■</font>|
+|<font color="#BF6766">長春</font>|CYOHSYUN|025|070|053|000| \#BF6766|<font color="#BF6766>■■■</font>|
+|<font color="#86473F">深緋</font>|KOKIAKE|054|075|065|014| \#86473F|<font color="#86473F>■■■</font>|
+|<font color="#B19693">桜鼠</font>|SAKURANEZUMI|034|046|039|000| \#B19693|<font color="#B19693>■■■</font>|
+|<font color="#EB7A77">甚三紅</font>|JINZAMOMI|000|065|046|000| \#EB7A77|<font color="#EB7A77>■■■</font>|
+|<font color="#954A45">小豆</font>|AZUKI|048|078|066|010| \#954A45|<font color="#954A45>■■■</font>|
+|<font color="#A96360">蘇芳香</font>|SUOHKOH|042|070|058|001| \#A96360|<font color="#A96360>■■■</font>|
+|<font color="#CB4042">赤紅</font>|AKABENI|015|085|068|000| \#CB4042|<font color="#CB4042>■■■</font>|
+|<font color="#AB3B3A">真朱</font>|SHINSYU|035|085|070|002| \#AB3B3A|<font color="#AB3B3A>■■■</font>|
+|<font color="#D7C4BB">灰桜</font>|HAIZAKURA|002|012|012|010| \#D7C4BB|<font color="#D7C4BB>■■■</font>|
+|<font color="#904840">栗梅</font>|KURIUME|050|078|068|013| \#904840|<font color="#904840>■■■</font>|
+|<font color="#734338">海老茶</font>|EBICHA|055|077|068|027| \#734338|<font color="#734338>■■■</font>|
+|<font color="#C73E3A">銀朱</font>|GINSYU|016|086|070|000| \#C73E3A|<font color="#C73E3A>■■■</font>|
+|<font color="#554236">黒鳶</font>|KUROTOBI|071|074|069|041| \#554236|<font color="#554236>■■■</font>|
+|<font color="#994639">紅鳶</font>|BENITOBI|045|082|072|011| \#994639|<font color="#994639>■■■</font>|
+|<font color="#F19483">曙</font>|AKEBONO|000|057|047|000| \#F19483|<font color="#F19483>■■■</font>|
+|<font color="#B54434">紅樺</font>|BENIKABA|035|087|079|001| \#B54434|<font color="#B54434>■■■</font>|
+|<font color="#B9887D">水がき</font>|MIZUGAKI|030|054|046|000| \#B9887D|<font color="#B9887D>■■■</font>|
+|<font color="#F17C67">珊瑚朱</font>|SANGOSYU|000|065|058|000| \#F17C67|<font color="#F17C67>■■■</font>|
+|<font color="#884C3A">紅檜皮</font>|BENIHIWADA|052|074|070|018| \#884C3A|<font color="#884C3A>■■■</font>|
+|<font color="#E83015">猩猩緋</font>|SYOJYOHI|000|089|079|000| \#E83015|<font color="#E83015>■■■</font>|
+|<font color="#D75455">鉛丹</font>|ENTAN|000|072|063|007| \#D75455|<font color="#D75455>■■■</font>|
+|<font color="#B55D4C">芝翫茶</font>|SHIKANCHA|037|072|068|000| \#B55D4C|<font color="#B55D4C>■■■</font>|
+|<font color="#854836">檜皮</font>|HIWADA|049|073|070|018| \#854836|<font color="#854836>■■■</font>|
+|<font color="#A35E47">柿渋</font>|KAKISHIBU|043|072|071|004| \#A35E47|<font color="#A35E47>■■■</font>|
+|<font color="#CC543A">緋</font>|AKE|017|079|074|000| \#CC543A|<font color="#CC543A>■■■</font>|
+|<font color="#724832">鳶</font>|TOBI|058|073|070|026| \#724832|<font color="#724832>■■■</font>|
+|<font color="#F75C2F">紅緋</font>|BENIHI|000|075|074|000| \#F75C2F|<font color="#F75C2F>■■■</font>|
+|<font color="#6A4028">栗皮茶</font>|KURIKAWACHA|058|074|072|030| \#6A4028|<font color="#6A4028>■■■</font>|
+|<font color="#9A5034">弁柄</font>|BENGARA|044|074|075|012| \#9A5034|<font color="#9A5034>■■■</font>|
+|<font color="#C46243">照柿</font>|TERIGAKI|024|072|072|000| \#C46243|<font color="#C46243>■■■</font>|
+|<font color="#AF5F3C">江戸茶</font>|EDOCHA|038|070|071|003| \#AF5F3C|<font color="#AF5F3C>■■■</font>|
+|<font color="#FB966E">洗朱</font>|ARAISYU|000|054|056|000| \#FB966E|<font color="#FB966E>■■■</font>|
+|<font color="#724938">百塩茶</font>|MOMOSHIOCHA|061|070|068|025| \#724938|<font color="#724938>■■■</font>|
+|<font color="#B47157">唐茶</font>|KARACHA|038|064|065|000| \#B47157|<font color="#B47157>■■■</font>|
+|<font color="#DB8E71">ときがら茶</font>|TOKIGARACHA|010|055|057|000| \#DB8E71|<font color="#DB8E71>■■■</font>|
+|<font color="#F05E1C">黄丹</font>|OHNI|000|072|090|000| \#F05E1C|<font color="#F05E1C>■■■</font>|
+|<font color="#ED784A">纁</font>|SOHI|000|065|073|000| \#ED784A|<font color="#ED784A>■■■</font>|
+|<font color="#CA7853">遠州茶</font>|ENSYUCHA|021|064|067|000| \#CA7853|<font color="#CA7853>■■■</font>|
+|<font color="#B35C37">樺茶</font>|KABACHA|036|072|076|002| \#B35C37|<font color="#B35C37>■■■</font>|
+|<font color="#563F2E">焦茶</font>|KOGECHA|068|073|071|040| \#563F2E|<font color="#563F2E>■■■</font>|
+|<font color="#E3916E">赤香</font>|AKAKOH|005|055|060|000| \#E3916E|<font color="#E3916E>■■■</font>|
+|<font color="#8F5A3C">雀茶</font>|SUZUMECHA|052|069|073|015| \#8F5A3C|<font color="#8F5A3C>■■■</font>|
+|<font color="#F0A986">宍</font>|SHISHI|000|047|050|000| \#F0A986|<font color="#F0A986>■■■</font>|
+|<font color="#A0674B">宗伝唐茶</font>|SODENKARACHA|048|066|070|006| \#A0674B|<font color="#A0674B>■■■</font>|
+|<font color="#C1693C">樺</font>|KABA|026|070|078|000| \#C1693C|<font color="#C1693C>■■■</font>|
+|<font color="#FB9966">深支子</font>|KOKIKUCHINASHI|000|053|065|000| \#FB9966|<font color="#FB9966>■■■</font>|
+|<font color="#947A6D">胡桃</font>|KURUMI|051|056|057|001| \#947A6D|<font color="#947A6D>■■■</font>|
+|<font color="#A36336">代赭</font>|TAISYA|038|067|082|003| \#A36336|<font color="#A36336>■■■</font>|
+|<font color="#E79460">洗柿</font>|ARAIGAKI|000|053|067|000| \#E79460|<font color="#E79460>■■■</font>|
+|<font color="#7D532C">黄櫨染</font>|KOHROZEN|055|068|078|023| \#7D532C|<font color="#7D532C>■■■</font>|
+|<font color="#C78550">赤朽葉</font>|AKAKUCHIBA|005|052|070|014| \#C78550|<font color="#C78550>■■■</font>|
+|<font color="#985F2A">礪茶</font>|TONOCHA|048|066|079|007| \#985F2A|<font color="#985F2A>■■■</font>|
+|<font color="#E1A679">赤白橡</font>|AKASHIROTSURUBAMI|006|042|055|000| \#E1A679|<font color="#E1A679>■■■</font>|
+|<font color="#855B32">煎茶</font>|SENCHA|055|066|075|014| \#855B32|<font color="#855B32>■■■</font>|
+|<font color="#FC9F4D">萱草</font>|KANZO|000|049|072|000| \#FC9F4D|<font color="#FC9F4D>■■■</font>|
+|<font color="#FFBA84">洒落柿</font>|SHAREGAKI|000|036|053|000| \#FFBA84|<font color="#FFBA84>■■■</font>|
+|<font color="#E98B2A">紅鬱金</font>|BENIUKON|000|052|080|000| \#E98B2A|<font color="#E98B2A>■■■</font>|
+|<font color="#E9A368">梅染</font>|UMEZOME|003|045|062|000| \#E9A368|<font color="#E9A368>■■■</font>|
+|<font color="#B17844">枇杷茶</font>|BIWACHA|035|058|075|000| \#B17844|<font color="#B17844>■■■</font>|
+|<font color="#96632E">丁子茶</font>|CHOJICHA|050|061|076|009| \#96632E|<font color="#96632E>■■■</font>|
+|<font color="#43341B">憲法染</font>|KENPOHZOME|076|071|073|047| \#43341B|<font color="#43341B>■■■</font>|
+|<font color="#CA7A2C">琥珀</font>|KOHAKU|020|058|085|000| \#CA7A2C|<font color="#CA7A2C>■■■</font>|
+|<font color="#ECB88A">薄柿</font>|USUGAKI|000|034|052|000| \#ECB88A|<font color="#ECB88A>■■■</font>|
+|<font color="#78552B">伽羅</font>|KYARA|058|062|072|016| \#78552B|<font color="#78552B>■■■</font>|
+|<font color="#B07736">丁子染</font>|CHOJIZOME|036|057|079|000| \#B07736|<font color="#B07736>■■■</font>|
+|<font color="#967249">柴染</font>|FUSHIZOME|050|056|071|005| \#967249|<font color="#967249>■■■</font>|
+|<font color="#E2943B">朽葉</font>|KUCHIBA|007|049|080|000| \#E2943B|<font color="#E2943B>■■■</font>|
+|<font color="#C7802D">金茶</font>|KINCHA|020|056|089|000| \#C7802D|<font color="#C7802D>■■■</font>|
+|<font color="#9B6E23">狐</font>|KITSUNE|046|057|080|004| \#9B6E23|<font color="#9B6E23>■■■</font>|
+|<font color="#6E552F">煤竹</font>|SUSUTAKE|062|063|073|021| \#6E552F|<font color="#6E552F>■■■</font>|
+|<font color="#EBB471">薄香</font>|USUKOH|000|034|060|000| \#EBB471|<font color="#EBB471>■■■</font>|
+|<font color="#D7B98E">砥粉</font>|TONOKO|005|020|038|015| \#D7B98E|<font color="#D7B98E>■■■</font>|
+|<font color="#82663A">銀煤竹</font>|GINSUSUTAKE|054|058|076|010| \#82663A|<font color="#82663A>■■■</font>|
+|<font color="#B68E55">黄土</font>|OHDO|031|045|066|000| \#B68E55|<font color="#B68E55>■■■</font>|
+|<font color="#BC9F77">白茶</font>|SHIRACHA|032|040|057|000| \#BC9F77|<font color="#BC9F77>■■■</font>|
+|<font color="#876633">媚茶</font>|KOBICHA|058|059|078|014| \#876633|<font color="#876633>■■■</font>|
+|<font color="#C18A26">黄唐茶</font>|KIGARACHA|028|048|083|000| \#C18A26|<font color="#C18A26>■■■</font>|
+|<font color="#FFB11B">山吹</font>|YAMABUKI|000|037|087|000| \#FFB11B|<font color="#FFB11B>■■■</font>|
+|<font color="#D19826">山吹茶</font>|YAMABUKICHA|017|044|089|000| \#D19826|<font color="#D19826>■■■</font>|
+|<font color="#DDA52D">櫨染</font>|HAJIZOME|008|040|083|000| \#DDA52D|<font color="#DDA52D>■■■</font>|
+|<font color="#C99833">桑茶</font>|KUWACHA|025|044|083|000| \#C99833|<font color="#C99833>■■■</font>|
+|<font color="#F9BF45">玉子</font>|TAMAGO|000|029|074|000| \#F9BF45|<font color="#F9BF45>■■■</font>|
+|<font color="#DCB879">白橡</font>|SHIROTSURUBAMI|016|030|060|000| \#DCB879|<font color="#DCB879>■■■</font>|
+|<font color="#BA9132">黄橡</font>|KITSURUBAMI|031|044|077|000| \#BA9132|<font color="#BA9132>■■■</font>|
+|<font color="#E8B647">玉蜀黍</font>|TAMAMOROKOSHI|004|029|071|000| \#E8B647|<font color="#E8B647>■■■</font>|
+|<font color="#F7C242">花葉</font>|HANABA|000|025|072|000| \#F7C242|<font color="#F7C242>■■■</font>|
+|<font color="#7D6C46">生壁</font>|NAMAKABE|058|056|070|008| \#7D6C46|<font color="#7D6C46>■■■</font>|
+|<font color="#DAC9A6">鳥の子</font>|TORINOKO|014|020|039|000| \#DAC9A6|<font color="#DAC9A6>■■■</font>|
+|<font color="#FAD689">浅黄</font>|USUKI|000|017|053|000| \#FAD689|<font color="#FAD689>■■■</font>|
+|<font color="#D9AB42">黄朽葉</font>|KIKUCHIBA|014|033|075|000| \#D9AB42|<font color="#D9AB42>■■■</font>|
+|<font color="#F6C555">梔子</font>|KUCHINASHI|000|025|070|000| \#F6C555|<font color="#F6C555>■■■</font>|
+|<font color="#FFC408">籐黄</font>|TOHOH|000|025|086|000| \#FFC408|<font color="#FFC408>■■■</font>|
+|<font color="#EFBB24">鬱金</font>|UKON|003|029|088|000| \#EFBB24|<font color="#EFBB24>■■■</font>|
+|<font color="#CAAD5F">芥子</font>|KARASHI|000|016|070|027| \#CAAD5F|<font color="#CAAD5F>■■■</font>|
+|<font color="#8D742A">肥後煤竹</font>|HIGOSUSUTAKE|055|053|082|007| \#8D742A|<font color="#8D742A>■■■</font>|
+|<font color="#B4A582">利休白茶</font>|RIKYUSHIRACHA|036|033|054|000| \#B4A582|<font color="#B4A582>■■■</font>|
+|<font color="#877F6C">灰汁</font>|AKU|058|051|060|001| \#877F6C|<font color="#877F6C>■■■</font>|
+|<font color="#897D55">利休茶</font>|RIKYUCHA|057|050|070|003| \#897D55|<font color="#897D55>■■■</font>|
+|<font color="#74673E">路考茶</font>|ROKOHCHA|064|057|073|010| \#74673E|<font color="#74673E>■■■</font>|
+|<font color="#A28C37">菜種油</font>|NATANEYU|046|042|084|000| \#A28C37|<font color="#A28C37>■■■</font>|
+|<font color="#6C6024">鶯茶</font>|UGUISUCHA|064|056|078|016| \#6C6024|<font color="#6C6024>■■■</font>|
+|<font color="#867835">黄海松茶</font>|KIMIRUCHA|057|048|078|006| \#867835|<font color="#867835>■■■</font>|
+|<font color="#62592C">海松茶</font>|MIRUCHA|068|059|075|022| \#62592C|<font color="#62592C>■■■</font>|
+|<font color="#E9CD4C">刈安</font>|KARIYASU|007|015|074|000| \#E9CD4C|<font color="#E9CD4C>■■■</font>|
+|<font color="#F7D94C">菜の花</font>|NANOHANA|002|011|075|000| \#F7D94C|<font color="#F7D94C>■■■</font>|
+|<font color="#FBE251">黄蘗</font>|KIHADA|000|005|073|000| \#FBE251|<font color="#FBE251>■■■</font>|
+|<font color="#D9CD90">蒸栗</font>|MUSHIKURI|016|015|052|000| \#D9CD90|<font color="#D9CD90>■■■</font>|
+|<font color="#ADA142">青朽葉</font>|AOKUCHIBA|038|031|076|000| \#ADA142|<font color="#ADA142>■■■</font>|
+|<font color="#DDD23B">女郎花</font>|OMINAESHI|016|009|082|000| \#DDD23B|<font color="#DDD23B>■■■</font>|
+|<font color="#A5A051">鶸茶</font>|HIWACHA|045|033|076|000| \#A5A051|<font color="#A5A051>■■■</font>|
+|<font color="#BEC23F">鶸</font>|HIWA|032|015|085|000| \#BEC23F|<font color="#BEC23F>■■■</font>|
+|<font color="#6C6A2D">鶯</font>|UGUISU|067|054|084|014| \#6C6A2D|<font color="#6C6A2D>■■■</font>|
+|<font color="#939650">柳茶</font>|YANAGICHA|052|037|073|000| \#939650|<font color="#939650>■■■</font>|
+|<font color="#838A2D">苔</font>|KOKE|062|041|083|002| \#838A2D|<font color="#838A2D>■■■</font>|
+|<font color="#B1B479">麹塵</font>|KIKUJIN|037|023|063|000| \#B1B479|<font color="#B1B479>■■■</font>|
+|<font color="#616138">璃寛茶</font>|RIKANCHA|072|058|073|019| \#616138|<font color="#616138>■■■</font>|
+|<font color="#4B4E2A">藍媚茶</font>|AIKOBICHA|076|061|074|030| \#4B4E2A|<font color="#4B4E2A>■■■</font>|
+|<font color="#5B622E">海松</font>|MIRU|072|056|078|020| \#5B622E|<font color="#5B622E>■■■</font>|
+|<font color="#4D5139">千歳茶</font>|SENSAICHA|077|061|070|030| \#4D5139|<font color="#4D5139>■■■</font>|
+|<font color="#89916B">梅幸茶</font>|BAIKOCHA|057|038|063|000| \#89916B|<font color="#89916B>■■■</font>|
+|<font color="#90B44B">鶸萌黄</font>|HIWAMOEGI|056|013|077|000| \#90B44B|<font color="#90B44B>■■■</font>|
+|<font color="#91AD70">柳染</font>|YANAGIZOME|056|024|065|000| \#91AD70|<font color="#91AD70>■■■</font>|
+|<font color="#B5CAA0">裏柳</font>|URAYANAGI|036|010|045|000| \#B5CAA0|<font color="#B5CAA0>■■■</font>|
+|<font color="#646A58">岩井茶</font>|IWAICHA|069|052|063|007| \#646A58|<font color="#646A58>■■■</font>|
+|<font color="#7BA23F">萌黄</font>|MOEGI|070|023|086|000| \#7BA23F|<font color="#7BA23F>■■■</font>|
+|<font color="#86C166">苗</font>|NAE|057|001|072|000| \#86C166|<font color="#86C166>■■■</font>|
+|<font color="#4A593D">柳煤竹</font>|YANAGISUSUTAKE|076|057|070|017| \#4A593D|<font color="#4A593D>■■■</font>|
+|<font color="#42602D">松葉</font>|MATSUBA|080|055|079|020| \#42602D|<font color="#42602D>■■■</font>|
+|<font color="#516E41">青丹</font>|AONI|076|051|075|012| \#516E41|<font color="#516E41>■■■</font>|
+|<font color="#91B493">薄青</font>|USUAO|057|019|052|000| \#91B493|<font color="#91B493>■■■</font>|
+|<font color="#808F7C">柳鼠</font>|YANAGINEZUMI|061|041|053|000| \#808F7C|<font color="#808F7C>■■■</font>|
+|<font color="#1B813E">常磐</font>|TOKIWA|082|000|078|040| \#1B813E|<font color="#1B813E>■■■</font>|
+|<font color="#5DAC81">若竹</font>|WAKATAKE|068|013|059|000| \#5DAC81|<font color="#5DAC81>■■■</font>|
+|<font color="#36563C">千歳緑</font>|CHITOSEMIDORI|083|055|069|022| \#36563C|<font color="#36563C>■■■</font>|
+|<font color="#227D51">緑</font>|MIDORI|086|036|070|000| \#227D51|<font color="#227D51>■■■</font>|
+|<font color="#A8D8B9">白緑</font>|BYAKUROKU|044|000|037|000| \#A8D8B9|<font color="#A8D8B9>■■■</font>|
+|<font color="#6A8372">老竹</font>|OITAKE|071|046|060|002| \#6A8372|<font color="#6A8372>■■■</font>|
+|<font color="#2D6D4B">木賊</font>|TOKUSA|086|046|070|008| \#2D6D4B|<font color="#2D6D4B>■■■</font>|
+|<font color="#465D4C">御納戸茶</font>|ONANDOCHA|081|060|068|022| \#465D4C|<font color="#465D4C>■■■</font>|
+|<font color="#24936E">緑青</font>|ROKUSYOH|083|023|063|000| \#24936E|<font color="#24936E>■■■</font>|
+|<font color="#86A697">錆青磁</font>|SABISEIJI|058|030|045|000| \#86A697|<font color="#86A697>■■■</font>|
+|<font color="#00896C">青竹</font>|AOTAKE|092|028|067|000| \#00896C|<font color="#00896C>■■■</font>|
+|<font color="#096148">ビロード</font>|VELUDO|093|054|071|020| \#096148|<font color="#096148>■■■</font>|
+|<font color="#20604F">虫襖</font>|MUSHIAO|089|055|067|017| \#20604F|<font color="#20604F>■■■</font>|
+|<font color="#0F4C3A">藍海松茶</font>|AIMIRUCHA|089|060|067|030| \#0F4C3A|<font color="#0F4C3A>■■■</font>|
+|<font color="#4F726C">沈香茶</font>|TONOCHA2|077|050|057|004| \#4F726C|<font color="#4F726C>■■■</font>|
+|<font color="#00AA90">青緑</font>|AOMIDORI|088|000|053|000| \#00AA90|<font color="#00AA90>■■■</font>|
+|<font color="#69B0AC">青磁</font>|SEIJI|061|014|034|000| \#69B0AC|<font color="#69B0AC>■■■</font>|
+|<font color="#26453D">鉄</font>|TETSU|090|063|066|030| \#26453D|<font color="#26453D>■■■</font>|
+|<font color="#66BAB7">水浅葱</font>|MIZUASAGI|068|010|033|000| \#66BAB7|<font color="#66BAB7>■■■</font>|
+|<font color="#268785">青碧</font>|SEIHEKI|085|035|050|000| \#268785|<font color="#268785>■■■</font>|
+|<font color="#405B55">錆鉄御納戸</font>|SABITETSUONANDO|083|059|060|013| \#405B55|<font color="#405B55>■■■</font>|
+|<font color="#305A56">高麗納戸</font>|KORAINANDO|088|058|061|015| \#305A56|<font color="#305A56>■■■</font>|
+|<font color="#78C2C4">白群</font>|BYAKUGUN|052|000|020|000| \#78C2C4|<font color="#78C2C4>■■■</font>|
+|<font color="#376B6D">御召茶</font>|OMESHICHA|087|054|054|005| \#376B6D|<font color="#376B6D>■■■</font>|
+|<font color="#A5DEE4">瓶覗</font>|KAMENOZOKI|042|000|011|000| \#A5DEE4|<font color="#A5DEE4>■■■</font>|
+|<font color="#77969A">深川鼠</font>|FUKAGAWANEZUMI|063|038|040|000| \#77969A|<font color="#77969A>■■■</font>|
+|<font color="#6699A1">錆浅葱</font>|SABIASAGI|066|030|034|000| \#6699A1|<font color="#6699A1>■■■</font>|
+|<font color="#81C7D4">水</font>|MIZU|055|006|017|000| \#81C7D4|<font color="#81C7D4>■■■</font>|
+|<font color="#33A6B8">浅葱</font>|ASAGI|082|018|027|000| \#33A6B8|<font color="#33A6B8>■■■</font>|
+|<font color="#0C4842">御納戸</font>|ONANDO|092|065|062|025| \#0C4842|<font color="#0C4842>■■■</font>|
+|<font color="#0D5661">藍</font>|AI|095|063|056|017| \#0D5661|<font color="#0D5661>■■■</font>|
+|<font color="#0089A7">新橋</font>|SHINBASHI|095|031|030|000| \#0089A7|<font color="#0089A7>■■■</font>|
+|<font color="#336774">錆御納戸</font>|SABIONANDO|087|056|052|006| \#336774|<font color="#336774>■■■</font>|
+|<font color="#255359">鉄御納戸</font>|TETSUONANDO|090|063|059|021| \#255359|<font color="#255359>■■■</font>|
+|<font color="#1E88A8">花浅葱</font>|HANAASAGI|090|032|023|000| \#1E88A8|<font color="#1E88A8>■■■</font>|
+|<font color="#566C73">藍鼠</font>|AINEZUMI|078|057|052|007| \#566C73|<font color="#566C73>■■■</font>|
+|<font color="#577C8A">舛花</font>|MASUHANA|078|048|042|000| \#577C8A|<font color="#577C8A>■■■</font>|
+|<font color="#58B2DC">空</font>|SORA|072|013|007|000| \#58B2DC|<font color="#58B2DC>■■■</font>|
+|<font color="#2B5F75">熨斗目花</font>|NOSHIMEHANA|092|060|047|004| \#2B5F75|<font color="#2B5F75>■■■</font>|
+|<font color="#3A8FB7">千草</font>|CHIGUSA|083|031|017|000| \#3A8FB7|<font color="#3A8FB7>■■■</font>|
+|<font color="#2E5C6E">御召御納戸</font>|OMESHIONANDO|090|063|051|007| \#2E5C6E|<font color="#2E5C6E>■■■</font>|
+|<font color="#006284">縹</font>|HANADA|100|060|041|002| \#006284|<font color="#006284>■■■</font>|
+|<font color="#7DB9DE">勿忘草</font>|WASURENAGUSA|052|010|000|000| \#7DB9DE|<font color="#7DB9DE>■■■</font>|
+|<font color="#51A8DD">群青</font>|GUNJYO|067|021|000|000| \#51A8DD|<font color="#51A8DD>■■■</font>|
+|<font color="#2EA9DF">露草</font>|TSUYUKUSA|073|020|000|000| \#2EA9DF|<font color="#2EA9DF>■■■</font>|
+|<font color="#0B1013">黒橡</font>|KUROTSURUBAMI|092|078|064|048| \#0B1013|<font color="#0B1013>■■■</font>|
+|<font color="#0F2540">紺</font>|KON|100|085|050|024| \#0F2540|<font color="#0F2540>■■■</font>|
+|<font color="#08192D">褐</font>|KACHI|100|086|060|045| \#08192D|<font color="#08192D>■■■</font>|
+|<font color="#005CAF">瑠璃</font>|RURI|097|065|000|000| \#005CAF|<font color="#005CAF>■■■</font>|
+|<font color="#0B346E">瑠璃紺</font>|RURIKON|100|085|039|004| \#0B346E|<font color="#0B346E>■■■</font>|
+|<font color="#7B90D2">紅碧</font>|BENIMIDORI|064|044|000|000| \#7B90D2|<font color="#7B90D2>■■■</font>|
+|<font color="#6E75A4">藤鼠</font>|FUJINEZUMI|069|056|017|000| \#6E75A4|<font color="#6E75A4>■■■</font>|
+|<font color="#261E47">鉄紺</font>|TETSUKON|080|065|000|077| \#261E47|<font color="#261E47>■■■</font>|
+|<font color="#113285">紺青</font>|KONJYO|100|085|015|000| \#113285|<font color="#113285>■■■</font>|
+|<font color="#4E4F97">紅掛花</font>|BENIKAKEHANA|082|070|014|000| \#4E4F97|<font color="#4E4F97>■■■</font>|
+|<font color="#211E55">紺桔梗</font>|KONKIKYO|100|090|042|012| \#211E55|<font color="#211E55>■■■</font>|
+|<font color="#8B81C3">藤</font>|FUJI|058|052|000|000| \#8B81C3|<font color="#8B81C3>■■■</font>|
+|<font color="#70649A">二藍</font>|FUTAAI|072|067|021|000| \#70649A|<font color="#70649A>■■■</font>|
+|<font color="#9B90C2">楝</font>|OUCHI|042|042|000|000| \#9B90C2|<font color="#9B90C2>■■■</font>|
+|<font color="#8A6BBE">藤紫</font>|FUJIMURASAKI|058|060|000|000| \#8A6BBE|<font color="#8A6BBE>■■■</font>|
+|<font color="#6A4C9C">桔梗</font>|KIKYO|075|075|010|000| \#6A4C9C|<font color="#6A4C9C>■■■</font>|
+|<font color="#8F77B5">紫苑</font>|SHION|055|058|001|000| \#8F77B5|<font color="#8F77B5>■■■</font>|
+|<font color="#533D5B">滅紫</font>|MESSHI|082|080|048|015| \#533D5B|<font color="#533D5B>■■■</font>|
+|<font color="#B28FCE">薄</font>|USU|043|051|000|000| \#B28FCE|<font color="#B28FCE>■■■</font>|
+|<font color="#986DB2">半</font>|HASHITA|055|063|000|000| \#986DB2|<font color="#986DB2>■■■</font>|
+|<font color="#77428D">江戸紫</font>|EDOMURASAKI|060|074|000|014| \#77428D|<font color="#77428D>■■■</font>|
+|<font color="#3C2F41">紫紺</font>|SHIKON|088|084|060|045| \#3C2F41|<font color="#3C2F41>■■■</font>|
+|<font color="#4A225D">深紫</font>|KOKIMURASAKI|090|093|043|016| \#4A225D|<font color="#4A225D>■■■</font>|
+|<font color="#66327C">菫</font>|SUMIRE|074|083|022|000| \#66327C|<font color="#66327C>■■■</font>|
+|<font color="#592C63">紫</font>|MURASAKI|081|087|040|007| \#592C63|<font color="#592C63>■■■</font>|
+|<font color="#6F3381">菖蒲</font>|AYAME|071|087|014|000| \#6F3381|<font color="#6F3381>■■■</font>|
+|<font color="#574C57">藤煤竹</font>|FUJISUSUTAKE|075|070|057|025| \#574C57|<font color="#574C57>■■■</font>|
+|<font color="#B481BB">紅藤</font>|BENIFUJI|038|060|000|000| \#B481BB|<font color="#B481BB>■■■</font>|
+|<font color="#3F2B36">黒紅</font>|KUROBENI|086|085|064|050| \#3F2B36|<font color="#3F2B36>■■■</font>|
+|<font color="#572A3F">茄子紺</font>|NASUKON|040|073|010|073| \#572A3F|<font color="#572A3F>■■■</font>|
+|<font color="#5E3D50">葡萄鼠</font>|BUDOHNEZUMI|073|077|054|017| \#5E3D50|<font color="#5E3D50>■■■</font>|
+|<font color="#72636E">鳩羽鼠</font>|HATOBANEZUMI|068|064|051|006| \#72636E|<font color="#72636E>■■■</font>|
+|<font color="#622954">杜若</font>|KAKITSUBATA|077|092|048|021| \#622954|<font color="#622954>■■■</font>|
+|<font color="#6D2E5B">蒲葡</font>|EBIZOME|071|089|048|012| \#6D2E5B|<font color="#6D2E5B>■■■</font>|
+|<font color="#C1328E">牡丹</font>|BOTAN|025|091|008|000| \#C1328E|<font color="#C1328E>■■■</font>|
+|<font color="#A8497A">梅紫</font>|UMEMURASAKI|045|080|037|000| \#A8497A|<font color="#A8497A>■■■</font>|
+|<font color="#562E37">似紫</font>|NISEMURASAKI|075|084|062|042| \#562E37|<font color="#562E37>■■■</font>|
+|<font color="#E03C8A">躑躅</font>|TSUTSUJI|000|080|003|000| \#E03C8A|<font color="#E03C8A>■■■</font>|
+|<font color="#60373E">紫鳶</font>|MURASAKITOBI|070|078|061|030| \#60373E|<font color="#60373E>■■■</font>|
+|<font color="#FCFAF2">白練</font>|SHIRONERI|000|003|011|000| \#FCFAF2|<font color="#FCFAF2>■■■</font>|
+|<font color="#FFFFFB">胡粉</font>|GOFUN|000|000|002|000| \#FFFFFB|<font color="#FFFFFB>■■■</font>|
+|<font color="#BDC0BA">白鼠</font>|SHIRONEZUMI|031|023|028|000| \#BDC0BA|<font color="#BDC0BA>■■■</font>|
+|<font color="#91989F">銀鼠</font>|GINNEZUMI|052|039|036|000| \#91989F|<font color="#91989F>■■■</font>|
+|<font color="#787878">鉛</font>|NAMARI|008|000|000|073| \#787878|<font color="#787878>■■■</font>|
+|<font color="#828282">灰</font>|HAI|000|000|000|070| \#828282|<font color="#828282>■■■</font>|
+|<font color="#787D7B">素鼠</font>|SUNEZUMI|065|053|053|000| \#787D7B|<font color="#787D7B>■■■</font>|
+|<font color="#707C74">利休鼠</font>|RIKYUNEZUMI|066|050|054|001| \#707C74|<font color="#707C74>■■■</font>|
+|<font color="#656765">鈍</font>|NIBI|005|000|000|080| \#656765|<font color="#656765>■■■</font>|
+|<font color="#535953">青鈍</font>|AONIBI|078|063|062|020| \#535953|<font color="#535953>■■■</font>|
+|<font color="#4F4F48">溝鼠</font>|DOBUNEZUMI|078|065|065|030| \#4F4F48|<font color="#4F4F48>■■■</font>|
+|<font color="#52433D">紅消鼠</font>|BENIKESHINEZUMI|073|069|063|030| \#52433D|<font color="#52433D>■■■</font>|
+|<font color="#373C38">藍墨茶</font>|AISUMICHA|086|072|068|047| \#373C38|<font color="#373C38>■■■</font>|
+|<font color="#3A3226">檳榔子染</font>|BINROJIZOME|079|072|072|050| \#3A3226|<font color="#3A3226>■■■</font>|
+|<font color="#434343">消炭</font>|KESHIZUMI|000|000|000|088| \#434343|<font color="#434343>■■■</font>|
+|<font color="#1C1C1C">墨</font>|SUMI|092|078|073|066| \#1C1C1C|<font color="#1C1C1C>■■■</font>|
+|<font color="#080808">黒</font>|KURO|091|084|074|071| \#080808|<font color="#080808>■■■</font>|
+|<font color="#0C0C0C">呂</font>|RO|000|000|000|100| \#0C0C0C|<font color="#0C0C0C>■■■</font>|
 
 
 
