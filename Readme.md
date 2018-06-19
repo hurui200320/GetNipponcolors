@@ -11,8 +11,8 @@ This program need Gson 2.8.5 to work. But you needn't run it when you need. This
 And since it single-thread, it will take a lot of time to run it. So I run it at 1404(UTC) on 2018 June 19th. Here is the table I collected. ```---```means no data or data broken.
 
 ## NipponColors
-
 Colors from [nipponcolors.com](http://nipponcolors.com) :
+
 |Name|Roma|C|M|Y|K|RGB|
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 |<font color="#DC9FB4">撫子</font>|NADESHIKO|002|043|003|000| \#DC9FB4|
@@ -268,7 +268,9 @@ Colors from [nipponcolors.com](http://nipponcolors.com) :
 
 
 ## Colordic
+
 Colors from [www.colordic.org](https://www.colordic.org/w/) :
+
 |Name|Roma|C|M|Y|K|RGB|
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 |<font color="#FEF4F4">桜色</font>|さくらいろ|---|---|---|---| \#FEF4F4|
@@ -740,7 +742,9 @@ Colors from [www.colordic.org](https://www.colordic.org/w/) :
 
 
 ## irocore
+
 Colors from [irocore.com](https://irocore.com) :
+
 |Name|Roma|C|M|Y|K|RGB|
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 |<font color="#105779">藍色</font>|Ai-iro|070|020|000|060| \#105779|
@@ -1204,7 +1208,9 @@ Colors from [irocore.com](https://irocore.com) :
 
 
 ## chinaz
+
 Colors from [tool.chinaz.com](http://tool.chinaz.com/tools/cj) :
+
 |Name|Roma|C|M|Y|K|RGB|
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 |<font color="#895B8A">古代紫</font>|---|---|---|---|---| \#895B8A|
