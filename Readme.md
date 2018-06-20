@@ -12,6 +12,8 @@ And since it single-thread, it will take a lot of time to run it. So I run it at
 
 ## NipponColors
 
+![黑](https://raw.githubusercontent.com/hurui200320/GetNipponcolors/master/png/NipponColors.svg)
+
 Colors from [nipponcolors.com](http://nipponcolors.com) :
 
 |Name|Roma|C|M|Y|K|RGB|
@@ -268,6 +270,8 @@ Colors from [nipponcolors.com](http://nipponcolors.com) :
 |呂|RO|000|000|000|100| \#0C0C0C|
 
 ## ColorDic
+
+![黑](https://raw.githubusercontent.com/hurui200320/GetNipponcolors/master/png/ColorDic.svg)
 
 Colors from [www.colordic.org](https://www.colordic.org/w/) :
 
@@ -740,6 +744,8 @@ Colors from [www.colordic.org](https://www.colordic.org/w/) :
 |暗黒色|あんこくしょく|084|080|090|071| \#16160E|
 
 ## IroCore
+
+![黑](https://raw.githubusercontent.com/hurui200320/GetNipponcolors/master/png/IroColor.svg)
 
 Colors from [irocore.com](https://irocore.com) :
 
