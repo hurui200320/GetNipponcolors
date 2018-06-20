@@ -12,7 +12,7 @@ And since it single-thread, it will take a lot of time to run it. So I run it at
 
 ## NipponColors
 
-![黑](https://raw.githubusercontent.com/hurui200320/GetNipponcolors/master/png/NipponColors.svg)
+![黑](./png/NipponColors.svg)
 
 Colors from [nipponcolors.com](http://nipponcolors.com) :
 
@@ -271,7 +271,7 @@ Colors from [nipponcolors.com](http://nipponcolors.com) :
 
 ## ColorDic
 
-![黑](https://raw.githubusercontent.com/hurui200320/GetNipponcolors/master/png/ColorDic.svg)
+![黑](./png/ColorDic.svg)
 
 Colors from [www.colordic.org](https://www.colordic.org/w/) :
 
@@ -745,7 +745,7 @@ Colors from [www.colordic.org](https://www.colordic.org/w/) :
 
 ## IroCore
 
-![黑](https://raw.githubusercontent.com/hurui200320/GetNipponcolors/master/png/IroColor.svg)
+![黑](./png/IroColor.svg)
 
 Colors from [irocore.com](https://irocore.com) :
 
