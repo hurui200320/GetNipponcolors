@@ -1,1683 +1,1210 @@
 # Description
 
-This program can download nippon colors from 4 different webiste.
+This program can download nippon colors from 3 different webiste.
 
 Every website has a different statement with Nippon colors, not only nipponcolors.com, but also irocore.com and colordic.org. So I wrote this program to catch different colors from their website.
 
 # How to use
 
-This program need Gson 2.8.5 to work. But you needn't run it when you need. This program use some simple tricks to split data. Once the website change, it won't work well.
+This program need Gson 2.8.5 to work, and I use IDEA for IDE, but you needn't run it when you need. This program use some simple tricks to split data. Once the website change, it won't work well.
 
-And since it single-thread, it will take a lot of time to run it. So I run it at 1404(UTC) on 2018 June 19th. Here is the table I collected. ```---```means no data or data broken.
+And since it single-thread, it will take a lot of time to run it. So I run it at 0513(UTC) on 2018 June 20th. Here is the table I collected. ```---```means no data or data broken.
 
 ## NipponColors
+
 Colors from [nipponcolors.com](http://nipponcolors.com) :
 
 |Name|Roma|C|M|Y|K|RGB|
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-|<font color="#DC9FB4">撫子</font>|NADESHIKO|002|043|003|000| \#DC9FB4|
-|<font color="#E16B8C">紅梅</font>|KOHBAI|000|073|024|000| \#E16B8C|
-|<font color="#8E354A">蘇芳</font>|SUOH|051|093|058|010| \#8E354A|
-|<font color="#F8C3CD">退紅</font>|TAIKOH|000|031|009|000| \#F8C3CD|
-|<font color="#F4A7B9">一斥染</font>|IKKONZOME|000|048|015|000| \#F4A7B9|
-|<font color="#64363C">桑染</font>|KUWAZOME|069|086|065|035| \#64363C|
-|<font color="#F596AA">桃</font>|MOMO|000|055|019|000| \#F596AA|
-|<font color="#B5495B">苺</font>|ICHIGO|002|070|038|030| \#B5495B|
-|<font color="#E87A90">薄紅</font>|USUBENI|000|064|026|000| \#E87A90|
-|<font color="#D05A6E">今様</font>|IMAYOH|000|075|038|020| \#D05A6E|
-|<font color="#DB4D6D">中紅</font>|NAKABENI|005|083|040|000| \#DB4D6D|
-|<font color="#FEDFE1">桜</font>|SAKURA|000|017|006|000| \#FEDFE1|
-|<font color="#9E7A7A">梅鼠</font>|UMENEZUMI|048|059|049|000| \#9E7A7A|
-|<font color="#D0104C">韓紅花</font>|KARAKURENAI|015|098|061|000| \#D0104C|
-|<font color="#9F353A">燕脂</font>|ENJI|042|093|068|006| \#9F353A|
-|<font color="#CB1B45">紅</font>|KURENAI|000|100|065|010| \#CB1B45|
-|<font color="#EEA9A9">鴇</font>|TOKI|002|045|027|000| \#EEA9A9|
-|<font color="#BF6766">長春</font>|CYOHSYUN|025|070|053|000| \#BF6766|
-|<font color="#86473F">深緋</font>|KOKIAKE|054|075|065|014| \#86473F|
-|<font color="#B19693">桜鼠</font>|SAKURANEZUMI|034|046|039|000| \#B19693|
-|<font color="#EB7A77">甚三紅</font>|JINZAMOMI|000|065|046|000| \#EB7A77|
-|<font color="#954A45">小豆</font>|AZUKI|048|078|066|010| \#954A45|
-|<font color="#A96360">蘇芳香</font>|SUOHKOH|042|070|058|001| \#A96360|
-|<font color="#CB4042">赤紅</font>|AKABENI|015|085|068|000| \#CB4042|
-|<font color="#AB3B3A">真朱</font>|SHINSYU|035|085|070|002| \#AB3B3A|
-|<font color="#D7C4BB">灰桜</font>|HAIZAKURA|002|012|012|010| \#D7C4BB|
-|<font color="#904840">栗梅</font>|KURIUME|050|078|068|013| \#904840|
-|<font color="#734338">海老茶</font>|EBICHA|055|077|068|027| \#734338|
-|<font color="#C73E3A">銀朱</font>|GINSYU|016|086|070|000| \#C73E3A|
-|<font color="#554236">黒鳶</font>|KUROTOBI|071|074|069|041| \#554236|
-|<font color="#994639">紅鳶</font>|BENITOBI|045|082|072|011| \#994639|
-|<font color="#F19483">曙</font>|AKEBONO|000|057|047|000| \#F19483|
-|<font color="#B54434">紅樺</font>|BENIKABA|035|087|079|001| \#B54434|
-|<font color="#B9887D">水がき</font>|MIZUGAKI|030|054|046|000| \#B9887D|
-|<font color="#F17C67">珊瑚朱</font>|SANGOSYU|000|065|058|000| \#F17C67|
-|<font color="#884C3A">紅檜皮</font>|BENIHIWADA|052|074|070|018| \#884C3A|
-|<font color="#E83015">猩猩緋</font>|SYOJYOHI|000|089|079|000| \#E83015|
-|<font color="#D75455">鉛丹</font>|ENTAN|000|072|063|007| \#D75455|
-|<font color="#B55D4C">芝翫茶</font>|SHIKANCHA|037|072|068|000| \#B55D4C|
-|<font color="#854836">檜皮</font>|HIWADA|049|073|070|018| \#854836|
-|<font color="#A35E47">柿渋</font>|KAKISHIBU|043|072|071|004| \#A35E47|
-|<font color="#CC543A">緋</font>|AKE|017|079|074|000| \#CC543A|
-|<font color="#724832">鳶</font>|TOBI|058|073|070|026| \#724832|
-|<font color="#F75C2F">紅緋</font>|BENIHI|000|075|074|000| \#F75C2F|
-|<font color="#6A4028">栗皮茶</font>|KURIKAWACHA|058|074|072|030| \#6A4028|
-|<font color="#9A5034">弁柄</font>|BENGARA|044|074|075|012| \#9A5034|
-|<font color="#C46243">照柿</font>|TERIGAKI|024|072|072|000| \#C46243|
-|<font color="#AF5F3C">江戸茶</font>|EDOCHA|038|070|071|003| \#AF5F3C|
-|<font color="#FB966E">洗朱</font>|ARAISYU|000|054|056|000| \#FB966E|
-|<font color="#724938">百塩茶</font>|MOMOSHIOCHA|061|070|068|025| \#724938|
-|<font color="#B47157">唐茶</font>|KARACHA|038|064|065|000| \#B47157|
-|<font color="#DB8E71">ときがら茶</font>|TOKIGARACHA|010|055|057|000| \#DB8E71|
-|<font color="#F05E1C">黄丹</font>|OHNI|000|072|090|000| \#F05E1C|
-|<font color="#ED784A">纁</font>|SOHI|000|065|073|000| \#ED784A|
-|<font color="#CA7853">遠州茶</font>|ENSYUCHA|021|064|067|000| \#CA7853|
-|<font color="#B35C37">樺茶</font>|KABACHA|036|072|076|002| \#B35C37|
-|<font color="#563F2E">焦茶</font>|KOGECHA|068|073|071|040| \#563F2E|
-|<font color="#E3916E">赤香</font>|AKAKOH|005|055|060|000| \#E3916E|
-|<font color="#8F5A3C">雀茶</font>|SUZUMECHA|052|069|073|015| \#8F5A3C|
-|<font color="#F0A986">宍</font>|SHISHI|000|047|050|000| \#F0A986|
-|<font color="#A0674B">宗伝唐茶</font>|SODENKARACHA|048|066|070|006| \#A0674B|
-|<font color="#C1693C">樺</font>|KABA|026|070|078|000| \#C1693C|
-|<font color="#FB9966">深支子</font>|KOKIKUCHINASHI|000|053|065|000| \#FB9966|
-|<font color="#947A6D">胡桃</font>|KURUMI|051|056|057|001| \#947A6D|
-|<font color="#A36336">代赭</font>|TAISYA|038|067|082|003| \#A36336|
-|<font color="#E79460">洗柿</font>|ARAIGAKI|000|053|067|000| \#E79460|
-|<font color="#7D532C">黄櫨染</font>|KOHROZEN|055|068|078|023| \#7D532C|
-|<font color="#C78550">赤朽葉</font>|AKAKUCHIBA|005|052|070|014| \#C78550|
-|<font color="#985F2A">礪茶</font>|TONOCHA|048|066|079|007| \#985F2A|
-|<font color="#E1A679">赤白橡</font>|AKASHIROTSURUBAMI|006|042|055|000| \#E1A679|
-|<font color="#855B32">煎茶</font>|SENCHA|055|066|075|014| \#855B32|
-|<font color="#FC9F4D">萱草</font>|KANZO|000|049|072|000| \#FC9F4D|
-|<font color="#FFBA84">洒落柿</font>|SHAREGAKI|000|036|053|000| \#FFBA84|
-|<font color="#E98B2A">紅鬱金</font>|BENIUKON|000|052|080|000| \#E98B2A|
-|<font color="#E9A368">梅染</font>|UMEZOME|003|045|062|000| \#E9A368|
-|<font color="#B17844">枇杷茶</font>|BIWACHA|035|058|075|000| \#B17844|
-|<font color="#96632E">丁子茶</font>|CHOJICHA|050|061|076|009| \#96632E|
-|<font color="#43341B">憲法染</font>|KENPOHZOME|076|071|073|047| \#43341B|
-|<font color="#CA7A2C">琥珀</font>|KOHAKU|020|058|085|000| \#CA7A2C|
-|<font color="#ECB88A">薄柿</font>|USUGAKI|000|034|052|000| \#ECB88A|
-|<font color="#78552B">伽羅</font>|KYARA|058|062|072|016| \#78552B|
-|<font color="#B07736">丁子染</font>|CHOJIZOME|036|057|079|000| \#B07736|
-|<font color="#967249">柴染</font>|FUSHIZOME|050|056|071|005| \#967249|
-|<font color="#E2943B">朽葉</font>|KUCHIBA|007|049|080|000| \#E2943B|
-|<font color="#C7802D">金茶</font>|KINCHA|020|056|089|000| \#C7802D|
-|<font color="#9B6E23">狐</font>|KITSUNE|046|057|080|004| \#9B6E23|
-|<font color="#6E552F">煤竹</font>|SUSUTAKE|062|063|073|021| \#6E552F|
-|<font color="#EBB471">薄香</font>|USUKOH|000|034|060|000| \#EBB471|
-|<font color="#D7B98E">砥粉</font>|TONOKO|005|020|038|015| \#D7B98E|
-|<font color="#82663A">銀煤竹</font>|GINSUSUTAKE|054|058|076|010| \#82663A|
-|<font color="#B68E55">黄土</font>|OHDO|031|045|066|000| \#B68E55|
-|<font color="#BC9F77">白茶</font>|SHIRACHA|032|040|057|000| \#BC9F77|
-|<font color="#876633">媚茶</font>|KOBICHA|058|059|078|014| \#876633|
-|<font color="#C18A26">黄唐茶</font>|KIGARACHA|028|048|083|000| \#C18A26|
-|<font color="#FFB11B">山吹</font>|YAMABUKI|000|037|087|000| \#FFB11B|
-|<font color="#D19826">山吹茶</font>|YAMABUKICHA|017|044|089|000| \#D19826|
-|<font color="#DDA52D">櫨染</font>|HAJIZOME|008|040|083|000| \#DDA52D|
-|<font color="#C99833">桑茶</font>|KUWACHA|025|044|083|000| \#C99833|
-|<font color="#F9BF45">玉子</font>|TAMAGO|000|029|074|000| \#F9BF45|
-|<font color="#DCB879">白橡</font>|SHIROTSURUBAMI|016|030|060|000| \#DCB879|
-|<font color="#BA9132">黄橡</font>|KITSURUBAMI|031|044|077|000| \#BA9132|
-|<font color="#E8B647">玉蜀黍</font>|TAMAMOROKOSHI|004|029|071|000| \#E8B647|
-|<font color="#F7C242">花葉</font>|HANABA|000|025|072|000| \#F7C242|
-|<font color="#7D6C46">生壁</font>|NAMAKABE|058|056|070|008| \#7D6C46|
-|<font color="#DAC9A6">鳥の子</font>|TORINOKO|014|020|039|000| \#DAC9A6|
-|<font color="#FAD689">浅黄</font>|USUKI|000|017|053|000| \#FAD689|
-|<font color="#D9AB42">黄朽葉</font>|KIKUCHIBA|014|033|075|000| \#D9AB42|
-|<font color="#F6C555">梔子</font>|KUCHINASHI|000|025|070|000| \#F6C555|
-|<font color="#FFC408">籐黄</font>|TOHOH|000|025|086|000| \#FFC408|
-|<font color="#EFBB24">鬱金</font>|UKON|003|029|088|000| \#EFBB24|
-|<font color="#CAAD5F">芥子</font>|KARASHI|000|016|070|027| \#CAAD5F|
-|<font color="#8D742A">肥後煤竹</font>|HIGOSUSUTAKE|055|053|082|007| \#8D742A|
-|<font color="#B4A582">利休白茶</font>|RIKYUSHIRACHA|036|033|054|000| \#B4A582|
-|<font color="#877F6C">灰汁</font>|AKU|058|051|060|001| \#877F6C|
-|<font color="#897D55">利休茶</font>|RIKYUCHA|057|050|070|003| \#897D55|
-|<font color="#74673E">路考茶</font>|ROKOHCHA|064|057|073|010| \#74673E|
-|<font color="#A28C37">菜種油</font>|NATANEYU|046|042|084|000| \#A28C37|
-|<font color="#6C6024">鶯茶</font>|UGUISUCHA|064|056|078|016| \#6C6024|
-|<font color="#867835">黄海松茶</font>|KIMIRUCHA|057|048|078|006| \#867835|
-|<font color="#62592C">海松茶</font>|MIRUCHA|068|059|075|022| \#62592C|
-|<font color="#E9CD4C">刈安</font>|KARIYASU|007|015|074|000| \#E9CD4C|
-|<font color="#F7D94C">菜の花</font>|NANOHANA|002|011|075|000| \#F7D94C|
-|<font color="#FBE251">黄蘗</font>|KIHADA|000|005|073|000| \#FBE251|
-|<font color="#D9CD90">蒸栗</font>|MUSHIKURI|016|015|052|000| \#D9CD90|
-|<font color="#ADA142">青朽葉</font>|AOKUCHIBA|038|031|076|000| \#ADA142|
-|<font color="#DDD23B">女郎花</font>|OMINAESHI|016|009|082|000| \#DDD23B|
-|<font color="#A5A051">鶸茶</font>|HIWACHA|045|033|076|000| \#A5A051|
-|<font color="#BEC23F">鶸</font>|HIWA|032|015|085|000| \#BEC23F|
-|<font color="#6C6A2D">鶯</font>|UGUISU|067|054|084|014| \#6C6A2D|
-|<font color="#939650">柳茶</font>|YANAGICHA|052|037|073|000| \#939650|
-|<font color="#838A2D">苔</font>|KOKE|062|041|083|002| \#838A2D|
-|<font color="#B1B479">麹塵</font>|KIKUJIN|037|023|063|000| \#B1B479|
-|<font color="#616138">璃寛茶</font>|RIKANCHA|072|058|073|019| \#616138|
-|<font color="#4B4E2A">藍媚茶</font>|AIKOBICHA|076|061|074|030| \#4B4E2A|
-|<font color="#5B622E">海松</font>|MIRU|072|056|078|020| \#5B622E|
-|<font color="#4D5139">千歳茶</font>|SENSAICHA|077|061|070|030| \#4D5139|
-|<font color="#89916B">梅幸茶</font>|BAIKOCHA|057|038|063|000| \#89916B|
-|<font color="#90B44B">鶸萌黄</font>|HIWAMOEGI|056|013|077|000| \#90B44B|
-|<font color="#91AD70">柳染</font>|YANAGIZOME|056|024|065|000| \#91AD70|
-|<font color="#B5CAA0">裏柳</font>|URAYANAGI|036|010|045|000| \#B5CAA0|
-|<font color="#646A58">岩井茶</font>|IWAICHA|069|052|063|007| \#646A58|
-|<font color="#7BA23F">萌黄</font>|MOEGI|070|023|086|000| \#7BA23F|
-|<font color="#86C166">苗</font>|NAE|057|001|072|000| \#86C166|
-|<font color="#4A593D">柳煤竹</font>|YANAGISUSUTAKE|076|057|070|017| \#4A593D|
-|<font color="#42602D">松葉</font>|MATSUBA|080|055|079|020| \#42602D|
-|<font color="#516E41">青丹</font>|AONI|076|051|075|012| \#516E41|
-|<font color="#91B493">薄青</font>|USUAO|057|019|052|000| \#91B493|
-|<font color="#808F7C">柳鼠</font>|YANAGINEZUMI|061|041|053|000| \#808F7C|
-|<font color="#1B813E">常磐</font>|TOKIWA|082|000|078|040| \#1B813E|
-|<font color="#5DAC81">若竹</font>|WAKATAKE|068|013|059|000| \#5DAC81|
-|<font color="#36563C">千歳緑</font>|CHITOSEMIDORI|083|055|069|022| \#36563C|
-|<font color="#227D51">緑</font>|MIDORI|086|036|070|000| \#227D51|
-|<font color="#A8D8B9">白緑</font>|BYAKUROKU|044|000|037|000| \#A8D8B9|
-|<font color="#6A8372">老竹</font>|OITAKE|071|046|060|002| \#6A8372|
-|<font color="#2D6D4B">木賊</font>|TOKUSA|086|046|070|008| \#2D6D4B|
-|<font color="#465D4C">御納戸茶</font>|ONANDOCHA|081|060|068|022| \#465D4C|
-|<font color="#24936E">緑青</font>|ROKUSYOH|083|023|063|000| \#24936E|
-|<font color="#86A697">錆青磁</font>|SABISEIJI|058|030|045|000| \#86A697|
-|<font color="#00896C">青竹</font>|AOTAKE|092|028|067|000| \#00896C|
-|<font color="#096148">ビロード</font>|VELUDO|093|054|071|020| \#096148|
-|<font color="#20604F">虫襖</font>|MUSHIAO|089|055|067|017| \#20604F|
-|<font color="#0F4C3A">藍海松茶</font>|AIMIRUCHA|089|060|067|030| \#0F4C3A|
-|<font color="#4F726C">沈香茶</font>|TONOCHA2|077|050|057|004| \#4F726C|
-|<font color="#00AA90">青緑</font>|AOMIDORI|088|000|053|000| \#00AA90|
-|<font color="#69B0AC">青磁</font>|SEIJI|061|014|034|000| \#69B0AC|
-|<font color="#26453D">鉄</font>|TETSU|090|063|066|030| \#26453D|
-|<font color="#66BAB7">水浅葱</font>|MIZUASAGI|068|010|033|000| \#66BAB7|
-|<font color="#268785">青碧</font>|SEIHEKI|085|035|050|000| \#268785|
-|<font color="#405B55">錆鉄御納戸</font>|SABITETSUONANDO|083|059|060|013| \#405B55|
-|<font color="#305A56">高麗納戸</font>|KORAINANDO|088|058|061|015| \#305A56|
-|<font color="#78C2C4">白群</font>|BYAKUGUN|052|000|020|000| \#78C2C4|
-|<font color="#376B6D">御召茶</font>|OMESHICHA|087|054|054|005| \#376B6D|
-|<font color="#A5DEE4">瓶覗</font>|KAMENOZOKI|042|000|011|000| \#A5DEE4|
-|<font color="#77969A">深川鼠</font>|FUKAGAWANEZUMI|063|038|040|000| \#77969A|
-|<font color="#6699A1">錆浅葱</font>|SABIASAGI|066|030|034|000| \#6699A1|
-|<font color="#81C7D4">水</font>|MIZU|055|006|017|000| \#81C7D4|
-|<font color="#33A6B8">浅葱</font>|ASAGI|082|018|027|000| \#33A6B8|
-|<font color="#0C4842">御納戸</font>|ONANDO|092|065|062|025| \#0C4842|
-|<font color="#0D5661">藍</font>|AI|095|063|056|017| \#0D5661|
-|<font color="#0089A7">新橋</font>|SHINBASHI|095|031|030|000| \#0089A7|
-|<font color="#336774">錆御納戸</font>|SABIONANDO|087|056|052|006| \#336774|
-|<font color="#255359">鉄御納戸</font>|TETSUONANDO|090|063|059|021| \#255359|
-|<font color="#1E88A8">花浅葱</font>|HANAASAGI|090|032|023|000| \#1E88A8|
-|<font color="#566C73">藍鼠</font>|AINEZUMI|078|057|052|007| \#566C73|
-|<font color="#577C8A">舛花</font>|MASUHANA|078|048|042|000| \#577C8A|
-|<font color="#58B2DC">空</font>|SORA|072|013|007|000| \#58B2DC|
-|<font color="#2B5F75">熨斗目花</font>|NOSHIMEHANA|092|060|047|004| \#2B5F75|
-|<font color="#3A8FB7">千草</font>|CHIGUSA|083|031|017|000| \#3A8FB7|
-|<font color="#2E5C6E">御召御納戸</font>|OMESHIONANDO|090|063|051|007| \#2E5C6E|
-|<font color="#006284">縹</font>|HANADA|100|060|041|002| \#006284|
-|<font color="#7DB9DE">勿忘草</font>|WASURENAGUSA|052|010|000|000| \#7DB9DE|
-|<font color="#51A8DD">群青</font>|GUNJYO|067|021|000|000| \#51A8DD|
-|<font color="#2EA9DF">露草</font>|TSUYUKUSA|073|020|000|000| \#2EA9DF|
-|<font color="#0B1013">黒橡</font>|KUROTSURUBAMI|092|078|064|048| \#0B1013|
-|<font color="#0F2540">紺</font>|KON|100|085|050|024| \#0F2540|
-|<font color="#08192D">褐</font>|KACHI|100|086|060|045| \#08192D|
-|<font color="#005CAF">瑠璃</font>|RURI|097|065|000|000| \#005CAF|
-|<font color="#0B346E">瑠璃紺</font>|RURIKON|100|085|039|004| \#0B346E|
-|<font color="#7B90D2">紅碧</font>|BENIMIDORI|064|044|000|000| \#7B90D2|
-|<font color="#6E75A4">藤鼠</font>|FUJINEZUMI|069|056|017|000| \#6E75A4|
-|<font color="#261E47">鉄紺</font>|TETSUKON|080|065|000|077| \#261E47|
-|<font color="#113285">紺青</font>|KONJYO|100|085|015|000| \#113285|
-|<font color="#4E4F97">紅掛花</font>|BENIKAKEHANA|082|070|014|000| \#4E4F97|
-|<font color="#211E55">紺桔梗</font>|KONKIKYO|100|090|042|012| \#211E55|
-|<font color="#8B81C3">藤</font>|FUJI|058|052|000|000| \#8B81C3|
-|<font color="#70649A">二藍</font>|FUTAAI|072|067|021|000| \#70649A|
-|<font color="#9B90C2">楝</font>|OUCHI|042|042|000|000| \#9B90C2|
-|<font color="#8A6BBE">藤紫</font>|FUJIMURASAKI|058|060|000|000| \#8A6BBE|
-|<font color="#6A4C9C">桔梗</font>|KIKYO|075|075|010|000| \#6A4C9C|
-|<font color="#8F77B5">紫苑</font>|SHION|055|058|001|000| \#8F77B5|
-|<font color="#533D5B">滅紫</font>|MESSHI|082|080|048|015| \#533D5B|
-|<font color="#B28FCE">薄</font>|USU|043|051|000|000| \#B28FCE|
-|<font color="#986DB2">半</font>|HASHITA|055|063|000|000| \#986DB2|
-|<font color="#77428D">江戸紫</font>|EDOMURASAKI|060|074|000|014| \#77428D|
-|<font color="#3C2F41">紫紺</font>|SHIKON|088|084|060|045| \#3C2F41|
-|<font color="#4A225D">深紫</font>|KOKIMURASAKI|090|093|043|016| \#4A225D|
-|<font color="#66327C">菫</font>|SUMIRE|074|083|022|000| \#66327C|
-|<font color="#592C63">紫</font>|MURASAKI|081|087|040|007| \#592C63|
-|<font color="#6F3381">菖蒲</font>|AYAME|071|087|014|000| \#6F3381|
-|<font color="#574C57">藤煤竹</font>|FUJISUSUTAKE|075|070|057|025| \#574C57|
-|<font color="#B481BB">紅藤</font>|BENIFUJI|038|060|000|000| \#B481BB|
-|<font color="#3F2B36">黒紅</font>|KUROBENI|086|085|064|050| \#3F2B36|
-|<font color="#572A3F">茄子紺</font>|NASUKON|040|073|010|073| \#572A3F|
-|<font color="#5E3D50">葡萄鼠</font>|BUDOHNEZUMI|073|077|054|017| \#5E3D50|
-|<font color="#72636E">鳩羽鼠</font>|HATOBANEZUMI|068|064|051|006| \#72636E|
-|<font color="#622954">杜若</font>|KAKITSUBATA|077|092|048|021| \#622954|
-|<font color="#6D2E5B">蒲葡</font>|EBIZOME|071|089|048|012| \#6D2E5B|
-|<font color="#C1328E">牡丹</font>|BOTAN|025|091|008|000| \#C1328E|
-|<font color="#A8497A">梅紫</font>|UMEMURASAKI|045|080|037|000| \#A8497A|
-|<font color="#562E37">似紫</font>|NISEMURASAKI|075|084|062|042| \#562E37|
-|<font color="#E03C8A">躑躅</font>|TSUTSUJI|000|080|003|000| \#E03C8A|
-|<font color="#60373E">紫鳶</font>|MURASAKITOBI|070|078|061|030| \#60373E|
-|<font color="#FCFAF2">白練</font>|SHIRONERI|000|003|011|000| \#FCFAF2|
-|<font color="#FFFFFB">胡粉</font>|GOFUN|000|000|002|000| \#FFFFFB|
-|<font color="#BDC0BA">白鼠</font>|SHIRONEZUMI|031|023|028|000| \#BDC0BA|
-|<font color="#91989F">銀鼠</font>|GINNEZUMI|052|039|036|000| \#91989F|
-|<font color="#787878">鉛</font>|NAMARI|008|000|000|073| \#787878|
-|<font color="#828282">灰</font>|HAI|000|000|000|070| \#828282|
-|<font color="#787D7B">素鼠</font>|SUNEZUMI|065|053|053|000| \#787D7B|
-|<font color="#707C74">利休鼠</font>|RIKYUNEZUMI|066|050|054|001| \#707C74|
-|<font color="#656765">鈍</font>|NIBI|005|000|000|080| \#656765|
-|<font color="#535953">青鈍</font>|AONIBI|078|063|062|020| \#535953|
-|<font color="#4F4F48">溝鼠</font>|DOBUNEZUMI|078|065|065|030| \#4F4F48|
-|<font color="#52433D">紅消鼠</font>|BENIKESHINEZUMI|073|069|063|030| \#52433D|
-|<font color="#373C38">藍墨茶</font>|AISUMICHA|086|072|068|047| \#373C38|
-|<font color="#3A3226">檳榔子染</font>|BINROJIZOME|079|072|072|050| \#3A3226|
-|<font color="#434343">消炭</font>|KESHIZUMI|000|000|000|088| \#434343|
-|<font color="#1C1C1C">墨</font>|SUMI|092|078|073|066| \#1C1C1C|
-|<font color="#080808">黒</font>|KURO|091|084|074|071| \#080808|
-|<font color="#0C0C0C">呂</font>|RO|000|000|000|100| \#0C0C0C|
+|撫子|NADESHIKO|002|043|003|000| \#DC9FB4|
+|紅梅|KOHBAI|000|073|024|000| \#E16B8C|
+|蘇芳|SUOH|051|093|058|010| \#8E354A|
+|退紅|TAIKOH|000|031|009|000| \#F8C3CD|
+|一斥染|IKKONZOME|000|048|015|000| \#F4A7B9|
+|桑染|KUWAZOME|069|086|065|035| \#64363C|
+|桃|MOMO|000|055|019|000| \#F596AA|
+|苺|ICHIGO|002|070|038|030| \#B5495B|
+|薄紅|USUBENI|000|064|026|000| \#E87A90|
+|今様|IMAYOH|000|075|038|020| \#D05A6E|
+|中紅|NAKABENI|005|083|040|000| \#DB4D6D|
+|桜|SAKURA|000|017|006|000| \#FEDFE1|
+|梅鼠|UMENEZUMI|048|059|049|000| \#9E7A7A|
+|韓紅花|KARAKURENAI|015|098|061|000| \#D0104C|
+|燕脂|ENJI|042|093|068|006| \#9F353A|
+|紅|KURENAI|000|100|065|010| \#CB1B45|
+|鴇|TOKI|002|045|027|000| \#EEA9A9|
+|長春|CYOHSYUN|025|070|053|000| \#BF6766|
+|深緋|KOKIAKE|054|075|065|014| \#86473F|
+|桜鼠|SAKURANEZUMI|034|046|039|000| \#B19693|
+|甚三紅|JINZAMOMI|000|065|046|000| \#EB7A77|
+|小豆|AZUKI|048|078|066|010| \#954A45|
+|蘇芳香|SUOHKOH|042|070|058|001| \#A96360|
+|赤紅|AKABENI|015|085|068|000| \#CB4042|
+|真朱|SHINSYU|035|085|070|002| \#AB3B3A|
+|灰桜|HAIZAKURA|002|012|012|010| \#D7C4BB|
+|栗梅|KURIUME|050|078|068|013| \#904840|
+|海老茶|EBICHA|055|077|068|027| \#734338|
+|銀朱|GINSYU|016|086|070|000| \#C73E3A|
+|黒鳶|KUROTOBI|071|074|069|041| \#554236|
+|紅鳶|BENITOBI|045|082|072|011| \#994639|
+|曙|AKEBONO|000|057|047|000| \#F19483|
+|紅樺|BENIKABA|035|087|079|001| \#B54434|
+|水がき|MIZUGAKI|030|054|046|000| \#B9887D|
+|珊瑚朱|SANGOSYU|000|065|058|000| \#F17C67|
+|紅檜皮|BENIHIWADA|052|074|070|018| \#884C3A|
+|猩猩緋|SYOJYOHI|000|089|079|000| \#E83015|
+|鉛丹|ENTAN|000|072|063|007| \#D75455|
+|芝翫茶|SHIKANCHA|037|072|068|000| \#B55D4C|
+|檜皮|HIWADA|049|073|070|018| \#854836|
+|柿渋|KAKISHIBU|043|072|071|004| \#A35E47|
+|緋|AKE|017|079|074|000| \#CC543A|
+|鳶|TOBI|058|073|070|026| \#724832|
+|紅緋|BENIHI|000|075|074|000| \#F75C2F|
+|栗皮茶|KURIKAWACHA|058|074|072|030| \#6A4028|
+|弁柄|BENGARA|044|074|075|012| \#9A5034|
+|照柿|TERIGAKI|024|072|072|000| \#C46243|
+|江戸茶|EDOCHA|038|070|071|003| \#AF5F3C|
+|洗朱|ARAISYU|000|054|056|000| \#FB966E|
+|百塩茶|MOMOSHIOCHA|061|070|068|025| \#724938|
+|唐茶|KARACHA|038|064|065|000| \#B47157|
+|ときがら茶|TOKIGARACHA|010|055|057|000| \#DB8E71|
+|黄丹|OHNI|000|072|090|000| \#F05E1C|
+|纁|SOHI|000|065|073|000| \#ED784A|
+|遠州茶|ENSYUCHA|021|064|067|000| \#CA7853|
+|樺茶|KABACHA|036|072|076|002| \#B35C37|
+|焦茶|KOGECHA|068|073|071|040| \#563F2E|
+|赤香|AKAKOH|005|055|060|000| \#E3916E|
+|雀茶|SUZUMECHA|052|069|073|015| \#8F5A3C|
+|宍|SHISHI|000|047|050|000| \#F0A986|
+|宗伝唐茶|SODENKARACHA|048|066|070|006| \#A0674B|
+|樺|KABA|026|070|078|000| \#C1693C|
+|深支子|KOKIKUCHINASHI|000|053|065|000| \#FB9966|
+|胡桃|KURUMI|051|056|057|001| \#947A6D|
+|代赭|TAISYA|038|067|082|003| \#A36336|
+|洗柿|ARAIGAKI|000|053|067|000| \#E79460|
+|黄櫨染|KOHROZEN|055|068|078|023| \#7D532C|
+|赤朽葉|AKAKUCHIBA|005|052|070|014| \#C78550|
+|礪茶|TONOCHA|048|066|079|007| \#985F2A|
+|赤白橡|AKASHIROTSURUBAMI|006|042|055|000| \#E1A679|
+|煎茶|SENCHA|055|066|075|014| \#855B32|
+|萱草|KANZO|000|049|072|000| \#FC9F4D|
+|洒落柿|SHAREGAKI|000|036|053|000| \#FFBA84|
+|紅鬱金|BENIUKON|000|052|080|000| \#E98B2A|
+|梅染|UMEZOME|003|045|062|000| \#E9A368|
+|枇杷茶|BIWACHA|035|058|075|000| \#B17844|
+|丁子茶|CHOJICHA|050|061|076|009| \#96632E|
+|憲法染|KENPOHZOME|076|071|073|047| \#43341B|
+|琥珀|KOHAKU|020|058|085|000| \#CA7A2C|
+|薄柿|USUGAKI|000|034|052|000| \#ECB88A|
+|伽羅|KYARA|058|062|072|016| \#78552B|
+|丁子染|CHOJIZOME|036|057|079|000| \#B07736|
+|柴染|FUSHIZOME|050|056|071|005| \#967249|
+|朽葉|KUCHIBA|007|049|080|000| \#E2943B|
+|金茶|KINCHA|020|056|089|000| \#C7802D|
+|狐|KITSUNE|046|057|080|004| \#9B6E23|
+|煤竹|SUSUTAKE|062|063|073|021| \#6E552F|
+|薄香|USUKOH|000|034|060|000| \#EBB471|
+|砥粉|TONOKO|005|020|038|015| \#D7B98E|
+|銀煤竹|GINSUSUTAKE|054|058|076|010| \#82663A|
+|黄土|OHDO|031|045|066|000| \#B68E55|
+|白茶|SHIRACHA|032|040|057|000| \#BC9F77|
+|媚茶|KOBICHA|058|059|078|014| \#876633|
+|黄唐茶|KIGARACHA|028|048|083|000| \#C18A26|
+|山吹|YAMABUKI|000|037|087|000| \#FFB11B|
+|山吹茶|YAMABUKICHA|017|044|089|000| \#D19826|
+|櫨染|HAJIZOME|008|040|083|000| \#DDA52D|
+|桑茶|KUWACHA|025|044|083|000| \#C99833|
+|玉子|TAMAGO|000|029|074|000| \#F9BF45|
+|白橡|SHIROTSURUBAMI|016|030|060|000| \#DCB879|
+|黄橡|KITSURUBAMI|031|044|077|000| \#BA9132|
+|玉蜀黍|TAMAMOROKOSHI|004|029|071|000| \#E8B647|
+|花葉|HANABA|000|025|072|000| \#F7C242|
+|生壁|NAMAKABE|058|056|070|008| \#7D6C46|
+|鳥の子|TORINOKO|014|020|039|000| \#DAC9A6|
+|浅黄|USUKI|000|017|053|000| \#FAD689|
+|黄朽葉|KIKUCHIBA|014|033|075|000| \#D9AB42|
+|梔子|KUCHINASHI|000|025|070|000| \#F6C555|
+|籐黄|TOHOH|000|025|086|000| \#FFC408|
+|鬱金|UKON|003|029|088|000| \#EFBB24|
+|芥子|KARASHI|000|016|070|027| \#CAAD5F|
+|肥後煤竹|HIGOSUSUTAKE|055|053|082|007| \#8D742A|
+|利休白茶|RIKYUSHIRACHA|036|033|054|000| \#B4A582|
+|灰汁|AKU|058|051|060|001| \#877F6C|
+|利休茶|RIKYUCHA|057|050|070|003| \#897D55|
+|路考茶|ROKOHCHA|064|057|073|010| \#74673E|
+|菜種油|NATANEYU|046|042|084|000| \#A28C37|
+|鶯茶|UGUISUCHA|064|056|078|016| \#6C6024|
+|黄海松茶|KIMIRUCHA|057|048|078|006| \#867835|
+|海松茶|MIRUCHA|068|059|075|022| \#62592C|
+|刈安|KARIYASU|007|015|074|000| \#E9CD4C|
+|菜の花|NANOHANA|002|011|075|000| \#F7D94C|
+|黄蘗|KIHADA|000|005|073|000| \#FBE251|
+|蒸栗|MUSHIKURI|016|015|052|000| \#D9CD90|
+|青朽葉|AOKUCHIBA|038|031|076|000| \#ADA142|
+|女郎花|OMINAESHI|016|009|082|000| \#DDD23B|
+|鶸茶|HIWACHA|045|033|076|000| \#A5A051|
+|鶸|HIWA|032|015|085|000| \#BEC23F|
+|鶯|UGUISU|067|054|084|014| \#6C6A2D|
+|柳茶|YANAGICHA|052|037|073|000| \#939650|
+|苔|KOKE|062|041|083|002| \#838A2D|
+|麹塵|KIKUJIN|037|023|063|000| \#B1B479|
+|璃寛茶|RIKANCHA|072|058|073|019| \#616138|
+|藍媚茶|AIKOBICHA|076|061|074|030| \#4B4E2A|
+|海松|MIRU|072|056|078|020| \#5B622E|
+|千歳茶|SENSAICHA|077|061|070|030| \#4D5139|
+|梅幸茶|BAIKOCHA|057|038|063|000| \#89916B|
+|鶸萌黄|HIWAMOEGI|056|013|077|000| \#90B44B|
+|柳染|YANAGIZOME|056|024|065|000| \#91AD70|
+|裏柳|URAYANAGI|036|010|045|000| \#B5CAA0|
+|岩井茶|IWAICHA|069|052|063|007| \#646A58|
+|萌黄|MOEGI|070|023|086|000| \#7BA23F|
+|苗|NAE|057|001|072|000| \#86C166|
+|柳煤竹|YANAGISUSUTAKE|076|057|070|017| \#4A593D|
+|松葉|MATSUBA|080|055|079|020| \#42602D|
+|青丹|AONI|076|051|075|012| \#516E41|
+|薄青|USUAO|057|019|052|000| \#91B493|
+|柳鼠|YANAGINEZUMI|061|041|053|000| \#808F7C|
+|常磐|TOKIWA|082|000|078|040| \#1B813E|
+|若竹|WAKATAKE|068|013|059|000| \#5DAC81|
+|千歳緑|CHITOSEMIDORI|083|055|069|022| \#36563C|
+|緑|MIDORI|086|036|070|000| \#227D51|
+|白緑|BYAKUROKU|044|000|037|000| \#A8D8B9|
+|老竹|OITAKE|071|046|060|002| \#6A8372|
+|木賊|TOKUSA|086|046|070|008| \#2D6D4B|
+|御納戸茶|ONANDOCHA|081|060|068|022| \#465D4C|
+|緑青|ROKUSYOH|083|023|063|000| \#24936E|
+|錆青磁|SABISEIJI|058|030|045|000| \#86A697|
+|青竹|AOTAKE|092|028|067|000| \#00896C|
+|ビロード|VELUDO|093|054|071|020| \#096148|
+|虫襖|MUSHIAO|089|055|067|017| \#20604F|
+|藍海松茶|AIMIRUCHA|089|060|067|030| \#0F4C3A|
+|沈香茶|TONOCHA2|077|050|057|004| \#4F726C|
+|青緑|AOMIDORI|088|000|053|000| \#00AA90|
+|青磁|SEIJI|061|014|034|000| \#69B0AC|
+|鉄|TETSU|090|063|066|030| \#26453D|
+|水浅葱|MIZUASAGI|068|010|033|000| \#66BAB7|
+|青碧|SEIHEKI|085|035|050|000| \#268785|
+|錆鉄御納戸|SABITETSUONANDO|083|059|060|013| \#405B55|
+|高麗納戸|KORAINANDO|088|058|061|015| \#305A56|
+|白群|BYAKUGUN|052|000|020|000| \#78C2C4|
+|御召茶|OMESHICHA|087|054|054|005| \#376B6D|
+|瓶覗|KAMENOZOKI|042|000|011|000| \#A5DEE4|
+|深川鼠|FUKAGAWANEZUMI|063|038|040|000| \#77969A|
+|錆浅葱|SABIASAGI|066|030|034|000| \#6699A1|
+|水|MIZU|055|006|017|000| \#81C7D4|
+|浅葱|ASAGI|082|018|027|000| \#33A6B8|
+|御納戸|ONANDO|092|065|062|025| \#0C4842|
+|藍|AI|095|063|056|017| \#0D5661|
+|新橋|SHINBASHI|095|031|030|000| \#0089A7|
+|錆御納戸|SABIONANDO|087|056|052|006| \#336774|
+|鉄御納戸|TETSUONANDO|090|063|059|021| \#255359|
+|花浅葱|HANAASAGI|090|032|023|000| \#1E88A8|
+|藍鼠|AINEZUMI|078|057|052|007| \#566C73|
+|舛花|MASUHANA|078|048|042|000| \#577C8A|
+|空|SORA|072|013|007|000| \#58B2DC|
+|熨斗目花|NOSHIMEHANA|092|060|047|004| \#2B5F75|
+|千草|CHIGUSA|083|031|017|000| \#3A8FB7|
+|御召御納戸|OMESHIONANDO|090|063|051|007| \#2E5C6E|
+|縹|HANADA|100|060|041|002| \#006284|
+|勿忘草|WASURENAGUSA|052|010|000|000| \#7DB9DE|
+|群青|GUNJYO|067|021|000|000| \#51A8DD|
+|露草|TSUYUKUSA|073|020|000|000| \#2EA9DF|
+|黒橡|KUROTSURUBAMI|092|078|064|048| \#0B1013|
+|紺|KON|100|085|050|024| \#0F2540|
+|褐|KACHI|100|086|060|045| \#08192D|
+|瑠璃|RURI|097|065|000|000| \#005CAF|
+|瑠璃紺|RURIKON|100|085|039|004| \#0B346E|
+|紅碧|BENIMIDORI|064|044|000|000| \#7B90D2|
+|藤鼠|FUJINEZUMI|069|056|017|000| \#6E75A4|
+|鉄紺|TETSUKON|080|065|000|077| \#261E47|
+|紺青|KONJYO|100|085|015|000| \#113285|
+|紅掛花|BENIKAKEHANA|082|070|014|000| \#4E4F97|
+|紺桔梗|KONKIKYO|100|090|042|012| \#211E55|
+|藤|FUJI|058|052|000|000| \#8B81C3|
+|二藍|FUTAAI|072|067|021|000| \#70649A|
+|楝|OUCHI|042|042|000|000| \#9B90C2|
+|藤紫|FUJIMURASAKI|058|060|000|000| \#8A6BBE|
+|桔梗|KIKYO|075|075|010|000| \#6A4C9C|
+|紫苑|SHION|055|058|001|000| \#8F77B5|
+|滅紫|MESSHI|082|080|048|015| \#533D5B|
+|薄|USU|043|051|000|000| \#B28FCE|
+|半|HASHITA|055|063|000|000| \#986DB2|
+|江戸紫|EDOMURASAKI|060|074|000|014| \#77428D|
+|紫紺|SHIKON|088|084|060|045| \#3C2F41|
+|深紫|KOKIMURASAKI|090|093|043|016| \#4A225D|
+|菫|SUMIRE|074|083|022|000| \#66327C|
+|紫|MURASAKI|081|087|040|007| \#592C63|
+|菖蒲|AYAME|071|087|014|000| \#6F3381|
+|藤煤竹|FUJISUSUTAKE|075|070|057|025| \#574C57|
+|紅藤|BENIFUJI|038|060|000|000| \#B481BB|
+|黒紅|KUROBENI|086|085|064|050| \#3F2B36|
+|茄子紺|NASUKON|040|073|010|073| \#572A3F|
+|葡萄鼠|BUDOHNEZUMI|073|077|054|017| \#5E3D50|
+|鳩羽鼠|HATOBANEZUMI|068|064|051|006| \#72636E|
+|杜若|KAKITSUBATA|077|092|048|021| \#622954|
+|蒲葡|EBIZOME|071|089|048|012| \#6D2E5B|
+|牡丹|BOTAN|025|091|008|000| \#C1328E|
+|梅紫|UMEMURASAKI|045|080|037|000| \#A8497A|
+|似紫|NISEMURASAKI|075|084|062|042| \#562E37|
+|躑躅|TSUTSUJI|000|080|003|000| \#E03C8A|
+|紫鳶|MURASAKITOBI|070|078|061|030| \#60373E|
+|白練|SHIRONERI|000|003|011|000| \#FCFAF2|
+|胡粉|GOFUN|000|000|002|000| \#FFFFFB|
+|白鼠|SHIRONEZUMI|031|023|028|000| \#BDC0BA|
+|銀鼠|GINNEZUMI|052|039|036|000| \#91989F|
+|鉛|NAMARI|008|000|000|073| \#787878|
+|灰|HAI|000|000|000|070| \#828282|
+|素鼠|SUNEZUMI|065|053|053|000| \#787D7B|
+|利休鼠|RIKYUNEZUMI|066|050|054|001| \#707C74|
+|鈍|NIBI|005|000|000|080| \#656765|
+|青鈍|AONIBI|078|063|062|020| \#535953|
+|溝鼠|DOBUNEZUMI|078|065|065|030| \#4F4F48|
+|紅消鼠|BENIKESHINEZUMI|073|069|063|030| \#52433D|
+|藍墨茶|AISUMICHA|086|072|068|047| \#373C38|
+|檳榔子染|BINROJIZOME|079|072|072|050| \#3A3226|
+|消炭|KESHIZUMI|000|000|000|088| \#434343|
+|墨|SUMI|092|078|073|066| \#1C1C1C|
+|黒|KURO|091|084|074|071| \#080808|
+|呂|RO|000|000|000|100| \#0C0C0C|
 
-
-## Colordic
+## ColorDic
 
 Colors from [www.colordic.org](https://www.colordic.org/w/) :
 
 |Name|Roma|C|M|Y|K|RGB|
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-|<font color="#FEF4F4">桜色</font>|さくらいろ|---|---|---|---| \#FEF4F4|
-|<font color="#96514D">小豆色</font>|あずきいろ|---|---|---|---| \#96514D|
-|<font color="#E6B422">黄金</font>|こがね|---|---|---|---| \#E6B422|
-|<font color="#006E54">萌葱色</font>|もえぎいろ|---|---|---|---| \#006E54|
-|<font color="#895B8A">古代紫</font>|こだいむらさき|---|---|---|---| \#895B8A|
-|<font color="#FDEFF2">薄桜</font>|うすざくら|---|---|---|---| \#FDEFF2|
-|<font color="#8D6449">枯茶</font>|からちゃ|---|---|---|---| \#8D6449|
-|<font color="#D9A62E">櫨染</font>|はじぞめ|---|---|---|---| \#D9A62E|
-|<font color="#00A381">花緑青</font>|はなろくしょう|---|---|---|---| \#00A381|
-|<font color="#824880">茄子紺</font>|なすこん|---|---|---|---| \#824880|
-|<font color="#E9DFE5">桜鼠</font>|さくらねず|---|---|---|---| \#E9DFE5|
-|<font color="#DEB068">飴色</font>|あめいろ|---|---|---|---| \#DEB068|
-|<font color="#D3A243">黄朽葉色</font>|きくちばいろ|---|---|---|---| \#D3A243|
-|<font color="#38B48B">翡翠色</font>|ひすいいろ|---|---|---|---| \#38B48B|
-|<font color="#915C8B">二藍</font>|ふたあい|---|---|---|---| \#915C8B|
-|<font color="#E4D2D8">鴇鼠</font>|ときねず|---|---|---|---| \#E4D2D8|
-|<font color="#BF794E">駱駝色</font>|らくだいろ|---|---|---|---| \#BF794E|
-|<font color="#C89932">山吹茶</font>|やまぶきちゃ|---|---|---|---| \#C89932|
-|<font color="#00A497">青緑</font>|あおみどり|---|---|---|---| \#00A497|
-|<font color="#9D5B8B">京紫</font>|きょうむらさき|---|---|---|---| \#9D5B8B|
-|<font color="#F6BFBC">虹色</font>|にじいろ|---|---|---|---| \#F6BFBC|
-|<font color="#BC763C">土色</font>|つちいろ|---|---|---|---| \#BC763C|
-|<font color="#D0AF4C">芥子色</font>|からしいろ|---|---|---|---| \#D0AF4C|
-|<font color="#80ABA9">水浅葱</font>|みずあさぎ|---|---|---|---| \#80ABA9|
-|<font color="#7A4171">蒲葡</font>|えびぞめ|---|---|---|---| \#7A4171|
-|<font color="#F5B1AA">珊瑚色</font>|さんごいろ|---|---|---|---| \#F5B1AA|
-|<font color="#B98C46">黄唐茶</font>|きがらちゃ|---|---|---|---| \#B98C46|
-|<font color="#8B968D">豆がら茶</font>|まめがらちゃ|---|---|---|---| \#8B968D|
-|<font color="#5C9291">錆浅葱</font>|さびあさぎ|---|---|---|---| \#5C9291|
-|<font color="#BC64A4">若紫</font>|わかむらさき|---|---|---|---| \#BC64A4|
-|<font color="#F5B199">一斤染</font>|いっこんぞめ|---|---|---|---| \#F5B199|
-|<font color="#B79B5B">桑染</font>|くわぞめ|---|---|---|---| \#B79B5B|
-|<font color="#6E7955">麹塵</font>|きくじん|---|---|---|---| \#6E7955|
-|<font color="#478384">青碧</font>|せいへき|---|---|---|---| \#478384|
-|<font color="#B44C97">紅紫</font>|べにむらさき|---|---|---|---| \#B44C97|
-|<font color="#EFAB93">宍色</font>|ししいろ|---|---|---|---| \#EFAB93|
-|<font color="#B77B57">櫨色</font>|はじいろ|---|---|---|---| \#B77B57|
-|<font color="#767C6B">山鳩色</font>|やまばといろ|---|---|---|---| \#767C6B|
-|<font color="#43676B">御召茶</font>|おめしちゃ|---|---|---|---| \#43676B|
-|<font color="#AA4C8F">梅紫</font>|うめむらさき|---|---|---|---| \#AA4C8F|
-|<font color="#F2A0A1">紅梅色</font>|こうばいいろ|---|---|---|---| \#F2A0A1|
-|<font color="#B68D4C">黄橡</font>|きつるばみ|---|---|---|---| \#B68D4C|
-|<font color="#888E7E">利休鼠</font>|りきゅうねずみ|---|---|---|---| \#888E7E|
-|<font color="#80989B">湊鼠</font>|みなとねずみ|---|---|---|---| \#80989B|
-|<font color="#CC7EB1"> 菖蒲色</font>|あやめいろ|---|---|---|---| \#CC7EB1|
-|<font color="#F0908D">薄紅</font>|うすべに|---|---|---|---| \#F0908D|
-|<font color="#AD7D4C">丁字染</font>|ちょうじぞめ|---|---|---|---| \#AD7D4C|
-|<font color="#5A544B">海松茶</font>|みるちゃ|---|---|---|---| \#5A544B|
-|<font color="#2C4F54">高麗納戸</font>|こうらいなんど|---|---|---|---| \#2C4F54|
-|<font color="#CCA6BF">紅藤色</font>|べにふじいろ|---|---|---|---| \#CCA6BF|
-|<font color="#EE827C">甚三紅</font>|じんざもみ|---|---|---|---| \#EE827C|
-|<font color="#AD7D4C">香染</font>|こうぞめ|---|---|---|---| \#AD7D4C|
-|<font color="#56564B">藍海松茶</font>|あいみるちゃ|---|---|---|---| \#56564B|
-|<font color="#1F3134">百入茶</font>|ももしおちゃ|---|---|---|---| \#1F3134|
-|<font color="#C4A3BF">浅紫</font>|あさむらさき|---|---|---|---| \#C4A3BF|
-|<font color="#F09199">桃色</font>|ももいろ|---|---|---|---| \#F09199|
-|<font color="#AE7C4F">枇杷茶</font>|びわちゃ|---|---|---|---| \#AE7C4F|
-|<font color="#555647">藍媚茶</font>|あいこびちゃ|---|---|---|---| \#555647|
-|<font color="#47585C">錆鼠</font>|さびねず|---|---|---|---| \#47585C|
-|<font color="#E7E7EB">紫水晶</font>|むらさきすいしょう|---|---|---|---| \#E7E7EB|
-|<font color="#F4B3C2">鴇色</font>|ときいろ|---|---|---|---| \#F4B3C2|
-|<font color="#AD7E4E">芝翫茶</font>|しかんちゃ|---|---|---|---| \#AD7E4E|
-|<font color="#494A41">千歳茶</font>|せんさいちゃ|---|---|---|---| \#494A41|
-|<font color="#485859">錆鉄御納戸</font>|さびてつおなんど|---|---|---|---| \#485859|
-|<font color="#DCD6D9">薄梅鼠</font>|うすうめねず|---|---|---|---| \#DCD6D9|
-|<font color="#EEBBCB">撫子色</font>|なでしこいろ|---|---|---|---| \#EEBBCB|
-|<font color="#AE7C58">焦香</font>|こがれこう|---|---|---|---| \#AE7C58|
-|<font color="#6B6F59">岩井茶</font>|いわいちゃ|---|---|---|---| \#6B6F59|
-|<font color="#6C848D">藍鼠</font>|あいねず|---|---|---|---| \#6C848D|
-|<font color="#D3CFD9">暁鼠</font>|あかつきねず|---|---|---|---| \#D3CFD9|
-|<font color="#E8D3C7">灰梅</font>|はいうめ|---|---|---|---| \#E8D3C7|
-|<font color="#A86F4C">胡桃色</font>|くるみいろ|---|---|---|---| \#A86F4C|
-|<font color="#474B42">仙斎茶</font>|せんさいちゃ|---|---|---|---| \#474B42|
-|<font color="#53727D">錆御納戸</font>|さびおなんど|---|---|---|---| \#53727D|
-|<font color="#D3CCD6">牡丹鼠</font>|ぼたんねず|---|---|---|---| \#D3CCD6|
-|<font color="#E8D3D1">灰桜</font>|はいざくら|---|---|---|---| \#E8D3D1|
-|<font color="#946243">渋紙色</font>|しぶかみいろ|---|---|---|---| \#946243|
-|<font color="#333631">黒緑</font>|くろみどり|---|---|---|---| \#333631|
-|<font color="#5B7E91">舛花色</font>|ますはないろ|---|---|---|---| \#5B7E91|
-|<font color="#C8C2C6">霞色</font>|かすみいろ|---|---|---|---| \#C8C2C6|
-|<font color="#E6CDE3">淡紅藤</font>|あわべにふじ|---|---|---|---| \#E6CDE3|
-|<font color="#917347">朽葉色</font>|くちばいろ|---|---|---|---| \#917347|
-|<font color="#5B6356">柳煤竹</font>|やなぎすすたけ|---|---|---|---| \#5B6356|
-|<font color="#426579">熨斗目花色</font>|のしめはないろ|---|---|---|---| \#426579|
-|<font color="#A6A5C4">藤鼠</font>|ふじねず|---|---|---|---| \#A6A5C4|
-|<font color="#E5ABBE">石竹色</font>|せきちくいろ|---|---|---|---| \#E5ABBE|
-|<font color="#956F29">桑茶</font>|くわちゃ|---|---|---|---| \#956F29|
-|<font color="#726250">樺茶色</font>|かばちゃいろ|---|---|---|---| \#726250|
-|<font color="#4C6473">御召御納戸</font>|おめしおなんど|---|---|---|---| \#4C6473|
-|<font color="#A69ABD">半色</font>|はしたいろ|---|---|---|---| \#A69ABD|
-|<font color="#E597B2">薄紅梅</font>|うすこうばい|---|---|---|---| \#E597B2|
-|<font color="#8C7042">路考茶</font>|ろこうちゃ|---|---|---|---| \#8C7042|
-|<font color="#9D896C">空五倍子色</font>|うつぶしいろ|---|---|---|---| \#9D896C|
-|<font color="#455765">鉄御納戸</font>|てつおなんど|---|---|---|---| \#455765|
-|<font color="#A89DAC">薄色</font>|うすいろ|---|---|---|---| \#A89DAC|
-|<font color="#E198B4">桃花色</font>|ももはないろ|---|---|---|---| \#E198B4|
-|<font color="#7B6C3E">国防色</font>|こくぼうしょく|---|---|---|---| \#7B6C3E|
-|<font color="#94846A">生壁色</font>|なまかべいろ|---|---|---|---| \#94846A|
-|<font color="#44617B">紺鼠</font>|こんねず|---|---|---|---| \#44617B|
-|<font color="#9790A4">薄鼠</font>|うすねず|---|---|---|---| \#9790A4|
-|<font color="#E4AB9B">水柿</font>|みずがき|---|---|---|---| \#E4AB9B|
-|<font color="#D8A373">伽羅色</font>|きゃらいろ|---|---|---|---| \#D8A373|
-|<font color="#897858">肥後煤竹</font>|ひごすすたけ|---|---|---|---| \#897858|
-|<font color="#393F4C">藍鉄</font>|あいてつ|---|---|---|---| \#393F4C|
-|<font color="#9E8B8E">鳩羽鼠</font>|はとばねずみ|---|---|---|---| \#9E8B8E|
-|<font color="#E09E87">ときがら茶</font>|ときがらちゃ|---|---|---|---| \#E09E87|
-|<font color="#CD8C5C">江戸茶</font>|えどちゃ|---|---|---|---| \#CD8C5C|
-|<font color="#716246">媚茶</font>|こびちゃ|---|---|---|---| \#716246|
-|<font color="#393E4F">青褐</font>|あおかち|---|---|---|---| \#393E4F|
-|<font color="#95859C">鳩羽色</font>|はとばいろ|---|---|---|---| \#95859C|
-|<font color="#D69090">退紅</font>|あらぞめ|---|---|---|---| \#D69090|
-|<font color="#CD5E3C">樺色</font>|かばいろ|---|---|---|---| \#CD5E3C|
-|<font color="#CBB994">白橡</font>|しろつるばみ|---|---|---|---| \#CBB994|
-|<font color="#203744">褐返</font>|かちかえし|---|---|---|---| \#203744|
-|<font color="#95949A">桔梗鼠</font>|ききょうねず|---|---|---|---| \#95949A|
-|<font color="#D4ACAD">薄柿</font>|うすがき|---|---|---|---| \#D4ACAD|
-|<font color="#CB8347">紅鬱金</font>|べにうこん|---|---|---|---| \#CB8347|
-|<font color="#D6C6AF">亜麻色</font>|あまいろ|---|---|---|---| \#D6C6AF|
-|<font color="#4D4C61">褐色</font>|かちいろ|---|---|---|---| \#4D4C61|
-|<font color="#71686C">紫鼠</font>|むらさきねず|---|---|---|---| \#71686C|
-|<font color="#C97586">長春色</font>|ちょうしゅんいろ|---|---|---|---| \#C97586|
-|<font color="#C37854">土器色</font>|かわらけいろ|---|---|---|---| \#C37854|
-|<font color="#BFA46F">榛色</font>|はしばみいろ|---|---|---|---| \#BFA46F|
-|<font color="#EAF4FC">月白</font>|げっぱく|---|---|---|---| \#EAF4FC|
-|<font color="#705B67">葡萄鼠</font>|ぶどうねずみ|---|---|---|---| \#705B67|
-|<font color="#C099A0">梅鼠</font>|うめねず|---|---|---|---| \#C099A0|
-|<font color="#C38743">狐色</font>|きつねいろ|---|---|---|---| \#C38743|
-|<font color="#9E9478">灰汁色</font>|あくいろ|---|---|---|---| \#9E9478|
-|<font color="#EAEDF7">白菫色</font>|しろすみれいろ|---|---|---|---| \#EAEDF7|
-|<font color="#634950">濃色</font>|こきいろ|---|---|---|---| \#634950|
-|<font color="#B88884">鴇浅葱</font>|ときあさぎ|---|---|---|---| \#B88884|
-|<font color="#C39143">黄土色</font>|おうどいろ|---|---|---|---| \#C39143|
-|<font color="#A59564">利休茶</font>|りきゅうちゃ|---|---|---|---| \#A59564|
-|<font color="#E8ECEF">白花色</font>|しらはないろ|---|---|---|---| \#E8ECEF|
-|<font color="#5F414B">紫鳶</font>|むらさきとび|---|---|---|---| \#5F414B|
-|<font color="#B48A76">梅染</font>|うめぞめ|---|---|---|---| \#B48A76|
-|<font color="#BF783A">琥珀色</font>|こはくいろ|---|---|---|---| \#BF783A|
-|<font color="#715C1F">鶯茶</font>|うぐいすちゃ|---|---|---|---| \#715C1F|
-|<font color="#EBF6F7">藍白</font>|あいじろ|---|---|---|---| \#EBF6F7|
-|<font color="#4F455C">濃鼠</font>|こいねず|---|---|---|---| \#4F455C|
-|<font color="#A86965">蘇芳香</font>|すおうこう|---|---|---|---| \#A86965|
-|<font color="#BB5535">赤茶</font>|あかちゃ|---|---|---|---| \#BB5535|
-|<font color="#C7B370">木蘭色</font>|もくらんじき|---|---|---|---| \#C7B370|
-|<font color="#C1E4E9">白藍</font>|しらあい|---|---|---|---| \#C1E4E9|
-|<font color="#5A5359">藤煤竹</font>|ふじすすたけ|---|---|---|---| \#5A5359|
-|<font color="#A25768">浅蘇芳</font>|あさすおう|---|---|---|---| \#A25768|
-|<font color="#BB5520">代赭</font>|たいしゃ|---|---|---|---| \#BB5520|
-|<font color="#DCD3B2">砂色</font>|すないろ|---|---|---|---| \#DCD3B2|
-|<font color="#BCE2E8">水色</font>|みずいろ|---|---|---|---| \#BCE2E8|
-|<font color="#594255">滅紫</font>|けしむらさき|---|---|---|---| \#594255|
-|<font color="#EC6D71">真朱</font>|まそお|---|---|---|---| \#EC6D71|
-|<font color="#B55233">煉瓦色</font>|れんがいろ|---|---|---|---| \#B55233|
-|<font color="#A19361">油色</font>|あぶらいろ|---|---|---|---| \#A19361|
-|<font color="#A2D7DD">瓶覗</font>|かめのぞき|---|---|---|---| \#A2D7DD|
-|<font color="#524748">紅消鼠</font>|べにけしねずみ|---|---|---|---| \#524748|
-|<font color="#EB6EA5">赤紫</font>|あかむらさき|---|---|---|---| \#EB6EA5|
-|<font color="#AA4F37">雀茶</font>|すずめちゃ|---|---|---|---| \#AA4F37|
-|<font color="#8F8667">利休色</font>|りきゅういろ|---|---|---|---| \#8F8667|
-|<font color="#ABCED8">秘色色</font>|ひそくいろ|---|---|---|---| \#ABCED8|
-|<font color="#513743">似せ紫</font>|にせむらさき|---|---|---|---| \#513743|
-|<font color="#E95295">躑躅色</font>|つつじいろ|---|---|---|---| \#E95295|
-|<font color="#9F563A">団十郎茶</font>|だんじゅうろうちゃ|---|---|---|---| \#9F563A|
-|<font color="#887938">梅幸茶</font>|ばいこうちゃ|---|---|---|---| \#887938|
-|<font color="#A0D8EF">空色</font>|そらいろ|---|---|---|---| \#A0D8EF|
-|<font color="#E6EAE3">灰黄緑</font>|はいきみどり|---|---|---|---| \#E6EAE3|
-|<font color="#E7609E">牡丹色</font>|ぼたんいろ|---|---|---|---| \#E7609E|
-|<font color="#9F563A">柿渋色</font>|かきしぶいろ|---|---|---|---| \#9F563A|
-|<font color="#6A5D21">璃寛茶</font>|りかんちゃ|---|---|---|---| \#6A5D21|
-|<font color="#89C3EB">勿忘草色</font>|わすれなぐさいろ|---|---|---|---| \#89C3EB|
-|<font color="#D4DCD6">蕎麦切色</font>|そばきりいろ|---|---|---|---| \#D4DCD6|
-|<font color="#D0576B">今様色</font>|いまよういろ|---|---|---|---| \#D0576B|
-|<font color="#9A493F">紅鳶</font>|べにとび|---|---|---|---| \#9A493F|
-|<font color="#918754">黄海松茶</font>|きみるちゃ|---|---|---|---| \#918754|
-|<font color="#84A2D4">青藤色</font>|あおふじいろ|---|---|---|---| \#84A2D4|
-|<font color="#D4DCDA">薄雲鼠</font>|うすくもねず|---|---|---|---| \#D4DCDA|
-|<font color="#C85179">中紅</font>|なかべに|---|---|---|---| \#C85179|
-|<font color="#98623C">灰茶</font>|はいちゃ|---|---|---|---| \#98623C|
-|<font color="#A69425">菜種油色</font>|なたねゆいろ|---|---|---|---| \#A69425|
-|<font color="#83CCD2">白群</font>|びゃくぐん|---|---|---|---| \#83CCD2|
-|<font color="#D3CBC6">枯野色</font>|かれのいろ|---|---|---|---| \#D3CBC6|
-|<font color="#E9546B">薔薇色</font>|ばらいろ|---|---|---|---| \#E9546B|
-|<font color="#965042">茶色</font>|ちゃいろ|---|---|---|---| \#965042|
-|<font color="#ADA250">青朽葉</font>|あおくちば|---|---|---|---| \#ADA250|
-|<font color="#84B9CB">浅縹</font>|あさはなだ|---|---|---|---| \#84B9CB|
-|<font color="#C8C2BE">潤色</font>|うるみいろ|---|---|---|---| \#C8C2BE|
-|<font color="#E95464">韓紅</font>|からくれない|---|---|---|---| \#E95464|
-|<font color="#965036">檜皮色</font>|ひわだいろ|---|---|---|---| \#965036|
-|<font color="#938B4B">根岸色</font>|ねぎしいろ|---|---|---|---| \#938B4B|
-|<font color="#698AAB">薄花色</font>|うすはないろ|---|---|---|---| \#698AAB|
-|<font color="#B3ADA0">利休白茶</font>|りきゅうしろちゃ|---|---|---|---| \#B3ADA0|
-|<font color="#C85554">銀朱</font>|ぎんしゅ|---|---|---|---| \#C85554|
-|<font color="#95483F">鳶色</font>|とびいろ|---|---|---|---| \#95483F|
-|<font color="#8C8861">鶸茶</font>|ひわちゃ|---|---|---|---| \#8C8861|
-|<font color="#008899">納戸色</font>|なんどいろ|---|---|---|---| \#008899|
-|<font color="#A99E93">茶鼠</font>|ちゃねずみ|---|---|---|---| \#A99E93|
-|<font color="#C53D43">赤紅</font>|あかべに|---|---|---|---| \#C53D43|
-|<font color="#954E2A">柿茶</font>|かきちゃ|---|---|---|---| \#954E2A|
-|<font color="#A1A46D">柳茶</font>|やなぎちゃ|---|---|---|---| \#A1A46D|
-|<font color="#00A3AF">浅葱色</font>|あさぎいろ|---|---|---|---| \#00A3AF|
-|<font color="#A58F86">胡桃染</font>|くるみぞめ|---|---|---|---| \#A58F86|
-|<font color="#E83929">紅緋</font>|べにひ|---|---|---|---| \#E83929|
-|<font color="#8F2E14">弁柄色</font>|べんがらいろ|---|---|---|---| \#8F2E14|
-|<font color="#726D40">海松色</font>|みるいろ|---|---|---|---| \#726D40|
-|<font color="#2A83A2">花浅葱</font>|はなあさぎ|---|---|---|---| \#2A83A2|
-|<font color="#928178">江戸鼠</font>|えどねず|---|---|---|---| \#928178|
-|<font color="#E60033">赤</font>|あか|---|---|---|---| \#E60033|
-|<font color="#8A3319">赤錆色</font>|あかさびいろ|---|---|---|---| \#8A3319|
-|<font color="#928C36">鶯色</font>|うぐいすいろ|---|---|---|---| \#928C36|
-|<font color="#59B9C6">新橋色</font>|しんばしいろ|---|---|---|---| \#59B9C6|
-|<font color="#887F7A">煤色</font>|すすいろ|---|---|---|---| \#887F7A|
-|<font color="#E2041B">猩々緋</font>|しょうじょうひ|---|---|---|---| \#E2041B|
-|<font color="#8A3B00"> 褐色</font>|かっしょく|---|---|---|---| \#8A3B00|
-|<font color="#DCCB18">緑黄色</font>|りょくおうしょく|---|---|---|---| \#DCCB18|
-|<font color="#2CA9E1">天色</font>|あまいろ|---|---|---|---| \#2CA9E1|
-|<font color="#B4866B">丁子茶</font>|ちょうじちゃ|---|---|---|---| \#B4866B|
-|<font color="#D7003A">紅</font>|くれない|---|---|---|---| \#D7003A|
-|<font color="#852E19">栗梅</font>|くりうめ|---|---|---|---| \#852E19|
-|<font color="#D7CF3A">鶸色</font>|ひわいろ|---|---|---|---| \#D7CF3A|
-|<font color="#38A1DB">露草色</font>|つゆくさいろ|---|---|---|---| \#38A1DB|
-|<font color="#B28C6E">柴染</font>|ふしぞめ|---|---|---|---| \#B28C6E|
-|<font color="#C9171E">深緋</font>|こきひ|---|---|---|---| \#C9171E|
-|<font color="#7B4741">紅檜皮</font>|べにひはだ|---|---|---|---| \#7B4741|
-|<font color="#C5C56A">抹茶色</font>|まっちゃいろ|---|---|---|---| \#C5C56A|
-|<font color="#0095D9">青</font>|あお|---|---|---|---| \#0095D9|
-|<font color="#A16D5D">宗伝唐茶</font>|そうでんからちゃ|---|---|---|---| \#A16D5D|
-|<font color="#D3381C">緋色</font>|ひいろ|---|---|---|---| \#D3381C|
-|<font color="#773C30">海老茶</font>|えびちゃ|---|---|---|---| \#773C30|
-|<font color="#C3D825">若草色</font>|わかくさいろ|---|---|---|---| \#C3D825|
-|<font color="#0094C8">薄藍</font>|うすあい|---|---|---|---| \#0094C8|
-|<font color="#9F6F55">砺茶</font>|とのちゃ|---|---|---|---| \#9F6F55|
-|<font color="#CE5242">赤丹</font>|あかに|---|---|---|---| \#CE5242|
-|<font color="#783C1D">唐茶</font>|からちゃ|---|---|---|---| \#783C1D|
-|<font color="#B8D200">黄緑</font>|きみどり|---|---|---|---| \#B8D200|
-|<font color="#2792C3">縹色</font>|はなだいろ|---|---|---|---| \#2792C3|
-|<font color="#8C6450">煎茶色</font>|せんちゃいろ|---|---|---|---| \#8C6450|
-|<font color="#D9333F">紅赤</font>|べにあか|---|---|---|---| \#D9333F|
-|<font color="#762F07">栗色</font>|くりいろ|---|---|---|---| \#762F07|
-|<font color="#E0EBAF">若芽色</font>|わかめいろ|---|---|---|---| \#E0EBAF|
-|<font color="#007BBB">紺碧</font>|こんぺき|---|---|---|---| \#007BBB|
-|<font color="#856859">銀煤竹</font>|ぎんすすだけ|---|---|---|---| \#856859|
-|<font color="#B94047">臙脂</font>|えんじ|---|---|---|---| \#B94047|
-|<font color="#752100">赤銅色</font>|しゃくどういろ|---|---|---|---| \#752100|
-|<font color="#D8E698">若菜色</font>|わかないろ|---|---|---|---| \#D8E698|
-|<font color="#5383C3">薄群青</font>|うすぐんじょう|---|---|---|---| \#5383C3|
-|<font color="#765C47">黄枯茶</font>|きがらちゃ|---|---|---|---| \#765C47|
-|<font color="#BA2636">朱・緋</font>|あけ|---|---|---|---| \#BA2636|
-|<font color="#6C3524">錆色</font>|さびいろ|---|---|---|---| \#6C3524|
-|<font color="#C7DC68">若苗色</font>|わかなえいろ|---|---|---|---| \#C7DC68|
-|<font color="#5A79BA">薄花桜</font>|うすはなざくら|---|---|---|---| \#5A79BA|
-|<font color="#6F514C">煤竹色</font>|すすたけいろ|---|---|---|---| \#6F514C|
-|<font color="#B7282E">茜色</font>|あかねいろ|---|---|---|---| \#B7282E|
-|<font color="#683F36">赤褐色</font>|せっかっしょく|---|---|---|---| \#683F36|
-|<font color="#99AB4E">青丹</font>|あおに|---|---|---|---| \#99AB4E|
-|<font color="#4C6CB3">群青色</font>|ぐんじょういろ|---|---|---|---| \#4C6CB3|
-|<font color="#6F4B3E">焦茶</font>|こげちゃ|---|---|---|---| \#6F4B3E|
-|<font color="#A73836">紅海老茶</font>|べにえびちゃ|---|---|---|---| \#A73836|
-|<font color="#664032">茶褐色</font>|ちゃかっしょく|---|---|---|---| \#664032|
-|<font color="#7B8D42">草色</font>|くさいろ|---|---|---|---| \#7B8D42|
-|<font color="#3E62AD">杜若色</font>|かきつばたいろ|---|---|---|---| \#3E62AD|
-|<font color="#544A47">黒橡</font>|くろつるばみ|---|---|---|---| \#544A47|
-|<font color="#9E3D3F">蘇芳</font>|すおう|---|---|---|---| \#9E3D3F|
-|<font color="#6D3C32">栗皮茶</font>|くりかわちゃ|---|---|---|---| \#6D3C32|
-|<font color="#69821B">苔色</font>|こけいろ|---|---|---|---| \#69821B|
-|<font color="#1E50A2">瑠璃色</font>|るりいろ|---|---|---|---| \#1E50A2|
-|<font color="#543F32">憲法色</font>|けんぽういろ|---|---|---|---| \#543F32|
-|<font color="#A22041">真紅</font>|しんく|---|---|---|---| \#A22041|
-|<font color="#583822">黒茶</font>|くろちゃ|---|---|---|---| \#583822|
-|<font color="#AACF53">萌黄</font>|もえぎ|---|---|---|---| \#AACF53|
-|<font color="#507EA4">薄縹</font>|うすはなだ|---|---|---|---| \#507EA4|
-|<font color="#554738">涅色</font>|くりいろ|---|---|---|---| \#554738|
-|<font color="#A22041">濃紅</font>|こいくれない|---|---|---|---| \#A22041|
-|<font color="#6C2C2F">葡萄茶</font>|えびちゃ|---|---|---|---| \#6C2C2F|
-|<font color="#B0CA71">苗色</font>|なえいろ|---|---|---|---| \#B0CA71|
-|<font color="#19448E">瑠璃紺</font>|るりこん|---|---|---|---| \#19448E|
-|<font color="#433D3C">檳榔子染</font>|びんろうじぞめ|---|---|---|---| \#433D3C|
-|<font color="#F8F4E6">象牙色</font>|ぞうげいろ|---|---|---|---| \#F8F4E6|
-|<font color="#640125">葡萄色</font>|えびいろ|---|---|---|---| \#640125|
-|<font color="#B9D08B">若葉色</font>|わかばいろ|---|---|---|---| \#B9D08B|
-|<font color="#164A84">紺瑠璃</font>|こんるり|---|---|---|---| \#164A84|
-|<font color="#432F2F">黒鳶</font>|くろとび|---|---|---|---| \#432F2F|
-|<font color="#EDE4CD">練色</font>|ねりいろ|---|---|---|---| \#EDE4CD|
-|<font color="#F8B862">萱草色</font>|かんぞういろ|---|---|---|---| \#F8B862|
-|<font color="#839B5C">松葉色</font>|まつばいろ|---|---|---|---| \#839B5C|
-|<font color="#165E83">藍色</font>|あいいろ|---|---|---|---| \#165E83|
-|<font color="#3F312B">赤墨</font>|あかすみ|---|---|---|---| \#3F312B|
-|<font color="#E9E4D4">灰白色</font>|かいはくしょく|---|---|---|---| \#E9E4D4|
-|<font color="#F6AD49">柑子色</font>|こうじいろ|---|---|---|---| \#F6AD49|
-|<font color="#CEE4AE">夏虫色</font>|なつむしいろ|---|---|---|---| \#CEE4AE|
-|<font color="#274A78">青藍</font>|せいらん|---|---|---|---| \#274A78|
-|<font color="#302833">黒紅</font>|くろべに|---|---|---|---| \#302833|
-|<font color="#EBE1A9">蒸栗色</font>|むしぐりいろ|---|---|---|---| \#EBE1A9|
-|<font color="#F39800">金茶</font>|きんちゃ|---|---|---|---| \#F39800|
-|<font color="#82AE46">鶸萌黄</font>|ひわもえぎ|---|---|---|---| \#82AE46|
-|<font color="#2A4073">深縹</font>|こきはなだ|---|---|---|---| \#2A4073|
-|<font color="#FFFFFF">白</font>|しろ|---|---|---|---| \#FFFFFF|
-|<font color="#F2F2B0">女郎花</font>|おみなえし|---|---|---|---| \#F2F2B0|
-|<font color="#F08300">蜜柑色</font>|みかんいろ|---|---|---|---| \#F08300|
-|<font color="#A8C97F">柳色</font>|やなぎいろ|---|---|---|---| \#A8C97F|
-|<font color="#223A70">紺色</font>|こんいろ|---|---|---|---| \#223A70|
-|<font color="#FFFFFC">胡粉色</font>|ごふんいろ|---|---|---|---| \#FFFFFC|
-|<font color="#E4DC8A">枯草色</font>|かれくさいろ|---|---|---|---| \#E4DC8A|
-|<font color="#EC6D51">鉛丹色</font>|えんたんいろ|---|---|---|---| \#EC6D51|
-|<font color="#9BA88D">青白橡</font>|あおしろつるばみ|---|---|---|---| \#9BA88D|
-|<font color="#192F60">紺青</font>|こんじょう|---|---|---|---| \#192F60|
-|<font color="#F7FCFE">卯の花色</font>|うのはないろ|---|---|---|---| \#F7FCFE|
-|<font color="#F8E58C">淡黄</font>|たんこう|---|---|---|---| \#F8E58C|
-|<font color="#EE7948">黄丹</font>|おうに|---|---|---|---| \#EE7948|
-|<font color="#C8D5BB">柳鼠</font>|やなぎねず|---|---|---|---| \#C8D5BB|
-|<font color="#1C305C">留紺</font>|とめこん|---|---|---|---| \#1C305C|
-|<font color="#F8FBF8">白磁</font>|はくじ|---|---|---|---| \#F8FBF8|
-|<font color="#DDBB99">白茶</font>|しらちゃ|---|---|---|---| \#DDBB99|
-|<font color="#ED6D3D">柿色</font>|かきいろ|---|---|---|---| \#ED6D3D|
-|<font color="#C1D8AC">裏葉柳</font>|うらはやなぎ|---|---|---|---| \#C1D8AC|
-|<font color="#0F2350">濃藍</font>|こいあい|---|---|---|---| \#0F2350|
-|<font color="#FBFAF5">生成り色</font>|きなりいろ|---|---|---|---| \#FBFAF5|
-|<font color="#D7A98C">赤白橡</font>|あかしろつるばみ|---|---|---|---| \#D7A98C|
-|<font color="#EC6800">黄赤</font>|きあか|---|---|---|---| \#EC6800|
-|<font color="#A8BF93">山葵色</font>|わさびいろ|---|---|---|---| \#A8BF93|
-|<font color="#17184B">鉄紺</font>|てつこん|---|---|---|---| \#17184B|
-|<font color="#F3F3F3">乳白色</font>|にゅうはくしょく|---|---|---|---| \#F3F3F3|
-|<font color="#F2C9AC">洗柿</font>|あらいがき|---|---|---|---| \#F2C9AC|
-|<font color="#EC6800">人参色</font>|にんじんいろ|---|---|---|---| \#EC6800|
-|<font color="#769164">老竹色</font>|おいたけいろ|---|---|---|---| \#769164|
-|<font color="#0D0015">漆黒</font>|しっこく|---|---|---|---| \#0D0015|
-|<font color="#F3F3F2">白練</font>|しろねり|---|---|---|---| \#F3F3F2|
-|<font color="#FFF1CF">鳥の子色</font>|とりのこいろ|---|---|---|---| \#FFF1CF|
-|<font color="#EE7800">橙色</font>|だいだいいろ|---|---|---|---| \#EE7800|
-|<font color="#D6E9CA">白緑</font>|びゃくろく|---|---|---|---| \#D6E9CA|
-|<font color="#BBC8E6">淡藤色</font>|あわふじいろ|---|---|---|---| \#BBC8E6|
-|<font color="#EAE5E3">素色</font>|そしょく|---|---|---|---| \#EAE5E3|
-|<font color="#FDDEA5">蜂蜜色</font>|はちみついろ|---|---|---|---| \#FDDEA5|
-|<font color="#EB6238">照柿</font>|てりがき|---|---|---|---| \#EB6238|
-|<font color="#93CA76">淡萌黄</font>|うすもえぎ|---|---|---|---| \#93CA76|
-|<font color="#BBBCDE">藤色</font>|ふじいろ|---|---|---|---| \#BBBCDE|
-|<font color="#E5E4E6">白梅鼠</font>|しらうめねず|---|---|---|---| \#E5E4E6|
-|<font color="#FCE2C4">肌色</font>|はだいろ|---|---|---|---| \#FCE2C4|
-|<font color="#EA5506">赤橙</font>|あかだいだい|---|---|---|---| \#EA5506|
-|<font color="#93B881">柳染</font>|やなぎぞめ|---|---|---|---| \#93B881|
-|<font color="#8491C3">紅掛空色</font>|べにかけそらいろ|---|---|---|---| \#8491C3|
-|<font color="#DCDDDD">白鼠</font>|しろねず|---|---|---|---| \#DCDDDD|
-|<font color="#FDE8D0">薄卵色</font>|うすたまごいろ|---|---|---|---| \#FDE8D0|
-|<font color="#EA5506">金赤</font>|きんあか|---|---|---|---| \#EA5506|
-|<font color="#BADCAD">薄萌葱</font>|うすもえぎ|---|---|---|---| \#BADCAD|
-|<font color="#8491C3">紅碧</font>|べにみどり|---|---|---|---| \#8491C3|
-|<font color="#DDDCD6">絹鼠</font>|きぬねず|---|---|---|---| \#DDDCD6|
-|<font color="#F9C89B">雄黄</font>|ゆうおう|---|---|---|---| \#F9C89B|
-|<font color="#EB6101">朱色</font>|しゅいろ|---|---|---|---| \#EB6101|
-|<font color="#97A791">深川鼠</font>|ふかがわねずみ|---|---|---|---| \#97A791|
-|<font color="#4D5AAF">紺桔梗</font>|こんききょう|---|---|---|---| \#4D5AAF|
-|<font color="#C0C6C9">灰青</font>|はいあお|---|---|---|---| \#C0C6C9|
-|<font color="#F7BD8F">洒落柿</font>|しゃれがき|---|---|---|---| \#F7BD8F|
-|<font color="#E49E61">小麦色</font>|こむぎいろ|---|---|---|---| \#E49E61|
-|<font color="#98D98E">若緑</font>|わかみどり|---|---|---|---| \#98D98E|
-|<font color="#4D5AAF">花色</font>|はないろ|---|---|---|---| \#4D5AAF|
-|<font color="#AFAFB0">銀鼠</font>|ぎんねず|---|---|---|---| \#AFAFB0|
-|<font color="#F6B894">赤香</font>|あかこう|---|---|---|---| \#F6B894|
-|<font color="#E45E32">丹色</font>|にいろ|---|---|---|---| \#E45E32|
-|<font color="#88CB7F">浅緑</font>|あさみどり|---|---|---|---| \#88CB7F|
-|<font color="#4A488E">紺藍</font>|こんあい|---|---|---|---| \#4A488E|
-|<font color="#ADADAD">薄鈍</font>|うすにび|---|---|---|---| \#ADADAD|
-|<font color="#F4DDA5">砥粉色</font>|とのこいろ|---|---|---|---| \#F4DDA5|
-|<font color="#E17B34">黄茶</font>|きちゃ|---|---|---|---| \#E17B34|
-|<font color="#69B076">薄緑</font>|うすみどり|---|---|---|---| \#69B076|
-|<font color="#4D4398">紅桔梗</font>|べにききょう|---|---|---|---| \#4D4398|
-|<font color="#A3A3A2">薄墨色</font>|うすずみいろ|---|---|---|---| \#A3A3A2|
-|<font color="#F1BF99">肉色</font>|にくいろ|---|---|---|---| \#F1BF99|
-|<font color="#DD7A56">肉桂色</font>|にっけいいろ|---|---|---|---| \#DD7A56|
-|<font color="#6B7B6E">青鈍</font>|あおにび|---|---|---|---| \#6B7B6E|
-|<font color="#5654A2">桔梗色</font>|ききょういろ|---|---|---|---| \#5654A2|
-|<font color="#9EA1A3">錫色</font>|すずいろ|---|---|---|---| \#9EA1A3|
-|<font color="#F1BF99">人色</font>|ひといろ|---|---|---|---| \#F1BF99|
-|<font color="#DB8449">赤朽葉色</font>|あかくちばいろ|---|---|---|---| \#DB8449|
-|<font color="#BED2C3">青磁鼠</font>|せいじねず|---|---|---|---| \#BED2C3|
-|<font color="#706CAA">藤納戸</font>|ふじなんど|---|---|---|---| \#706CAA|
-|<font color="#9FA0A0">素鼠</font>|すねずみ|---|---|---|---| \#9FA0A0|
-|<font color="#EFCD9A">丁子色</font>|ちょうじいろ|---|---|---|---| \#EFCD9A|
-|<font color="#D66A35">黄櫨染</font>|こうろぜん|---|---|---|---| \#D66A35|
-|<font color="#93B69C">薄青</font>|うすあお|---|---|---|---| \#93B69C|
-|<font color="#68699B">紅掛花色</font>|べにかけはないろ|---|---|---|---| \#68699B|
-|<font color="#949495">鼠色</font>|ねずみいろ|---|---|---|---| \#949495|
-|<font color="#EFCD9A">香色</font>|こういろ|---|---|---|---| \#EFCD9A|
-|<font color="#FFD900">蒲公英色</font>|たんぽぽいろ|---|---|---|---| \#FFD900|
-|<font color="#A6C8B2">錆青磁</font>|さびせいじ|---|---|---|---| \#A6C8B2|
-|<font color="#867BA9">紫苑色</font>|しおんいろ|---|---|---|---| \#867BA9|
-|<font color="#888084">源氏鼠</font>|げんじねず|---|---|---|---| \#888084|
-|<font color="#F0CFA0">薄香</font>|うすこう|---|---|---|---| \#F0CFA0|
-|<font color="#FFD900">黄色</font>|きいろ|---|---|---|---| \#FFD900|
-|<font color="#47885E">緑青色</font>|ろくしょういろ|---|---|---|---| \#47885E|
-|<font color="#DBD0E6">白藤色</font>|しらふじいろ|---|---|---|---| \#DBD0E6|
-|<font color="#7D7D7D">灰色</font>|はいいろ|---|---|---|---| \#7D7D7D|
-|<font color="#EDD3A1">浅黄</font>|うすき|---|---|---|---| \#EDD3A1|
-|<font color="#FFEA00">中黄</font>|ちゅうき|---|---|---|---| \#FFEA00|
-|<font color="#316745">千歳緑</font>|ちとせみどり|---|---|---|---| \#316745|
-|<font color="#A59ACA">藤紫</font>|ふじむらさき|---|---|---|---| \#A59ACA|
-|<font color="#7B7C7D">鉛色</font>|なまりいろ|---|---|---|---| \#7B7C7D|
-|<font color="#E0C38C">枯色</font>|かれいろ|---|---|---|---| \#E0C38C|
-|<font color="#FFEC47">菜の花色</font>|なのはないろ|---|---|---|---| \#FFEC47|
-|<font color="#68BE8D">若竹色</font>|わかたけいろ|---|---|---|---| \#68BE8D|
-|<font color="#7058A3">菫色</font>|すみれいろ|---|---|---|---| \#7058A3|
-|<font color="#727171">鈍色</font>|にびいろ|---|---|---|---| \#727171|
-|<font color="#F3BF88">淡香</font>|うすこう|---|---|---|---| \#F3BF88|
-|<font color="#FEF263">黄檗色</font>|きはだいろ|---|---|---|---| \#FEF263|
-|<font color="#3EB370">緑</font>|みどり|---|---|---|---| \#3EB370|
-|<font color="#674598">青紫</font>|あおむらさき|---|---|---|---| \#674598|
-|<font color="#595857">墨</font>|すみ|---|---|---|---| \#595857|
-|<font color="#F7B977">杏色</font>|あんずいろ|---|---|---|---| \#F7B977|
-|<font color="#FCD575">卵色</font>|たまごいろ|---|---|---|---| \#FCD575|
-|<font color="#007B43">常磐色</font>|ときわいろ|---|---|---|---| \#007B43|
-|<font color="#674196">菖蒲色</font>|しょうぶいろ|---|---|---|---| \#674196|
-|<font color="#595455">丼鼠</font>|どぶねずみ|---|---|---|---| \#595455|
-|<font color="#F19072">東雲色</font>|しののめいろ|---|---|---|---| \#F19072|
-|<font color="#FBD26B">花葉色</font>|はなばいろ|---|---|---|---| \#FBD26B|
-|<font color="#BED3CA">千草鼠</font>|ちぐさねず|---|---|---|---| \#BED3CA|
-|<font color="#9079AD">竜胆色</font>|りんどういろ|---|---|---|---| \#9079AD|
-|<font color="#524E4D">消炭色</font>|けしずみいろ|---|---|---|---| \#524E4D|
-|<font color="#F19072">曙色</font>|あけぼのいろ|---|---|---|---| \#F19072|
-|<font color="#F5E56B">刈安色</font>|かりやすいろ|---|---|---|---| \#F5E56B|
-|<font color="#92B5A9">千草色</font>|ちぐさいろ|---|---|---|---| \#92B5A9|
-|<font color="#745399">江戸紫</font>|えどむらさき|---|---|---|---| \#745399|
-|<font color="#474A4D">藍墨茶</font>|あいすみちゃ|---|---|---|---| \#474A4D|
-|<font color="#EE836F">珊瑚朱色</font>|さんごしゅいろ|---|---|---|---| \#EE836F|
-|<font color="#EEC362">玉蜀黍色</font>|とうもろこしいろ|---|---|---|---| \#EEC362|
-|<font color="#7EBEA5">青磁色</font>|せいじいろ|---|---|---|---| \#7EBEA5|
-|<font color="#65318E">本紫</font>|ほんむらさき|---|---|---|---| \#65318E|
-|<font color="#383C3C">羊羹色</font>|ようかんいろ|---|---|---|---| \#383C3C|
-|<font color="#EB9B6F">深支子</font>|こきくちなし|---|---|---|---| \#EB9B6F|
-|<font color="#EBD842">金糸雀色</font>|かなりあいろ|---|---|---|---| \#EBD842|
-|<font color="#7EBEAB">青竹色</font>|あおたけいろ|---|---|---|---| \#7EBEAB|
-|<font color="#522F60"> 葡萄色</font>|ぶどういろ|---|---|---|---| \#522F60|
-|<font color="#2B2B2B">蝋色</font>|ろういろ|---|---|---|---| \#2B2B2B|
-|<font color="#E0815E">纁</font>|そひ|---|---|---|---| \#E0815E|
-|<font color="#FFDB4F">黄支子色</font>|きくちなしいろ|---|---|---|---| \#FFDB4F|
-|<font color="#028760">常磐緑</font>|ときわみどり|---|---|---|---| \#028760|
-|<font color="#493759">深紫</font>|ふかむらさき|---|---|---|---| \#493759|
-|<font color="#2B2B2B">黒</font>|くろ|---|---|---|---| \#2B2B2B|
-|<font color="#DF7163">浅緋</font>|うすきひ|---|---|---|---| \#DF7163|
-|<font color="#FBCA4D">支子色</font>|くちなしいろ|---|---|---|---| \#FBCA4D|
-|<font color="#3B7960">木賊色</font>|とくさいろ|---|---|---|---| \#3B7960|
-|<font color="#2E2930">紫黒</font>|しこく|---|---|---|---| \#2E2930|
-|<font color="#180614">烏羽色</font>|からすばいろ|---|---|---|---| \#180614|
-|<font color="#D57C6B">真赭</font>|まそほ|---|---|---|---| \#D57C6B|
-|<font color="#FCC800">向日葵色</font>|ひまわりいろ|---|---|---|---| \#FCC800|
-|<font color="#2F5D50">天鵞絨</font>|びろうど|---|---|---|---| \#2F5D50|
-|<font color="#884898">紫</font>|むらさき|---|---|---|---| \#884898|
-|<font color="#281A14">鉄黒</font>|てつぐろ|---|---|---|---| \#281A14|
-|<font color="#D0826C">洗朱</font>|あらいしゅ|---|---|---|---| \#D0826C|
-|<font color="#F8B500">山吹色</font>|やまぶきいろ|---|---|---|---| \#F8B500|
-|<font color="#3A5B52">虫襖</font>|むしあお|---|---|---|---| \#3A5B52|
-|<font color="#C0A2C7">薄葡萄</font>|うすぶどう|---|---|---|---| \#C0A2C7|
-|<font color="#000B00">濡羽色</font>|ぬればいろ|---|---|---|---| \#000B00|
-|<font color="#CA8269">遠州茶</font>|えんしゅうちゃ|---|---|---|---| \#CA8269|
-|<font color="#FABF14">鬱金色</font>|うこんいろ|---|---|---|---| \#FABF14|
-|<font color="#475950">革色</font>|かわいろ|---|---|---|---| \#475950|
-|<font color="#460E44">紫紺</font>|しこん|---|---|---|---| \#460E44|
-|<font color="#250D00">黒檀</font>|こくたん|---|---|---|---| \#250D00|
-|<font color="#BB5548">紅樺色</font>|べにかばいろ|---|---|---|---| \#BB5548|
-|<font color="#F7C114">藤黄</font>|とうおう|---|---|---|---| \#F7C114|
-|<font color="#00552E">深緑</font>|ふかみどり|---|---|---|---| \#00552E|
-|<font color="#74325C">暗紅色</font>|あんこうしょく|---|---|---|---| \#74325C|
-|<font color="#241A08">憲法黒茶</font>|けんぽうくろちゃ|---|---|---|---| \#241A08|
-|<font color="#AB6953">赭</font>|そほ|---|---|---|---| \#AB6953|
-|<font color="#E6B422">金色</font>|こんじき|---|---|---|---| \#E6B422|
-|<font color="#005243">鉄色</font>|てついろ|---|---|---|---| \#005243|
-|<font color="#55295B">桑の実色</font>|くわのみいろ|---|---|---|---| \#55295B|
-|<font color="#16160E">暗黒色</font>|あんこくしょく|---|---|---|---| \#16160E|
+|桜色|さくらいろ|000|007|004|000| \#FEF4F4|
+|小豆色|あずきいろ|047|078|068|007| \#96514D|
+|黄金|こがね|015|034|089|000| \#E6B422|
+|萌葱色|もえぎいろ|087|048|077|008| \#006E54|
+|古代紫|こだいむらさき|056|073|027|000| \#895B8A|
+|薄桜|うすざくら|001|010|003|000| \#FDEFF2|
+|枯茶|からちゃ|051|065|075|008| \#8D6449|
+|櫨染|はじぞめ|020|040|088|000| \#D9A62E|
+|花緑青|はなろくしょう|078|016|061|000| \#00A381|
+|茄子紺|なすこん|060|082|029|000| \#824880|
+|桜鼠|さくらねず|009|015|007|000| \#E9DFE5|
+|飴色|あめいろ|017|036|064|000| \#DEB068|
+|黄朽葉色|きくちばいろ|023|041|080|000| \#D3A243|
+|翡翠色|ひすいいろ|071|008|058|000| \#38B48B|
+|二藍|ふたあい|053|073|026|000| \#915C8B|
+|鴇鼠|ときねず|012|021|011|000| \#E4D2D8|
+|駱駝色|らくだいろ|031|061|073|000| \#BF794E|
+|山吹茶|やまぶきちゃ|028|044|088|000| \#C89932|
+|青緑|あおみどり|077|017|049|000| \#00A497|
+|京紫|きょうむらさき|048|074|025|000| \#9D5B8B|
+|虹色|にじいろ|003|035|020|000| \#F6BFBC|
+|土色|つちいろ|033|062|083|000| \#BC763C|
+|芥子色|からしいろ|025|034|078|000| \#D0AF4C|
+|水浅葱|みずあさぎ|055|024|035|000| \#80ABA9|
+|蒲葡|えびぞめ|064|086|038|001| \#7A4171|
+|珊瑚色|さんごいろ|003|041|027|000| \#F5B1AA|
+|黄唐茶|きがらちゃ|035|050|080|000| \#B98C46|
+|豆がら茶|まめがらちゃ|052|037|044|000| \#8B968D|
+|錆浅葱|さびあさぎ|068|034|044|000| \#5C9291|
+|若紫|わかむらさき|034|072|008|000| \#BC64A4|
+|一斤染|いっこんぞめ|003|041|037|000| \#F5B199|
+|桑染|くわぞめ|035|041|071|000| \#B79B5B|
+|麹塵|きくじん|064|049|074|004| \#6E7955|
+|青碧|せいへき|075|041|049|000| \#478384|
+|紅紫|べにむらさき|038|082|010|000| \#B44C97|
+|宍色|ししいろ|007|043|039|000| \#EFAB93|
+|櫨色|はじいろ|035|059|068|000| \#B77B57|
+|山鳩色|やまばといろ|061|049|060|001| \#767C6B|
+|御召茶|おめしちゃ|079|056|056|006| \#43676B|
+|梅紫|うめむらさき|042|082|017|000| \#AA4C8F|
+|紅梅色|こうばいいろ|005|049|027|000| \#F2A0A1|
+|黄橡|きつるばみ|036|049|077|000| \#B68D4C|
+|利休鼠|りきゅうねずみ|054|041|051|000| \#888E7E|
+|湊鼠|みなとねずみ|056|035|037|000| \#80989B|
+| 菖蒲色|あやめいろ|025|062|007|000| \#CC7EB1|
+|薄紅|うすべに|005|056|036|000| \#F0908D|
+|丁字染|ちょうじぞめ|040|057|076|000| \#AD7D4C|
+|海松茶|みるちゃ|069|064|068|020| \#5A544B|
+|高麗納戸|こうらいなんど|085|064|062|021| \#2C4F54|
+|紅藤色|べにふじいろ|024|041|013|000| \#CCA6BF|
+|甚三紅|じんざもみ|007|062|043|000| \#EE827C|
+|香染|こうぞめ|040|057|076|000| \#AD7D4C|
+|藍海松茶|あいみるちゃ|070|063|070|020| \#56564B|
+|百入茶|ももしおちゃ|087|074|071|047| \#1F3134|
+|浅紫|あさむらさき|028|041|012|000| \#C4A3BF|
+|桃色|ももいろ|005|056|028|000| \#F09199|
+|枇杷茶|びわちゃ|039|057|074|000| \#AE7C4F|
+|藍媚茶|あいこびちゃ|070|062|073|021| \#555647|
+|錆鼠|さびねず|077|063|059|014| \#47585C|
+|紫水晶|むらさきすいしょう|011|009|007|000| \#E7E7EB|
+|鴇色|ときいろ|004|041|012|000| \#F4B3C2|
+|芝翫茶|しかんちゃ|040|056|075|000| \#AD7E4E|
+|千歳茶|せんさいちゃ|073|066|072|029| \#494A41|
+|錆鉄御納戸|さびてつおなんど|077|062|062|016| \#485859|
+|薄梅鼠|うすうめねず|016|017|012|000| \#DCD6D9|
+|撫子色|なでしこいろ|007|036|010|000| \#EEBBCB|
+|焦香|こがれこう|039|057|068|000| \#AE7C58|
+|岩井茶|いわいちゃ|065|054|068|007| \#6B6F59|
+|藍鼠|あいねず|064|044|041|000| \#6C848D|
+|暁鼠|あかつきねず|020|019|011|000| \#D3CFD9|
+|灰梅|はいうめ|010|021|021|000| \#E8D3C7|
+|胡桃色|くるみいろ|042|063|074|001| \#A86F4C|
+|仙斎茶|せんさいちゃ|074|065|072|029| \#474B42|
+|錆御納戸|さびおなんど|074|053|047|001| \#53727D|
+|牡丹鼠|ぼたんねず|020|021|011|000| \#D3CCD6|
+|灰桜|はいざくら|010|021|015|000| \#E8D3D1|
+|渋紙色|しぶかみいろ|048|067|079|007| \#946243|
+|黒緑|くろみどり|078|071|076|045| \#333631|
+|舛花色|ますはないろ|070|047|038|000| \#5B7E91|
+|霞色|かすみいろ|025|024|018|000| \#C8C2C6|
+|淡紅藤|あわべにふじ|011|025|002|000| \#E6CDE3|
+|朽葉色|くちばいろ|050|057|080|004| \#917347|
+|柳煤竹|やなぎすすたけ|070|058|067|012| \#5B6356|
+|熨斗目花色|のしめはないろ|080|060|046|003| \#426579|
+|藤鼠|ふじねず|040|035|013|000| \#A6A5C4|
+|石竹色|せきちくいろ|011|043|013|000| \#E5ABBE|
+|桑茶|くわちゃ|049|059|098|005| \#956F29|
+|樺茶色|かばちゃいろ|061|061|070|012| \#726250|
+|御召御納戸|おめしおなんど|077|060|049|004| \#4C6473|
+|半色|はしたいろ|041|042|013|000| \#A69ABD|
+|薄紅梅|うすこうばい|012|052|014|000| \#E597B2|
+|路考茶|ろこうちゃ|052|058|083|006| \#8C7042|
+|空五倍子色|うつぶしいろ|046|048|060|000| \#9D896C|
+|鉄御納戸|てつおなんど|079|066|053|011| \#455765|
+|薄色|うすいろ|040|039|024|000| \#A89DAC|
+|桃花色|ももはないろ|014|051|014|000| \#E198B4|
+|国防色|こくぼうしょく|058|057|086|010| \#7B6C3E|
+|生壁色|なまかべいろ|049|049|060|000| \#94846A|
+|紺鼠|こんねず|080|063|043|002| \#44617B|
+|薄鼠|うすねず|047|044|026|000| \#9790A4|
+|水柿|みずがき|012|041|035|000| \#E4AB9B|
+|伽羅色|きゃらいろ|019|043|056|000| \#D8A373|
+|肥後煤竹|ひごすすたけ|054|054|070|003| \#897858|
+|藍鉄|あいてつ|081|074|060|028| \#393F4C|
+|鳩羽鼠|はとばねずみ|045|047|039|000| \#9E8B8E|
+|ときがら茶|ときがらちゃ|014|047|044|000| \#E09E87|
+|江戸茶|えどちゃ|024|053|066|000| \#CD8C5C|
+|媚茶|こびちゃ|061|060|077|014| \#716246|
+|青褐|あおかち|082|076|058|026| \#393E4F|
+|鳩羽色|はとばいろ|049|050|028|000| \#95859C|
+|退紅|あらぞめ|019|053|035|000| \#D69090|
+|樺色|かばいろ|024|075|079|000| \#CD5E3C|
+|白橡|しろつるばみ|025|028|044|000| \#CBB994|
+|褐返|かちかえし|089|076|063|036| \#203744|
+|桔梗鼠|ききょうねず|048|041|034|000| \#95949A|
+|薄柿|うすがき|020|038|026|000| \#D4ACAD|
+|紅鬱金|べにうこん|025|057|077|000| \#CB8347|
+|亜麻色|あまいろ|019|024|032|000| \#D6C6AF|
+|褐色|かちいろ|077|073|052|013| \#4D4C61|
+|紫鼠|むらさきねず|063|061|053|004| \#71686C|
+|長春色|ちょうしゅんいろ|026|065|035|000| \#C97586|
+|土器色|かわらけいろ|029|062|068|000| \#C37854|
+|榛色|はしばみいろ|031|038|061|000| \#BFA46F|
+|月白|げっぱく|010|003|001|000| \#EAF4FC|
+|葡萄鼠|ぶどうねずみ|064|068|052|006| \#705B67|
+|梅鼠|うめねず|030|045|029|000| \#C099A0|
+|狐色|きつねいろ|030|054|080|000| \#C38743|
+|灰汁色|あくいろ|045|041|055|000| \#9E9478|
+|白菫色|しろすみれいろ|010|007|001|000| \#EAEDF7|
+|濃色|こきいろ|066|074|061|020| \#634950|
+|鴇浅葱|ときあさぎ|034|053|042|000| \#B88884|
+|黄土色|おうどいろ|030|048|081|000| \#C39143|
+|利休茶|りきゅうちゃ|043|042|066|000| \#A59564|
+|白花色|しらはないろ|010|007|006|000| \#E8ECEF|
+|紫鳶|むらさきとび|066|078|062|024| \#5F414B|
+|梅染|うめぞめ|036|051|052|000| \#B48A76|
+|琥珀色|こはくいろ|031|061|084|000| \#BF783A|
+|鶯茶|うぐいすちゃ|060|062|100|019| \#715C1F|
+|藍白|あいじろ|010|001|005|000| \#EBF6F7|
+|濃鼠|こいねず|076|077|053|015| \#4F455C|
+|蘇芳香|すおうこう|042|067|056|000| \#A86965|
+|赤茶|あかちゃ|033|079|086|001| \#BB5535|
+|木蘭色|もくらんじき|028|030|062|000| \#C7B370|
+|白藍|しらあい|029|003|011|000| \#C1E4E9|
+|藤煤竹|ふじすすたけ|070|068|059|015| \#5A5359|
+|浅蘇芳|あさすおう|045|076|050|001| \#A25768|
+|代赭|たいしゃ|033|078|100|001| \#BB5520|
+|砂色|すないろ|017|017|034|000| \#DCD3B2|
+|水色|みずいろ|031|003|012|000| \#BCE2E8|
+|滅紫|けしむらさき|071|078|056|019| \#594255|
+|真朱|まそお|008|071|045|000| \#EC6D71|
+|煉瓦色|れんがいろ|036|080|088|001| \#B55233|
+|油色|あぶらいろ|045|042|068|000| \#A19361|
+|瓶覗|かめのぞき|041|005|017|000| \#A2D7DD|
+|紅消鼠|べにけしねずみ|071|071|065|026| \#524748|
+|赤紫|あかむらさき|009|071|008|000| \#EB6EA5|
+|雀茶|すずめちゃ|040|081|085|004| \#AA4F37|
+|利休色|りきゅういろ|051|047|063|000| \#8F8667|
+|秘色色|ひそくいろ|038|012|015|000| \#ABCED8|
+|似せ紫|にせむらさき|070|080|063|032| \#513743|
+|躑躅色|つつじいろ|010|081|012|000| \#E95295|
+|団十郎茶|だんじゅうろうちゃ|044|075|084|006| \#9F563A|
+|梅幸茶|ばいこうちゃ|055|052|092|004| \#887938|
+|空色|そらいろ|041|005|007|000| \#A0D8EF|
+|灰黄緑|はいきみどり|012|007|012|000| \#E6EAE3|
+|牡丹色|ぼたんいろ|011|076|009|000| \#E7609E|
+|柿渋色|かきしぶいろ|044|075|084|006| \#9F563A|
+|璃寛茶|りかんちゃ|063|060|100|019| \#6A5D21|
+|勿忘草色|わすれなぐさいろ|049|014|004|000| \#89C3EB|
+|蕎麦切色|そばきりいろ|020|011|017|000| \#D4DCD6|
+|今様色|いまよういろ|023|079|046|000| \#D0576B|
+|紅鳶|べにとび|045|082|077|008| \#9A493F|
+|黄海松茶|きみるちゃ|051|046|075|001| \#918754|
+|青藤色|あおふじいろ|053|033|005|000| \#84A2D4|
+|薄雲鼠|うすくもねず|020|011|014|000| \#D4DCDA|
+|中紅|なかべに|027|081|035|000| \#C85179|
+|灰茶|はいちゃ|046|068|084|007| \#98623C|
+|菜種油色|なたねゆいろ|044|041|098|000| \#A69425|
+|白群|びゃくぐん|051|006|023|000| \#83CCD2|
+|枯野色|かれのいろ|020|020|020|000| \#D3CBC6|
+|薔薇色|ばらいろ|009|081|044|000| \#E9546B|
+|茶色|ちゃいろ|047|077|076|009| \#965042|
+|青朽葉|あおくちば|040|035|078|000| \#ADA250|
+|浅縹|あさはなだ|052|018|019|000| \#84B9CB|
+|潤色|うるみいろ|025|023|023|000| \#C8C2BE|
+|韓紅|からくれない|009|081|049|000| \#E95464|
+|檜皮色|ひわだいろ|046|077|086|010| \#965036|
+|根岸色|ねぎしいろ|051|044|081|000| \#938B4B|
+|薄花色|うすはないろ|064|042|024|000| \#698AAB|
+|利休白茶|りきゅうしろちゃ|035|031|036|000| \#B3ADA0|
+|銀朱|ぎんしゅ|026|080|062|000| \#C85554|
+|鳶色|とびいろ|047|081|077|010| \#95483F|
+|鶸茶|ひわちゃ|053|045|067|000| \#8C8861|
+|納戸色|なんどいろ|082|036|039|000| \#008899|
+|茶鼠|ちゃねずみ|039|038|040|000| \#A99E93|
+|赤紅|あかべに|028|089|072|000| \#C53D43|
+|柿茶|かきちゃ|046|077|095|011| \#954E2A|
+|柳茶|やなぎちゃ|045|032|064|000| \#A1A46D|
+|浅葱色|あさぎいろ|076|020|035|000| \#00A3AF|
+|胡桃染|くるみぞめ|042|046|044|000| \#A58F86|
+|紅緋|べにひ|009|090|086|000| \#E83929|
+|弁柄色|べんがらいろ|047|092|100|017| \#8F2E14|
+|海松色|みるいろ|062|055|085|010| \#726D40|
+|花浅葱|はなあさぎ|079|041|031|000| \#2A83A2|
+|江戸鼠|えどねず|050|051|051|000| \#928178|
+|赤|あか|010|099|078|000| \#E60033|
+|赤錆色|あかさびいろ|048|089|100|019| \#8A3319|
+|鶯色|うぐいすいろ|052|043|094|000| \#928C36|
+|新橋色|しんばしいろ|064|012|026|000| \#59B9C6|
+|煤色|すすいろ|054|051|049|000| \#887F7A|
+|猩々緋|しょうじょうひ|012|099|096|000| \#E2041B|
+| 褐色|かっしょく|049|084|100|019| \#8A3B00|
+|緑黄色|りょくおうしょく|022|019|091|000| \#DCCB18|
+|天色|あまいろ|071|021|007|000| \#2CA9E1|
+|丁子茶|ちょうじちゃ|036|053|058|000| \#B4866B|
+|紅|くれない|018|100|074|000| \#D7003A|
+|栗梅|くりうめ|049|091|100|022| \#852E19|
+|鶸色|ひわいろ|024|016|084|000| \#D7CF3A|
+|露草色|つゆくさいろ|071|026|007|000| \#38A1DB|
+|柴染|ふしぞめ|037|049|058|000| \#B28C6E|
+|深緋|こきひ|026|100|099|000| \#C9171E|
+|紅檜皮|べにひはだ|054|077|072|019| \#7B4741|
+|抹茶色|まっちゃいろ|030|019|068|000| \#C5C56A|
+|青|あお|077|032|004|000| \#0095D9|
+|宗伝唐茶|そうでんからちゃ|044|064|063|001| \#A16D5D|
+|緋色|ひいろ|021|091|099|000| \#D3381C|
+|海老茶|えびちゃ|053|082|084|026| \#773C30|
+|若草色|わかくさいろ|033|005|091|000| \#C3D825|
+|薄藍|うすあい|078|032|014|000| \#0094C8|
+|砺茶|とのちゃ|045|062|069|002| \#9F6F55|
+|赤丹|あかに|023|081|074|000| \#CE5242|
+|唐茶|からちゃ|052|081|100|027| \#783C1D|
+|黄緑|きみどり|038|006|097|000| \#B8D200|
+|縹色|はなだいろ|076|034|016|000| \#2792C3|
+|煎茶色|せんちゃいろ|052|065|070|007| \#8C6450|
+|紅赤|べにあか|017|092|073|000| \#D9333F|
+|栗色|くりいろ|052|087|100|030| \#762F07|
+|若芽色|わかめいろ|018|003|041|000| \#E0EBAF|
+|紺碧|こんぺき|083|047|012|000| \#007BBB|
+|銀煤竹|ぎんすすだけ|055|062|065|006| \#856859|
+|臙脂|えんじ|035|088|070|001| \#B94047|
+|赤銅色|しゃくどういろ|051|094|100|032| \#752100|
+|若菜色|わかないろ|022|004|051|000| \#D8E698|
+|薄群青|うすぐんじょう|071|046|007|000| \#5383C3|
+|黄枯茶|きがらちゃ|058|065|074|015| \#765C47|
+|朱・緋|あけ|033|098|082|001| \#BA2636|
+|錆色|さびいろ|055|083|092|033| \#6C3524|
+|若苗色|わかなえいろ|030|005|071|000| \#C7DC68|
+|薄花桜|うすはなざくら|071|052|008|000| \#5A79BA|
+|煤竹色|すすたけいろ|061|070|067|018| \#6F514C|
+|茜色|あかねいろ|035|097|091|002| \#B7282E|
+|赤褐色|せっかっしょく|059|077|077|030| \#683F36|
+|青丹|あおに|048|026|082|000| \#99AB4E|
+|群青色|ぐんじょういろ|076|059|008|000| \#4C6CB3|
+|焦茶|こげちゃ|058|072|075|023| \#6F4B3E|
+|紅海老茶|べにえびちゃ|041|091|084|006| \#A73836|
+|茶褐色|ちゃかっしょく|059|075|081|031| \#664032|
+|草色|くさいろ|060|039|089|000| \#7B8D42|
+|杜若色|かきつばたいろ|081|064|008|000| \#3E62AD|
+|黒橡|くろつるばみ|070|069|067|026| \#544A47|
+|蘇芳|すおう|044|088|076|008| \#9E3D3F|
+|栗皮茶|くりかわちゃ|056|080|081|030| \#6D3C32|
+|苔色|こけいろ|067|043|100|002| \#69821B|
+|瑠璃色|るりいろ|091|074|009|000| \#1E50A2|
+|憲法色|けんぽういろ|065|072|079|037| \#543F32|
+|真紅|しんく|043|099|071|006| \#A22041|
+|黒茶|くろちゃ|061|076|092|041| \#583822|
+|萌黄|もえぎ|042|006|079|000| \#AACF53|
+|薄縹|うすはなだ|073|047|026|000| \#507EA4|
+|涅色|くりいろ|067|068|078|032| \#554738|
+|濃紅|こいくれない|043|099|071|006| \#A22041|
+|葡萄茶|えびちゃ|055|089|079|033| \#6C2C2F|
+|苗色|なえいろ|039|011|067|000| \#B0CA71|
+|瑠璃紺|るりこん|095|082|019|000| \#19448E|
+|檳榔子染|びんろうじぞめ|074|072|070|037| \#433D3C|
+|象牙色|ぞうげいろ|003|005|013|000| \#F8F4E6|
+|葡萄色|えびいろ|056|100|079|041| \#640125|
+|若葉色|わかばいろ|035|010|055|000| \#B9D08B|
+|紺瑠璃|こんるり|094|078|030|000| \#164A84|
+|黒鳶|くろとび|070|078|073|046| \#432F2F|
+|練色|ねりいろ|009|012|022|000| \#EDE4CD|
+|萱草色|かんぞういろ|004|037|065|000| \#F8B862|
+|松葉色|まつばいろ|056|032|075|000| \#839B5C|
+|藍色|あいいろ|090|064|038|001| \#165E83|
+|赤墨|あかすみ|071|075|078|048| \#3F312B|
+|灰白色|かいはくしょく|011|011|019|000| \#E9E4D4|
+|柑子色|こうじいろ|005|042|075|000| \#F6AD49|
+|夏虫色|なつむしいろ|025|003|041|000| \#CEE4AE|
+|青藍|せいらん|091|077|038|003| \#274A78|
+|黒紅|くろべに|081|082|067|048| \#302833|
+|蒸栗色|むしぐりいろ|012|012|041|000| \#EBE1A9|
+|金茶|きんちゃ|005|051|094|000| \#F39800|
+|鶸萌黄|ひわもえぎ|057|019|088|000| \#82AE46|
+|深縹|こきはなだ|092|084|038|003| \#2A4073|
+|白|しろ|000|000|000|000| \#FFFFFF|
+|女郎花|おみなえし|009|004|040|000| \#F2F2B0|
+|蜜柑色|みかんいろ|006|061|095|000| \#F08300|
+|柳色|やなぎいろ|042|011|061|000| \#A8C97F|
+|紺色|こんいろ|095|088|038|004| \#223A70|
+|胡粉色|ごふんいろ|000|001|002|000| \#FFFFFC|
+|枯草色|かれくさいろ|016|013|054|000| \#E4DC8A|
+|鉛丹色|えんたんいろ|007|071|065|000| \#EC6D51|
+|青白橡|あおしろつるばみ|046|029|048|000| \#9BA88D|
+|紺青|こんじょう|099|094|046|012| \#192F60|
+|卯の花色|うのはないろ|003|001|001|000| \#F7FCFE|
+|淡黄|たんこう|007|012|054|000| \#F8E58C|
+|黄丹|おうに|006|066|071|000| \#EE7948|
+|柳鼠|やなぎねず|026|012|031|000| \#C8D5BB|
+|留紺|とめこん|097|092|047|016| \#1C305C|
+|白磁|はくじ|003|002|004|000| \#F8FBF8|
+|白茶|しらちゃ|017|031|041|000| \#DDBB99|
+|柿色|かきいろ|007|071|076|000| \#ED6D3D|
+|裏葉柳|うらはやなぎ|030|008|040|000| \#C1D8AC|
+|濃藍|こいあい|100|099|053|024| \#0F2350|
+|生成り色|きなりいろ|002|003|005|000| \#FBFAF5|
+|赤白橡|あかしろつるばみ|019|040|044|000| \#D7A98C|
+|黄赤|きあか|008|072|099|000| \#EC6800|
+|山葵色|わさびいろ|041|018|049|000| \#A8BF93|
+|鉄紺|てつこん|099|100|058|027| \#17184B|
+|乳白色|にゅうはくしょく|005|005|005|000| \#F3F3F3|
+|洗柿|あらいがき|006|028|033|000| \#F2C9AC|
+|人参色|にんじんいろ|008|072|099|000| \#EC6800|
+|老竹色|おいたけいろ|061|036|070|000| \#769164|
+|漆黒|しっこく|090|094|076|071| \#0D0015|
+|白練|しろねり|005|005|005|000| \#F3F3F2|
+|鳥の子色|とりのこいろ|001|008|024|000| \#FFF1CF|
+|橙色|だいだいいろ|007|066|097|000| \#EE7800|
+|白緑|びゃくろく|021|003|028|000| \#D6E9CA|
+|淡藤色|あわふじいろ|031|019|002|000| \#BBC8E6|
+|素色|そしょく|009|011|010|000| \#EAE5E3|
+|蜂蜜色|はちみついろ|002|018|040|000| \#FDDEA5|
+|照柿|てりがき|008|075|078|000| \#EB6238|
+|淡萌黄|うすもえぎ|049|005|067|000| \#93CA76|
+|藤色|ふじいろ|031|026|003|000| \#BBBCDE|
+|白梅鼠|しらうめねず|011|011|009|000| \#E5E4E6|
+|肌色|はだいろ|001|016|025|000| \#FCE2C4|
+|赤橙|あかだいだい|008|080|099|000| \#EA5506|
+|柳染|やなぎぞめ|049|017|058|000| \#93B881|
+|紅掛空色|べにかけそらいろ|055|042|008|000| \#8491C3|
+|白鼠|しろねず|016|012|012|000| \#DCDDDD|
+|薄卵色|うすたまごいろ|001|013|020|000| \#FDE8D0|
+|金赤|きんあか|008|080|099|000| \#EA5506|
+|薄萌葱|うすもえぎ|033|004|041|000| \#BADCAD|
+|紅碧|べにみどり|055|042|008|000| \#8491C3|
+|絹鼠|きぬねず|016|013|016|000| \#DDDCD6|
+|雄黄|ゆうおう|003|029|041|000| \#F9C89B|
+|朱色|しゅいろ|008|075|099|000| \#EB6101|
+|深川鼠|ふかがわねずみ|047|029|045|000| \#97A791|
+|紺桔梗|こんききょう|079|069|000|000| \#4D5AAF|
+|灰青|はいあお|029|020|019|000| \#C0C6C9|
+|洒落柿|しゃれがき|003|035|045|000| \#F7BD8F|
+|小麦色|こむぎいろ|013|047|064|000| \#E49E61|
+|若緑|わかみどり|046|000|057|000| \#98D98E|
+|花色|はないろ|079|069|000|000| \#4D5AAF|
+|銀鼠|ぎんねず|036|029|027|000| \#AFAFB0|
+|赤香|あかこう|003|037|041|000| \#F6B894|
+|丹色|にいろ|012|077|082|000| \#E45E32|
+|浅緑|あさみどり|052|002|063|000| \#88CB7F|
+|紺藍|こんあい|082|080|020|000| \#4A488E|
+|薄鈍|うすにび|037|030|028|000| \#ADADAD|
+|砥粉色|とのこいろ|007|016|041|000| \#F4DDA5|
+|黄茶|きちゃ|014|063|083|000| \#E17B34|
+|薄緑|うすみどり|062|015|065|000| \#69B076|
+|紅桔梗|べにききょう|082|082|009|000| \#4D4398|
+|薄墨色|うすずみいろ|041|034|033|000| \#A3A3A2|
+|肉色|にくいろ|006|033|041|000| \#F1BF99|
+|肉桂色|にっけいいろ|016|064|065|000| \#DD7A56|
+|青鈍|あおにび|065|049|058|001| \#6B7B6E|
+|桔梗色|ききょういろ|076|073|008|000| \#5654A2|
+|錫色|すずいろ|044|034|032|000| \#9EA1A3|
+|人色|ひといろ|006|033|041|000| \#F1BF99|
+|赤朽葉色|あかくちばいろ|017|059|074|000| \#DB8449|
+|青磁鼠|せいじねず|030|012|027|000| \#BED2C3|
+|藤納戸|ふじなんど|065|061|012|000| \#706CAA|
+|素鼠|すねずみ|043|035|033|000| \#9FA0A0|
+|丁子色|ちょうじいろ|009|025|043|000| \#EFCD9A|
+|黄櫨染|こうろぜん|019|071|083|000| \#D66A35|
+|薄青|うすあお|048|019|044|000| \#93B69C|
+|紅掛花色|べにかけはないろ|068|062|022|000| \#68699B|
+|鼠色|ねずみいろ|048|040|037|000| \#949495|
+|香色|こういろ|009|025|043|000| \#EFCD9A|
+|蒲公英色|たんぽぽいろ|005|018|088|000| \#FFD900|
+|錆青磁|さびせいじ|041|013|035|000| \#A6C8B2|
+|紫苑色|しおんいろ|056|055|017|000| \#867BA9|
+|源氏鼠|げんじねず|054|050|043|000| \#888084|
+|薄香|うすこう|008|024|041|000| \#F0CFA0|
+|黄色|きいろ|005|018|088|000| \#FFD900|
+|緑青色|ろくしょういろ|075|037|075|000| \#47885E|
+|白藤色|しらふじいろ|016|021|002|000| \#DBD0E6|
+|灰色|はいいろ|058|050|047|000| \#7D7D7D|
+|浅黄|うすき|010|021|041|000| \#EDD3A1|
+|中黄|ちゅうき|007|008|087|000| \#FFEA00|
+|千歳緑|ちとせみどり|082|051|085|014| \#316745|
+|藤紫|ふじむらさき|042|042|004|000| \#A59ACA|
+|鉛色|なまりいろ|059|050|047|000| \#7B7C7D|
+|枯色|かれいろ|016|027|049|000| \#E0C38C|
+|菜の花色|なのはないろ|006|007|077|000| \#FFEC47|
+|若竹色|わかたけいろ|061|006|057|000| \#68BE8D|
+|菫色|すみれいろ|067|072|007|000| \#7058A3|
+|鈍色|にびいろ|063|056|052|002| \#727171|
+|淡香|うすこう|006|033|049|000| \#F3BF88|
+|黄檗色|きはだいろ|006|004|069|000| \#FEF263|
+|緑|みどり|071|007|071|000| \#3EB370|
+|青紫|あおむらさき|072|082|009|000| \#674598|
+|墨|すみ|070|064|062|015| \#595857|
+|杏色|あんずいろ|004|036|056|000| \#F7B977|
+|卵色|たまごいろ|004|022|060|000| \#FCD575|
+|常磐色|ときわいろ|086|041|094|003| \#007B43|
+|菖蒲色|しょうぶいろ|072|084|009|000| \#674196|
+|丼鼠|どぶねずみ|070|066|062|017| \#595455|
+|東雲色|しののめいろ|005|056|051|000| \#F19072|
+|花葉色|はなばいろ|005|023|064|000| \#FBD26B|
+|千草鼠|ちぐさねず|030|011|023|000| \#BED3CA|
+|竜胆色|りんどういろ|052|057|012|000| \#9079AD|
+|消炭色|けしずみいろ|072|067|065|022| \#524E4D|
+|曙色|あけぼのいろ|005|056|051|000| \#F19072|
+|刈安色|かりやすいろ|010|010|066|000| \#F5E56B|
+|千草色|ちぐさいろ|048|021|036|000| \#92B5A9|
+|江戸紫|えどむらさき|066|075|013|000| \#745399|
+|藍墨茶|あいすみちゃ|076|068|063|024| \#474A4D|
+|珊瑚朱色|さんごしゅいろ|007|062|051|000| \#EE836F|
+|玉蜀黍色|とうもろこしいろ|011|029|068|000| \#EEC362|
+|青磁色|せいじいろ|055|011|043|000| \#7EBEA5|
+|本紫|ほんむらさき|074|092|010|000| \#65318E|
+|羊羹色|ようかんいろ|078|071|069|038| \#383C3C|
+|深支子|こきくちなし|009|050|056|000| \#EB9B6F|
+|金糸雀色|かなりあいろ|015|015|080|000| \#EBD842|
+|青竹色|あおたけいろ|055|011|040|000| \#7EBEAB|
+| 葡萄色|ぶどういろ|079|094|045|010| \#522F60|
+|蝋色|ろういろ|080|076|074|052| \#2B2B2B|
+|纁|そひ|014|061|061|000| \#E0815E|
+|黄支子色|きくちなしいろ|004|018|074|000| \#FFDB4F|
+|常磐緑|ときわみどり|083|035|076|000| \#028760|
+|深紫|ふかむらさき|080|086|050|017| \#493759|
+|黒|くろ|080|076|074|052| \#2B2B2B|
+|浅緋|うすきひ|015|068|056|000| \#DF7163|
+|支子色|くちなしいろ|005|027|075|000| \#FBCA4D|
+|木賊色|とくさいろ|079|045|071|003| \#3B7960|
+|紫黒|しこく|080|080|070|050| \#2E2930|
+|烏羽色|からすばいろ|085|093|077|071| \#180614|
+|真赭|まそほ|020|063|053|000| \#D57C6B|
+|向日葵色|ひまわりいろ|005|027|090|000| \#FCC800|
+|天鵞絨|びろうど|083|056|072|017| \#2F5D50|
+|紫|むらさき|058|082|009|000| \#884898|
+|鉄黒|てつぐろ|075|082|087|066| \#281A14|
+|洗朱|あらいしゅ|022|059|054|000| \#D0826C|
+|山吹色|やまぶきいろ|005|037|092|000| \#F8B500|
+|虫襖|むしあお|080|058|068|018| \#3A5B52|
+|薄葡萄|うすぶどう|030|041|007|000| \#C0A2C7|
+|濡羽色|ぬればいろ|091|083|092|076| \#000B00|
+|遠州茶|えんしゅうちゃ|025|058|057|000| \#CA8269|
+|鬱金色|うこんいろ|005|032|089|000| \#FABF14|
+|革色|かわいろ|076|060|068|019| \#475950|
+|紫紺|しこん|080|100|057|031| \#460E44|
+|黒檀|こくたん|075|086|096|071| \#250D00|
+|紅樺色|べにかばいろ|033|079|072|000| \#BB5548|
+|藤黄|とうおう|007|030|089|000| \#F7C114|
+|深緑|ふかみどり|091|055|100|027| \#00552E|
+|暗紅色|あんこうしょく|064|092|049|009| \#74325C|
+|憲法黒茶|けんぽうくろちゃ|077|079|097|067| \#241A08|
+|赭|そほ|040|068|068|001| \#AB6953|
+|金色|こんじき|015|034|089|000| \#E6B422|
+|鉄色|てついろ|091|058|079|027| \#005243|
+|桑の実色|くわのみいろ|077|097|046|013| \#55295B|
+|暗黒色|あんこくしょく|084|080|090|071| \#16160E|
 
-
-
-## irocore
+## IroCore
 
 Colors from [irocore.com](https://irocore.com) :
 
 |Name|Roma|C|M|Y|K|RGB|
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-|<font color="#105779">藍色</font>|Ai-iro|070|020|000|060| \#105779|
-|<font color="#756D91">藍色鳩羽</font>|Aiirohatoba|040|040|000|040| \#756D91|
-|<font color="#555647">藍媚茶</font>|Aikobicha|055|040|052|028| \#555647|
-|<font color="#373C38">藍墨茶</font>|Aisumicha|086|072|068|047| \#373C38|
-|<font color="#373C38">相済茶</font>|Aisumicha|086|072|068|047| \#373C38|
-|<font color="#003A47">藍鉄色</font>|Aitetsu-iro|090|000|023|080| \#003A47|
-|<font color="#6B818E">藍鼠</font>|Ainezu|070|050|040|000| \#6B818E|
-|<font color="#56564B">藍海松茶</font>|Aimirucha|000|000|013|066| \#56564B|
-|<font color="#0095D9">青</font>|Ao|010|031|000|015| \#0095D9|
-|<font color="#AA89BD"">葵色</font>|Aoi-iro|038|050|000|000| \#AA89BD"|
-|<font color="#ADA250">青朽葉</font>|Aokuchiba|000|006|054|032| \#ADA250|
-|<font color="#85916D">青白橡</font>|Aoshirotsurubami|035|017|040|020| \#85916D|
-|<font color="#7EBEAB">青竹色</font>|Aotake-iro|034|000|010|025| \#7EBEAB|
-|<font color="#858954">青丹</font>|Aoni|056|043|076|000| \#858954|
-|<font color="#324356">青鈍</font>|Aonibi|090|080|060|015| \#324356|
-|<font color="#8AA2D3"">青藤</font>|Aofuji|050|031|000|000| \#8AA2D3"|
-|<font color="#00A497">青緑</font>|Aomidori|010|000|008|036| \#00A497|
-|<font color="#6846A5">青紫</font>|Aomurasaki|072|080|000|000| \#6846A5|
-|<font color="#F20000">赤</font>|Aka|000|095|083|005| \#F20000|
-|<font color="#F2934E">赤支子</font>|Akaikuchinashi|010|032|090|000| \#F2934E|
-|<font color="#db8449">赤朽葉</font>|Akakuchiba|000|040|067|014| \#DB8449|
-|<font color="#F6B894"">赤香色</font>|Akakō-iro|000|025|040|004| \#F6B894"|
-|<font color="#FED2AE"">赤白橡</font>|Akashirotsurubami|000|025|035|000| \#FED2AE"|
-|<font color="#EA5506">赤橙</font>|AkaDaidai|000|064|097|008| \#EA5506|
-|<font color="#B7282E">茜色</font>|Akane-iro|000|078|075|028| \#B7282E|
-|<font color="#D81F35">赤紅</font>|Akabeni|000|095|071|010| \#D81F35|
-|<font color="#EB6EA5">赤紫</font>|Akamurasaki|010|070|008|000| \#EB6EA5|
-|<font color="#BCB09C"">灰汁色</font>|Aku-iro|035|032|042|000| \#BCB09C"|
-|<font color="#BA2636">緋</font>|Ake|034|097|082|003| \#BA2636|
-|<font color="#F9A383"">曙色</font>|Akebono-iro|000|050|050|000| \#F9A383"|
-|<font color="#DF7163">浅緋</font>|Asaake|000|049|056|013| \#DF7163|
-|<font color="#00A5BF">浅葱色</font>|Asagi-iro|076|020|026|000| \#00A5BF|
-|<font color="#94A8B0"">浅葱鼠</font>|Asaginezu|030|000|011|030| \#94A8B0"|
-|<font color="#84B9CB"">浅縹</font>|Asahanada|035|009|000|020| \#84B9CB"|
-|<font color="#9BCF97"">浅緑</font>|Asamidori|044|000|050|000| \#9BCF97"|
-|<font color="#C4A3BF"">浅紫</font>|Asamurasaki|000|017|003|023| \#C4A3BF"|
-|<font color="#A04940">小豆色</font>|Azuki-iro|050|085|080|000| \#A04940|
-|<font color="#715454">小豆鼠</font>|Azukinezu|062|069|069|014| \#715454|
-|<font color="#0086CC">天色</font>|Ama-iro|085|032|000|000| \#0086CC|
-|<font color="#C7B897"">亜麻色</font>|Ama-iro|000|011|030|030| \#C7B897"|
-|<font color="#CD6118">飴色</font>|Ame-iro|000|068|090|020| \#CD6118|
-|<font color="#B168A8">菖蒲色</font>|Ayame-iro|030|055|005|000| \#B168A8|
-|<font color="#F0B694"">洗柿</font>|Araigaki|000|025|030|005| \#F0B694"|
-|<font color="#D0826C">洗朱</font>|Araishu|000|038|048|018| \#D0826C|
-|<font color="#FFB3A7"">退紅</font>|Arazome|000|030|020|010| \#FFB3A7"|
-|<font color="#D2D0E8"">淡藤色</font>|Awafuji-iro|020|018|000|000| \#D2D0E8"|
-|<font color="#F4A466">杏色</font>|Anzu-iro|000|045|060|000| \#F4A466|
-|<font color="#A8A256">威光茶</font>|Ikoucha|034|036|066|000| \#A8A256|
-|<font color="#bb5561">苺色</font>|Ichigo-iro|034|078|052|000| \#BB5561|
-|<font color="#FCD4D5"">一斤染</font>|Ikkonzome|001|020|009|000| \#FCD4D5"|
-|<font color="#563779">今紫</font>|Imamurasaki|029|055|000|053| \#563779|
-|<font color="#D0576B">今様色</font>|Imayou-iro|023|078|045|000| \#D0576B|
-|<font color="#6F6F43">岩井茶</font>|Iwaicha|071|060|085|000| \#6F6F43|
-|<font color="#FFD768"">不言色</font>|Iwanu-iro|000|018|060|000| \#FFD768"|
-|<font color="#838B0D">鶯色</font>|Uguisu-iro|023|000|090|050| \#838B0D|
-|<font color="#715C1F">鶯茶</font>|Uguisucha|000|019|073|056| \#715C1F|
-|<font color="#F7C229">鬱金色</font>|Ukon-iro|000|019|095|000| \#F7C229|
-|<font color="#A0CEA8"">薄青</font>|Usuao|040|000|040|005| \#A0CEA8"|
-|<font color="#A2D7DD"">薄浅葱</font>|Usuasagi|040|000|015|000| \#A2D7DD"|
-|<font color="#CEB4B9"">薄色</font>|Usu-iro|025|035|020|000| \#CEB4B9"|
-|<font color="#D4ACAD"">薄柿</font>|Usugaki|000|019|018|017| \#D4ACAD"|
-|<font color="#EDD3A1"">浅黄</font>|Usuki|000|011|032|007| \#EDD3A1"|
-|<font color="#F9F1C0"">淡黄蘗</font>|Usukihada|000|002|030|005| \#F9F1C0"|
-|<font color="#B15C65">薄紅</font>|Usukurenai|000|064|032|024| \#B15C65|
-|<font color="#F3BF88"">淡香</font>|Usuko|000|021|044|005| \#F3BF88"|
-|<font color="#FCF5F7"">薄桜</font>|Usuzakura|000|005|001|002| \#FCF5F7"|
-|<font color="#A3A3A2"">薄墨色</font>|Usuzumi-iro|000|000|001|036| \#A3A3A2"|
-|<font color="#82A9DA"">薄花色</font>|Usuhana-iro|052|025|000|000| \#82A9DA"|
-|<font color="#C7C3E1"">薄藤色</font>|Usufuji-iro|025|023|000|000| \#C7C3E1"|
-|<font color="#E9C3DC"">淡紅藤</font>|Usubenifuji|008|030|000|000| \#E9C3DC"|
-|<font color="#BCE1DF"">薄水色</font>|Usumizu-iro|030|000|015|000| \#BCE1DF"|
-|<font color="#CAE5CD"">薄緑</font>|Usumidori|025|000|025|000| \#CAE5CD"|
-|<font color="#E0E7AA"">薄柳</font>|Usuyanagi|013|000|040|005| \#E0E7AA"|
-|<font color="#9D896C">空五倍子色</font>|Utsubushi-iro|000|013|031|038| \#9D896C|
-|<font color="#FBFBF6"">卯の花色</font>|Unohana-iro|001|000|004|002| \#FBFBF6"|
-|<font color="#E9546B">梅重</font>|Umegasane|000|080|040|000| \#E9546B|
-|<font color="#B48A76">梅染</font>|Umezome|000|023|034|029| \#B48A76|
-|<font color="#AD7984">梅鼠</font>|Umenezumi|008|035|015|025| \#AD7984|
-|<font color="#493759">梅紫</font>|Umemurasaki|045|080|037|000| \#493759|
-|<font color="#C1D8AC"">裏葉柳</font>|Urahayanagi|011|000|020|015| \#C1D8AC"|
-|<font color="#A4C2A9"">裏葉色</font>|Uraha-iro|030|000|030|020| \#A4C2A9"|
-|<font color="#C1D8AC"">裏柳</font>|Urayanagi|011|000|020|015| \#C1D8AC"|
-|<font color="#CD8C5C">江戸茶</font>|Edocha|000|032|055|020| \#CD8C5C|
-|<font color="#745399">江戸紫</font>|Edomurasaki|024|046|000|040| \#745399|
-|<font color="#6E1E51">葡萄色</font>|Ebi-iro|020|080|000|060| \#6E1E51|
-|<font color="#932e40">海老色</font>|Ebi-iro|000|080|040|050| \#932E40|
-|<font color="#7A4171">葡萄染</font>|Ebizome|000|047|007|052| \#7A4171|
-|<font color="#640125">葡萄茶</font>|Ebicha|000|099|063|064| \#640125|
-|<font color="#6c2c2f">海老茶</font>|Ebicha|000|059|056|058| \#6C2C2F|
-|<font color="#CA8269">遠州茶</font>|Enshucha|000|036|048|021| \#CA8269|
-|<font color="#9B003F">臙脂色</font>|Enji-iro|000|095|036|045| \#9B003F|
-|<font color="#85646C">臙脂鼠</font>|Enji-nezu|000|035|009|060| \#85646C|
-|<font color="#EC6D51">鉛丹色</font>|Entan-iro|000|054|066|007| \#EC6D51|
-|<font color="#769164">老竹色</font>|Oitake-iro|019|000|031|043| \#769164|
-|<font color="#405C36">老緑</font>|Oimidori|045|000|060|070| \#405C36|
-|<font color="#a596c7"">楝色</font>|Ouchi-iro|043|043|005|000| \#A596C7"|
-|<font color="#CE9B0E">黄土色</font>|Odo-iro|000|032|090|025| \#CE9B0E|
-|<font color="#EE7948">黄丹</font>|Oni|000|049|070|007| \#EE7948|
-|<font color="#9FBB00">鸚緑</font>|Ouryoku|038|000|010|015| \#9FBB00|
-|<font color="#F9D0C5"">乙女色</font>|Otome-iro|000|045|034|000| \#F9D0C5"|
-|<font color="#007083">御納戸色</font>|Onando-iro|080|000|020|050| \#007083|
-|<font color="#465D4C">御納戸茶</font>|Onandocha|081|060|068|022| \#465D4C|
-|<font color="#F2F2B0"">女郎花</font>|Ominaeshi|000|000|027|005| \#F2F2B0"|
-|<font color="#4C6473">御召御納戸</font>|Omeshionando|034|013|000|055| \#4C6473|
-|<font color="#43676B">御召茶</font>|Omeshicha|037|004|000|058| \#43676B|
-|<font color="#125115">織部</font>|Oribe|068|000|090|070| \#125115|
-|<font color="#DE6A1C">柿色</font>|Kaki-iro|000|068|090|010| \#DE6A1C|
-|<font color="#BD7862">柿渋色</font>|Kakishibu-iro|035|065|065|000| \#BD7862|
-|<font color="#5E3862">杜若</font>|Kakitsubata|074|088|045|009| \#5E3862|
-|<font color="#003847">褐色</font>|Kachiiro|010|080|065|035| \#003847|
-|<font color="#181B39">勝色</font>|Katsu-iro|060|045|000|085| \#181B39|
-|<font color="#C5591A">樺色</font>|Kaba-iro|030|080|095|000| \#C5591A|
-|<font color="#726250">樺茶</font>|Kabacha|000|014|030|055| \#726250|
-|<font color="#C5E4Ed"">甕覗</font>|Kamenozoki|025|000|006|003| \#C5E4ED"|
-|<font color="#00695B">鴨の羽色</font>|Kamonoha-iro|089|050|070|009| \#00695B|
-|<font color="#C7B183"">茅色</font>|Kaya-iro|000|015|040|030| \#C7B183"|
-|<font color="#EA0032">唐紅</font>|Karakurenai|003|010|080|000| \#EA0032|
-|<font color="#EA0032">韓紅</font>|Karakurenai|003|010|080|000| \#EA0032|
-|<font color="#EB9793"">乾鮭色</font>|Karasake-iro|000|050|030|005| \#EB9793"|
-|<font color="#D0AF4C">芥子色</font>|Karashi-iro|000|016|063|018| \#D0AF4C|
-|<font color="#A06705">唐茶</font>|Karacha|050|070|010|000| \#A06705|
-|<font color="#FFED00"">刈安</font>|Kariyasu|000|015|095|000| \#FFED00"|
-|<font color="#C37854">土器色</font>|Kawarake-iro|000|038|057|024| \#C37854|
-|<font color="#FDA900">萱草色</font>|Kanzo-iro|000|045|096|000| \#FDA900|
-|<font color="#8CB155">黄浅緑</font>|Kiasamidori|053|019|079|000| \#8CB155|
-|<font color="#FFD900"">黄色</font>|Ki-iro|000|015|010|000| \#FFD900"|
-|<font color="#B98C46">黄唐茶</font>|Kigaracha|000|024|062|027| \#B98C46|
-|<font color="#765C47">黄枯茶</font>|Kigaracha|000|022|040|054| \#765C47|
-|<font color="#624498">桔梗色</font>|Kikyo-iro|072|080|000|000| \#624498|
-|<font color="#6E7955">麹塵</font>|Kikujin|009|000|030|053| \#6E7955|
-|<font color="#FFDB4F"">黄支子</font>|Kikuchinashi|000|014|069|000| \#FFDB4F"|
-|<font color="#d3a243">黄朽葉</font>|Kikuchiba|000|023|068|017| \#D3A243|
-|<font color="#856859">紀州茶</font>|Kishucha|000|022|033|048| \#856859|
-|<font color="#D9972F">狐色</font>|Kitsune-iro|020|050|090|000| \#D9972F|
-|<font color="#A27033">黄橡</font>|Kitsurubami|020|040|070|020| \#A27033|
-|<font color="#F7EFE3"">生成色</font>|Kinari-iro|000|005|010|005| \#F7EFE3"|
-|<font color="#FEF263"">黄蘗</font>|Kihada|003|000|070|000| \#FEF263"|
-|<font color="#918754">黄海松茶</font>|Kimirucha|000|007|042|043| \#918754|
-|<font color="#D8A373">伽羅色</font>|Kyara-iro|000|025|047|015| \#D8A373|
-|<font color="#C08FB3"">京藤</font>|Kyoufuji|017|045|000|015| \#C08FB3"|
-|<font color="#772F6D">京紫</font>|Kyomurasaki|040|080|000|040| \#772F6D|
-|<font color="#CE7A19">金茶</font>|Kincha|025|065|095|000| \#CE7A19|
-|<font color="#C0C0C0"">銀色</font>|Gin-iro|025|025|025|000| \#C0C0C0"|
-|<font color="#F12B00">銀朱</font>|Ginshu|002|082|085|005| \#F12B00|
-|<font color="#82663A">銀煤竹</font>|Ginsusutake|054|058|076|010| \#82663A|
-|<font color="#BBBCBF"">銀鼠</font>|Ginnezumi|003|002|000|035| \#BBBCBF"|
-|<font color="#7B8D42">草色</font>|Kusa-iro|061|039|089|000| \#7B8D42|
-|<font color="#0086A2">孔雀青</font>|Kujakuao|010|000|025|025| \#0086A2|
-|<font color="#008E74">孔雀緑</font>|Kujakumidori|010|000|063|015| \#008E74|
-|<font color="#FFD768"">梔子色</font>|Kuchinashi-iro|000|018|060|000| \#FFD768"|
-|<font color="#FFD768"">支子色</font>|Kuchinashi-iro|000|018|060|000| \#FFD768"|
-|<font color="#917347">朽葉色</font>|Kuchiba-iro|000|021|051|043| \#917347|
-|<font color="#433634">涅色</font>|Kuri-iro|080|085|081|019| \#433634|
-|<font color="#762F07">栗色</font>|Kuri-iro|000|060|094|054| \#762F07|
-|<font color="#6C1912">栗梅</font>|Kiriume|005|078|075|055| \#6C1912|
-|<font color="#6A4028">栗皮色</font>|Kurikawa-iro|058|074|072|030| \#6A4028|
-|<font color="#824522">栗皮茶</font>|Kurikawacha|065|085|095|000| \#824522|
-|<font color="#A86F4C">胡桃色</font>|Kurumi-iro|000|034|055|034| \#A86F4C|
-|<font color="#A58F86"">胡桃染</font>|Kurumizome|000|013|019|035| \#A58F86"|
-|<font color="#AD002D">紅の八塩</font>|kurenainoyashio|000|010|063|035| \#AD002D|
-|<font color="#86473F">黒緋</font>|Kuroake|054|075|065|014| \#86473F|
-|<font color="#102E24">鉄色</font>|Kurogane-iro|090|050|075|040| \#102E24|
-|<font color="#322C28">黒橡</font>|Kurotsurubami|020|025|025|075| \#322C28|
-|<font color="#432F2F">黒鳶</font>|Kurotobi|000|030|030|074| \#432F2F|
-|<font color="#302833">黒紅</font>|Kurobeni|006|022|000|080| \#302833|
-|<font color="#302833">黒紅梅</font>|Kurobeniume|006|022|000|080| \#302833|
-|<font color="#DABC91"">桑色</font>|Kuwa-iro|020|030|050|000| \#DABC91"|
-|<font color="#DABC91"">桑染</font>|Kuwazome|020|030|050|000| \#DABC91"|
-|<font color="#550030">桑の実色</font>|Kuwanomi-iro|045|090|000|000| \#550030|
-|<font color="#005baa">群青色</font>|Gunjou-iro|010|058|000|000| \#005BAA|
-|<font color="#595045">消炭色</font>|Keshizumi-iro|000|010|020|080| \#595045|
-|<font color="#574738">憲法染</font>|Kenpozome|068|068|077|031| \#574738|
-|<font color="#F6F7F8"">月白</font>|Geppaku|002|001|000|004| \#F6F7F8"|
-|<font color="#3E1E00">玄</font>|Gen|068|068|077|031| \#3E1E00|
-|<font color="#002E4E">濃藍</font>|Koiai|060|045|000|085| \#002E4E|
-|<font color="#EFCD9A"">香色</font>|Kou-iro|000|014|036|006| \#EFCD9A"|
-|<font color="#9A725C">光悦茶</font>|Kouetsucha|000|036|040|050| \#9A725C|
-|<font color="#FF5234">柑子色</font>|Kouji-iro|007|068|080|000| \#FF5234|
-|<font color="#AD7D4C">香染</font>|Kouzome|000|028|056|032| \#AD7D4C|
-|<font color="#E86B79">紅梅色</font>|Kobai-iro|000|070|035|003| \#E86B79|
-|<font color="#104539">高麗納戸</font>|Kourainando|095|078|085|010| \#104539|
-|<font color="#D74B22">黄櫨染</font>|Korozen|000|066|077|015| \#D74B22|
-|<font color="#C20024">深緋</font>|Kokiake|030|010|095|000| \#C20024|
-|<font color="#EFBB2C">深支子</font>|Kokikuchinashi|010|032|090|000| \#EFBB2C|
-|<font color="#2A4073">深縹</font>|Kokihanada|063|044|000|055| \#2A4073|
-|<font color="#493759">深紫</font>|Kokimurasaki|018|038|000|065| \#493759|
-|<font color="#78882d">苔色</font>|Koke-iro|030|000|080|050| \#78882D|
-|<font color="#6A4D32">焦茶</font>|Kogecha|075|080|090|000| \#6A4D32|
-|<font color="#8C6589">古代紫</font>|Kodaimurasaki|025|050|000|040| \#8C6589|
-|<font color="#EA930A">琥珀色</font>|Kohaku-iro|010|055|095|000| \#EA930A|
-|<font color="#716246">媚茶</font>|Kobicha|000|013|038|056| \#716246|
-|<font color="#6F6045">昆布茶</font>|Kobucha|056|062|073|000| \#6F6045|
-|<font color="#E5E2E4"">小町鼠</font>|Komachinezu|000|003|000|015| \#E5E2E4"|
-|<font color="#E4A343">小麦色</font>|Komugi-iro|000|038|075|012| \#E4A343|
-|<font color="#4B0D43">小紫</font>|Komurasaki|040|080|000|070| \#4B0D43|
-|<font color="#001A43">紺</font>|Kon|010|050|000|080| \#001A43|
-|<font color="#211E55">紺桔梗</font>|Konkikyou|010|090|042|012| \#211E55|
-|<font color="#005499">紺青色</font>|Konjou-iro|010|072|005|000| \#005499|
-|<font color="#3F4551">紺鼠</font>|Konnezu|030|015|000|080| \#3F4551|
-|<font color="#5AC2D9">金春色</font>|Konparu-iro|065|000|015|000| \#5AC2D9|
-|<font color="#6592C6">紺藤</font>|Konfuji|060|030|000|010| \#6592C6|
-|<font color="#005B98">紺碧</font>|Konpeki|090|045|000|030| \#005B98|
-|<font color="#FFFFFC"">胡粉色</font>|Gofun-iro|000|000|001|000| \#FFFFFC"|
-|<font color="#327131">左伊多津万色</font>|Saitaduma-iro|068|000|090|040| \#327131|
-|<font color="#B08D84"">嵯峨鼠</font>|Saganezu|000|030|023|040| \#B08D84"|
-|<font color="#FEEEED"">桜色</font>|Sakura-iro|000|005|002|000| \#FEEEED"|
-|<font color="#D8C6BC"">桜鼠</font>|Sakuranezumi|020|025|020|000| \#D8C6BC"|
-|<font color="#5C9291">錆浅葱</font>|Sabiasagi|037|000|001|043| \#5C9291|
-|<font color="#406F79">錆御納戸</font>|Sabionando|050|000|013|060| \#406F79|
-|<font color="#485859">錆鉄御納戸</font>|Sabitetsuonando|019|001|000|065| \#485859|
-|<font color="#406F79">錆納戸</font>|Sabinando|050|000|013|060| \#406F79|
-|<font color="#877254">錆利休</font>|Sabirikyu|000|020|040|060| \#877254|
-|<font color="#EF8468">珊瑚色</font>|Sango-iro|000|060|053|000| \#EF8468|
-|<font color="#EF454A">珊瑚珠色</font>|Shu-iro|005|085|064|000| \#EF454A|
-|<font color="#C92E36">柘榴色</font>|Zakuro-iro|000|090|068|020| \#C92E36|
-|<font color="#968ABD"">紫苑色</font>|Shion-iro|045|045|000|005| \#968ABD"|
-|<font color="#BF795D">芝翫茶</font>|Shikancha|000|050|050|030| \#BF795D|
-|<font color="#400B36">紫紺</font>|Shikon|050|090|020|050| \#400B36|
-|<font color="#2D0425">至極色</font>|Shigoku-iro|030|060|000|090| \#2D0425|
-|<font color="#EFAB93"">宍色</font>|Shishi-iro|000|028|038|006| \#EFAB93"|
-|<font color="#6A1435">紫檀色</font>|Shitan-iro|000|080|020|070| \#6A1435|
-|<font color="#080000">漆黒</font>|Sikkoku|045|045|045|010| \#080000|
-|<font color="#F19072">東雲色</font>|Shinonome-iro|000|040|053|005| \#F19072|
-|<font color="#7E0F09">赤銅色</font>|Shakudo-iro|000|090|079|060| \#7E0F09|
-|<font color="#F7BD8F"">洒落柿</font>|Sharegaki|000|023|042|003| \#F7BD8F"|
-|<font color="#740A00">朱殷</font>|Shuan|000|090|090|065| \#740A00|
-|<font color="#EF454A">朱色</font>|Shu-iro|000|059|010|008| \#EF454A|
-|<font color="#E7001D">猩々緋</font>|Shojohi|005|010|090|000| \#E7001D|
-|<font color="#D4ECEE"">白藍</font>|Shiraai|020|000|008|000| \#D4ECEE"|
-|<font color="#DAC4A5"">白茶</font>|Shiracha|020|025|040|000| \#DAC4A5"|
-|<font color="#FDFCF5"">白百合色</font>|Shirayuri-iro|000|000|005|002| \#FDFCF5"|
-|<font color="#FFFFFD"">白</font>|Shiro|000|000|001|000| \#FFFFFD"|
-|<font color="#E9EAF5"">白菫色</font>|Shirosumire-iro|010|008|000|000| \#E9EAF5"|
-|<font color="#CBB994"">白橡</font>|Shirotsurubami|000|009|027|020| \#CBB994"|
-|<font color="#E6E6E6"">白鼠</font>|Shironezumi|000|000|000|013| \#E6E6E6"|
-|<font color="#FCFAF2"">白練</font>|Shironeri|000|003|011|000| \#FCFAF2"|
-|<font color="#DFF2FC"">白縹</font>|Shirohanada|015|000|000|000| \#DFF2FC"|
-|<font color="#AD002D">深紅</font>|Shinku|000|010|063|035| \#AD002D|
-|<font color="#AD002D">真紅</font>|Shinku|000|010|063|035| \#AD002D|
-|<font color="#d72500">真朱</font>|Shinshu|002|082|085|020| \#D72500|
-|<font color="#5AC2D9">新橋色</font>|Shinbashi-iro|065|000|015|000| \#5AC2D9|
-|<font color="#005E15">深碧</font>|Shinpeki|075|000|010|060| \#005E15|
-|<font color="#FFFFFF"">純白</font>|Junpaku|000|000|000|000| \#FFFFFF"|
-|<font color="#D23F40">甚三紅</font>|Jinzamomi|000|085|064|015| \#D23F40|
-|<font color="#7E2639">蘇芳</font>|Suō|052|086|063|000| \#7E2639|
-|<font color="#B23E52">蘇芳香</font>|Suoko|040|090|065|000| \#B23E52|
-|<font color="#70564A">煤竹色</font>|Susutake-iro|000|030|030|072| \#70564A|
-|<font color="#9EA1A3"">錫色</font>|Suzu-iro|003|001|000|036| \#9EA1A3"|
-|<font color="#864337">雀色</font>|Suzumeiro|000|050|059|047| \#864337|
-|<font color="#954039">雀茶</font>|Suzumecha|000|070|053|050| \#954039|
-|<font color="#737373">素鼠</font>|Sunezumi|000|000|000|055| \#737373|
-|<font color="#000A02">墨色</font>|Sumi-iro|090|080|085|080| \#000A02|
-|<font color="#7065A3">菫色</font>|Sumire-iro|070|070|000|000| \#7065A3|
-|<font color="#184212">青漆</font>|Seishitsu|060|000|080|080| \#184212|
-|<font color="#7EBEA5">青磁色</font>|Seiji-iro|055|010|042|000| \#7EBEA5|
-|<font color="#EBF4F4"">青白磁</font>|Seihakuji|008|000|004|003| \#EBF4F4"|
-|<font color="#478384">青碧</font>|Seiheki|046|001|000|048| \#478384|
-|<font color="#00558F">青藍</font>|Seiran|010|038|000|040| \#00558F|
-|<font color="#683F36">赤褐色</font>|Sekkashoku|000|039|048|059| \#683F36|
-|<font color="#474B42">仙斎茶</font>|Sensaicha|005|000|012|071| \#474B42|
-|<font color="#48493F">千歳茶</font>|Senzaicha|058|043|052|034| \#48493F|
-|<font color="#335719">千歳緑</font>|Chitosemidori|081|055|010|015| \#335719|
-|<font color="#8C6450">煎茶色</font>|Sencha-iro|000|029|043|045| \#8C6450|
-|<font color="#6CBB5A">鮮緑</font>|Senryoku|060|000|080|008| \#6CBB5A|
-|<font color="#007655">蒼色</font>|Soushoku|090|000|068|040| \#007655|
-|<font color="#A16D5D">宗伝唐茶</font>|Sodenkaracha|000|032|042|037| \#A16D5D|
-|<font color="#F3F47F"">承和色</font>|Soga-iro|000|000|047|007| \#F3F47F"|
-|<font color="#FBA027">蘇比</font>|Sohi|000|050|090|000| \#FBA027|
-|<font color="#E0815E">纁</font>|Sohi|000|042|058|012| \#E0815E|
-|<font color="#CA4829">赭</font>|Soho|000|080|080|020| \#CA4829|
-|<font color="#73B8E2">空色</font>|Sora-iro|060|015|000|000| \#73B8E2|
-|<font color="#B8C8D1"">空色鼠</font>|Soraironezu|015|000|000|025| \#B8C8D1"|
-|<font color="#B36C3C">代赭色</font>|Taisha-iro|040|070|085|000| \#B36C3C|
-|<font color="#FFDF85"">玉子色</font>|Tamago-iro|000|016|060|000| \#FFDF85"|
-|<font color="#F8E58C"">淡黄</font>|Tankou|000|008|044|003| \#F8E58C"|
-|<font color="#FADCE9"">淡紅色</font>|Tankoushoku|000|020|000|000| \#FADCE9"|
-|<font color="#007D7A">胆礬色</font>|Tanba-iro|080|000|040|040| \#007D7A|
-|<font color="#FFE200"">蒲公英色</font>|Tanpopo-iro|000|010|095|000| \#FFE200"|
-|<font color="#EE7800">橙色</font>|Daidai-iro|000|050|010|007| \#EE7800|
-|<font color="#9F563A">団十郎茶</font>|Danjurocha|000|046|064|038| \#9F563A|
-|<font color="#3A8FB7">千草色</font>|Chigusa-iro|083|031|017|000| \#3A8FB7|
-|<font color="#965042">茶色</font>|Cha-iro|000|047|056|041| \#965042|
-|<font color="#664032">茶褐色</font>|Chakasshoku|000|037|051|060| \#664032|
-|<font color="#D88B83"">長春色</font>|Chōshun-iro|017|061|046|000| \#D88B83"|
-|<font color="#EFCD9A"">丁子色</font>|Chōji-iro|000|014|036|006| \#EFCD9A"|
-|<font color="#DDB87E">丁子染</font>|Chojizome|005|020|040|008| \#DDB87E|
-|<font color="#B4866B">丁子茶</font>|Chojicha|000|026|041|029| \#B4866B|
-|<font color="#68a5da">鴨頭草</font>|Tsukikusa|063|023|000|000| \#68A5DA|
-|<font color="#E02C87">躑躅色</font>|Tutuji-iro|000|090|000|005| \#E02C87|
-|<font color="#71A4D9">露草色</font>|Tsuyukusa-iro|060|023|000|000| \#71A4D9|
-|<font color="#455765">鉄御納戸</font>|Tetsuonando|068|042|034|019| \#455765|
-|<font color="#003149">鉄紺</font>|Tetsukon|085|000|000|085| \#003149|
-|<font color="#F89264">照柿</font>|Terigaki|000|058|065|000| \#F89264|
-|<font color="#F7C114">藤黄</font>|Tōō|000|022|092|002| \#F7C114|
-|<font color="#EEC362">玉蜀黍色</font>|Toumorokoshi-iro|000|018|059|007| \#EEC362|
-|<font color="#B88884"">鴇浅葱</font>|tokiasagi|000|026|028|028| \#B88884"|
-|<font color="#F3A696"">朱鷺色</font>|Toki-iro|004|045|034|000| \#F3A696"|
-|<font color="#F3A696"">鴇色</font>|Tokiiro|000|045|034|000| \#F3A696"|
-|<font color="#E09E87"">ときがら茶</font>|Tokigaracha|000|029|040|012| \#E09E87"|
-|<font color="#F49E95"">鴇羽色</font>|Tokiha-iro|000|050|030|000| \#F49E95"|
-|<font color="#007B43">常盤色</font>|Tokiwa-iro|010|000|046|052| \#007B43|
-|<font color="#22825D">木賊色</font>|Tokusa-iro|070|000|061|040| \#22825D|
-|<font color="#F4DDA5"">砥粉色</font>|Tonoko-iro|000|009|032|004| \#F4DDA5"|
-|<font color="#84a1a8"">殿茶</font>|Tonocha|030|000|008|040| \#84A1A8"|
-|<font color="#84a1a8"">沈香茶</font>|Tonocha|030|000|008|040| \#84A1A8"|
-|<font color="#9F6F55">礪茶</font>|Tonocha|000|030|047|038| \#9F6F55|
-|<font color="#7A380F">鳶色</font>|Tobi-iro|069|090|010|000| \#7A380F|
-|<font color="#F8EED1"">鳥の子色</font>|Torinoko-iro|000|005|020|005| \#F8EED1"|
-|<font color="#595455">丼鼠</font>|Dobunezumi|000|006|004|065| \#595455|
-|<font color="#B0CA71">苗色</font>|Naeiro|013|000|044|021| \#B0CA71|
-|<font color="#EE869A"">中紅花</font>|Nakakurenai|000|060|020|000| \#EE869A"|
-|<font color="#EB6159">中紅</font>|Nakabeni|000|075|056|000| \#EB6159|
-|<font color="#824880">茄子紺</font>|Nasukon|000|045|002|049| \#824880|
-|<font color="#DEC031">菜種油色</font>|Nataneabura-iro|020|025|090|000| \#DEC031|
-|<font color="#EEBBCB"">撫子色</font>|Nadeshiko-iro|000|021|015|007| \#EEBBCB"|
-|<font color="#FCD900"">菜の花色</font>|Nanohana-iro|005|015|010|000| \#FCD900"|
-|<font color="#AA8C63">生壁色</font>|Namakabe-iro|040|055|075|000| \#AA8C63|
-|<font color="#7B7C7D">鉛色</font>|Namari-iro|002|001|000|051| \#7B7C7D|
-|<font color="#008899">納戸色</font>|Nando-iro|010|011|000|040| \#008899|
-|<font color="#E45E32">丹色</font>|Ni-iro|000|059|078|011| \#E45E32|
-|<font color="#513743">似紫</font>|Nisemurasaki|000|032|017|068| \#513743|
-|<font color="#727171">鈍色</font>|Nibi-iro|000|001|001|055| \#727171|
-|<font color="#000B00">濡羽色</font>|Nureba-iro|010|000|010|096| \#000B00|
-|<font color="#908E65">根岸色</font>|Negishi-iro|004|000|040|055| \#908E65|
-|<font color="#7D7D7D">鼠色</font>|Nezumi-iro|000|000|000|065| \#7D7D7D|
-|<font color="#175B66">熨斗目色</font>|Noshime-iro|091|064|060|000| \#175B66|
-|<font color="#426579">熨斗目花色</font>|Noshime-hanairo|045|017|000|053| \#426579|
-|<font color="#9F9D9A"">灰色</font>|Hai-iro|000|003|005|050| \#9F9D9A"|
-|<font color="#E8D3D1"">灰桜</font>|Haizakura|000|009|010|009| \#E8D3D1"|
-|<font color="#98623C">灰茶</font>|Haicha|000|036|061|040| \#98623C|
-|<font color="#D3DBE2"">白銅色</font>|Hakudou-iro|010|003|000|015| \#D3DBE2"|
-|<font color="#A69ABD"">半色</font>|Hashita-iro|012|019|000|026| \#A69ABD"|
-|<font color="#D9A62E">櫨染</font>|Hajizome|000|024|079|015| \#D9A62E|
-|<font color="#95859C"">鳩羽色</font>|Hatoba-iro|004|015|000|039| \#95859C"|
-|<font color="#9E8B8E"">鳩羽鼠</font>|Hatobanezumi|000|012|010|038| \#9E8B8E"|
-|<font color="#1E88A8">花浅葱</font>|Hanaasagi|090|032|023|000| \#1E88A8|
-|<font color="#0086AD">花色</font>|Hana-iro|082|039|026|000| \#0086AD|
-|<font color="#062C54">花紺青</font>|Hanakonjou|090|065|000|048| \#062C54|
-|<font color="#0086AD">縹色</font>|Hanada-iro|082|039|026|000| \#0086AD|
-|<font color="#FBD26B"">花葉色</font>|Hanaba-iro|000|016|057|002| \#FBD26B"|
-|<font color="#008D56">花萌葱</font>|Hanamoegi|090|000|079|020| \#008D56|
-|<font color="#5AB5B2">花緑青</font>|Hanarokusho|060|000|030|010| \#5AB5B2|
-|<font color="#F4A57A">朱華</font>|Hanezu|000|045|050|000| \#F4A57A|
-|<font color="#79520B">榛摺</font>|Harizuri|000|040|080|065| \#79520B|
-|<font color="#AAA751">梅幸茶</font>|Baikoucha|045|031|082|000| \#AAA751|
-|<font color="#E73275">薔薇色</font>|Bara-iro|000|090|023|000| \#E73275|
-|<font color="#897858">肥後煤竹</font>|Higosusutake|000|012|036|046| \#897858|
-|<font color="#abced8"">秘色</font>|Hisoku|038|011|015|000| \#ABCED8"|
-|<font color="#7B4334">檜皮色</font>|Hihada-iro|000|060|060|050| \#7B4334|
-|<font color="#D6D000">鶸色</font>|Hiwa-iro|015|000|010|015| \#D6D000|
-|<font color="#8C8861">鶸茶</font>|Hiwacha|000|003|031|045| \#8C8861|
-|<font color="#82AE46">鶸萌黄</font>|Hiwamoegi|025|000|060|032| \#82AE46|
-|<font color="#83CCD2"">白群</font>|Byakugun|038|003|000|018| \#83CCD2"|
-|<font color="#DAEAD0"">白緑</font>|byakuroku|020|000|025|000| \#DAEAD0"|
-|<font color="#00451E">天鵞絨</font>|veludo|080|000|080|075| \#00451E|
-|<font color="#AE7C4F">枇杷茶</font>|Biwacha|000|029|055|032| \#AE7C4F|
-|<font color="#00081A">檳榔子黒</font>|Binroujiguro|050|013|000|010| \#00081A|
-|<font color="#433D3C">檳榔子染</font>|Binroujizome|000|009|010|074| \#433D3C|
-|<font color="#004150">深藍</font>|Fukaai|010|000|025|075| \#004150|
-|<font color="#85A1A0"">深川鼠</font>|Fukagawanezumi|030|000|015|040| \#85A1A0"|
-|<font color="#006A66">深藍色</font>|fukakiaiiro|090|000|045|050| \#006A66|
-|<font color="#004025">深緑</font>|Fukamidori|010|000|075|075| \#004025|
-|<font color="#998C78">柴色</font>|Fushi-iro|---|---|---|---| \#998C78|
-|<font color="#B28C6E">柴染</font>|Fushizome|000|021|038|030| \#B28C6E|
-|<font color="#BAA7CC"">藤色</font>|Fuji-iro|032|037|006|000| \#BAA7CC"|
-|<font color="#5A5359">藤煤竹</font>|Fujisusutake|000|008|001|065| \#5A5359|
-|<font color="#606DA1">藤納戸</font>|Fujinando|060|045|000|025| \#606DA1|
-|<font color="#6E75A4">藤鼠</font>|Fujinezumi|069|056|017|000| \#6E75A4|
-|<font color="#8F82BC"">藤紫</font>|Fujimurasaki|050|050|000|000| \#8F82BC"|
-|<font color="#888ABC"">二藍</font>|Futaai|058|050|000|000| \#888ABC"|
-|<font color="#583B55">二人静</font>|Futarishizuka|025|050|000|070| \#583B55|
-|<font color="#705B67">葡萄鼠</font>|BudouNezumi|000|019|008|056| \#705B67|
-|<font color="#007F89">碧色</font>|Hekishoku|090|000|034|035| \#007F89|
-|<font color="#E5004F">紅赤</font>|Beniaka|000|010|050|000| \#E5004F|
-|<font color="#C41A41">紅色</font>|Beni-iro|010|010|053|010| \#C41A41|
-|<font color="#CB8347">紅鬱金</font>|Beniukon|000|035|065|020| \#CB8347|
-|<font color="#8491C3"">紅掛空色</font>|Benikakesorairo|032|026|000|024| \#8491C3"|
-|<font color="#68699B">紅掛花色</font>|Benikakehanairo|033|032|000|039| \#68699B|
-|<font color="#B63D1B">紅樺</font>|Benikaba|038|090|095|000| \#B63D1B|
-|<font color="#9C308D">紅桔梗</font>|Benikikyou|045|090|000|000| \#9C308D|
-|<font color="#524748">紅消鼠</font>|Benikeshinezumi|000|013|012|068| \#524748|
-|<font color="#CC5229">紅柑子</font>|Benikouji|013|080|095|002| \#CC5229|
-|<font color="#D23F40">紅唐</font>|Benitou|000|085|064|015| \#D23F40|
-|<font color="#9A493F">紅鳶</font>|Benitobi|000|053|059|040| \#9A493F|
-|<font color="#A06F70">紅鼠</font>|Beninezu|037|056|056|000| \#A06F70|
-|<font color="#F83929">紅緋</font>|Benihi|000|075|082|009| \#F83929|
-|<font color="#7B4741">紅檜皮</font>|Benihihada|000|042|047|052| \#7B4741|
-|<font color="#C9396D">紅鶸色</font>|Benihiwa-iro|000|080|021|000| \#C9396D|
-|<font color="#CCA6BF"">紅藤</font>|Benifuji|019|050|000|000| \#CCA6BF"|
-|<font color="#8491C3"">紅碧</font>|Benimidori|032|026|000|024| \#8491C3"|
-|<font color="#AA562E">紅柄色</font>|Bengara-iro|045|080|090|000| \#AA562E|
-|<font color="#8F2E14">弁柄色</font>|Bengara-iro|000|068|086|044| \#8F2E14|
-|<font color="#E761A4">牡丹色</font>|Botan|012|075|004|000| \#E761A4|
-|<font color="#5B7E91">舛花色</font>|Masuhana-iro|037|013|000|043| \#5B7E91|
-|<font color="#3F7735">松葉色</font>|Sensaicha|060|000|080|050| \#3F7735|
-|<font color="#F08300">蜜柑色</font>|Mikan-iro|000|045|010|006| \#F08300|
-|<font color="#8CD2BC"">水浅葱</font>|Mizuasagi|045|000|020|000| \#8CD2BC"|
-|<font color="#7FCCE3">水色</font>|Mizu-iro|055|000|010|000| \#7FCCE3|
-|<font color="#B56C60">水柿</font>|Mizugaki|036|067|059|000| \#B56C60|
-|<font color="#6C9BD2">み空色</font>|Misora-iro|060|030|000|000| \#6C9BD2|
-|<font color="#3EB370">緑</font>|Midori|065|000|037|030| \#3EB370|
-|<font color="#77969A">湊鼠</font>|Minatonezumi|063|038|040|000| \#77969A|
-|<font color="#7EC7D8">水縹</font>|Mihanada|050|000|013|005| \#7EC7D8|
-|<font color="#596327">海松色</font>|Miru-iro|026|000|070|070| \#596327|
-|<font color="#57543D">海松茶</font>|Mirucha|052|040|059|029| \#57543D|
-|<font color="#E3C576">麦藁色</font>|Mugiwara-iro|000|017|055|015| \#E3C576|
-|<font color="#20604F">虫襖</font>|Mushiao|090|063|066|030| \#20604F|
-|<font color="#EFEACC"">蒸栗色</font>|Mushikuri-iro|000|002|020|010| \#EFEACC"|
-|<font color="#884898">紫</font>|Murasaki|011|053|000|040| \#884898|
-|<font color="#90326D">紫式部</font>|Murasakishikibu|020|080|000|040| \#90326D|
-|<font color="#5F414B">紫鳶</font>|murasakitobi|000|032|021|063| \#5F414B|
-|<font color="#594255">滅紫</font>|Messhi|000|026|004|065| \#594255|
-|<font color="#A7BD00">萌木色</font>|Moegi-iro|040|000|010|015| \#A7BD00|
-|<font color="#006D4D">萌葱色</font>|Moegi-iro|080|000|065|050| \#006D4D|
-|<font color="#86B81B">萌黄色</font>|Moegi-iro|050|000|010|010| \#86B81B|
-|<font color="#C7B370">木蘭</font>|Mokuran|000|010|044|022| \#C7B370|
-|<font color="#F58F98"">桃色</font>|Momo-iro|000|055|025|000| \#F58F98"|
-|<font color="#724938">百塩茶</font>|Momoshiocha|061|070|068|025| \#724938|
-|<font color="#F9AEA5"">桃花色</font>|Momohana-iro|000|045|030|000| \#F9AEA5"|
-|<font color="#4A593D">柳煤竹</font>|Yanagisusutake|076|057|070|017| \#4A593D|
-|<font color="#93B881"">柳染</font>|Yanagisome|020|000|030|028| \#93B881"|
-|<font color="#A3A86C">柳茶</font>|Yanagicha|013|000|050|040| \#A3A86C|
-|<font color="#C8D5BB"">柳鼠</font>|Yanaginezumi|006|000|012|016| \#C8D5BB"|
-|<font color="#EFAE7C">大和柿</font>|Yamatogaki|000|038|050|005| \#EFAE7C|
-|<font color="#767C6B">山鳩色</font>|Yamabato-iro|005|000|014|051| \#767C6B|
-|<font color="#F8B400">山吹色</font>|Yamabuki-iro|000|036|095|000| \#F8B400|
-|<font color="#C89932">山吹茶</font>|Yamabukicha|000|024|075|022| \#C89932|
-|<font color="#C6A35B">楊梅色</font>|yamamomo-iro|000|023|060|030| \#C6A35B|
-|<font color="#EE9D19">雄黄</font>|Yuuou|000|045|090|005| \#EE9D19|
-|<font color="#006543">柚葉色</font>|Yuzuha-iro|080|000|068|055| \#006543|
-|<font color="#FCD4D5"">聴色</font>|Yurushi-iro|000|025|010|000| \#FCD4D5"|
-|<font color="#6D3C14">羊羹色</font>|Youkan-iro|000|053|070|070| \#6D3C14|
-|<font color="#DA003D">洋紅色</font>|Youkoushoku|000|010|063|008| \#DA003D|
-|<font color="#43341B">吉岡染</font>|Yoshiokazome|076|071|073|047| \#43341B|
-|<font color="#BF794E">駱駝色</font>|Rakuda-iro|000|037|059|025| \#BF794E|
-|<font color="#D19826">蘭茶</font>|Rancha|017|044|089|000| \#D19826|
-|<font color="#6A5D21">璃寛茶</font>|Rikancha|000|012|069|058| \#6A5D21|
-|<font color="#E6E3C5"">利休白茶</font>|Rikyūshiracha|000|001|020|015| \#E6E3C5"|
-|<font color="#897845">利休茶</font>|Rikyūcha|010|018|050|040| \#897845|
-|<font color="#7BAA17">柳緑</font>|Ryuuryoku|050|000|010|020| \#7BAA17|
-|<font color="#6967AB">竜胆色</font>|Rindou-iro|069|096|009|000| \#6967AB|
-|<font color="#004898">瑠璃色</font>|Ruri-iro|010|070|000|010| \#004898|
-|<font color="#224B8F">瑠璃紺</font>|Rurikon|089|054|011|003| \#224B8F|
-|<font color="#ECDF2B"">檸檬色</font>|Remon-iro|007|013|083|000| \#ECDF2B"|
-|<font color="#AA5C3F">煉瓦色</font>|Renga-iro|000|060|060|040| \#AA5C3F|
-|<font color="#0c0c0c">呂色</font>|Roiro|000|000|000|010| \#0C0C0C|
-|<font color="#5BAD92">緑青</font>|Rokusho|060|000|045|015| \#5BAD92|
-|<font color="#927A30">路考茶</font>|Rokōcha|000|020|070|055| \#927A30|
-|<font color="#ABC900">若草色</font>|Wakakusa-iro|038|000|010|005| \#ABC900|
-|<font color="#7CC28E">若竹色</font>|Wakatake-iro|060|000|060|000| \#7CC28E|
-|<font color="#CCDE68">若菜色</font>|Wakana-iro|026|000|070|000| \#CCDE68|
-|<font color="#C7DC68">若苗色</font>|Wakanae-iro|010|000|053|014| \#C7DC68|
-|<font color="#A4CA68">若葉色</font>|Wakaba-iro|040|000|070|005| \#A4CA68|
-|<font color="#A5CD89"">若緑</font>|Wakamidori|039|000|055|005| \#A5CD89"|
-|<font color="#BE84B8"">若紫</font>|Wakamurasaki|028|055|000|000| \#BE84B8"|
-|<font color="#E8EC98"">若芽色</font>|Wakame-iro|013|000|050|000| \#E8EC98"|
-|<font color="#8EC298"">山葵色</font>|Wasabi-iro|045|000|045|010| \#8EC298"|
-|<font color="#9CC5E6"">勿忘草</font>|Wasurenagusa|040|010|000|005| \#9CC5E6"|
+|藍色|Ai-iro|070|020|000|060| \#105779|
+|藍色鳩羽|Aiirohatoba|040|040|000|040| \#756D91|
+|藍媚茶|Aikobicha|055|040|052|028| \#555647|
+|藍墨茶|Aisumicha|086|072|068|047| \#373C38|
+|相済茶|Aisumicha|086|072|068|047| \#373C38|
+|藍鉄色|Aitetsu-iro|090|000|023|080| \#003A47|
+|藍鼠|Ainezu|070|050|040|000| \#6B818E|
+|藍海松茶|Aimirucha|000|000|013|066| \#56564B|
+|青|Ao|010|031|000|015| \#0095D9|
+|葵色|Aoi-iro|038|050|000|000| \#AA89BD"|
+|青朽葉|Aokuchiba|000|006|054|032| \#ADA250|
+|青白橡|Aoshirotsurubami|035|017|040|020| \#85916D|
+|青竹色|Aotake-iro|034|000|010|025| \#7EBEAB|
+|青丹|Aoni|056|043|076|000| \#858954|
+|青鈍|Aonibi|090|080|060|015| \#324356|
+|青藤|Aofuji|050|031|000|000| \#8AA2D3"|
+|青緑|Aomidori|010|000|008|036| \#00A497|
+|青紫|Aomurasaki|072|080|000|000| \#6846A5|
+|赤|Aka|000|095|083|005| \#F20000|
+|赤支子|Akaikuchinashi|010|032|090|000| \#F2934E|
+|赤朽葉|Akakuchiba|000|040|067|014| \#DB8449|
+|赤香色|Akakō-iro|000|025|040|004| \#F6B894"|
+|赤白橡|Akashirotsurubami|000|025|035|000| \#FED2AE"|
+|赤橙|AkaDaidai|000|064|097|008| \#EA5506|
+|茜色|Akane-iro|000|078|075|028| \#B7282E|
+|赤紅|Akabeni|000|095|071|010| \#D81F35|
+|赤紫|Akamurasaki|010|070|008|000| \#EB6EA5|
+|灰汁色|Aku-iro|035|032|042|000| \#BCB09C"|
+|緋|Ake|034|097|082|003| \#BA2636|
+|曙色|Akebono-iro|000|050|050|000| \#F9A383"|
+|浅緋|Asaake|000|049|056|013| \#DF7163|
+|浅葱色|Asagi-iro|076|020|026|000| \#00A5BF|
+|浅葱鼠|Asaginezu|030|000|011|030| \#94A8B0"|
+|浅縹|Asahanada|035|009|000|020| \#84B9CB"|
+|浅緑|Asamidori|044|000|050|000| \#9BCF97"|
+|浅紫|Asamurasaki|000|017|003|023| \#C4A3BF"|
+|小豆色|Azuki-iro|050|085|080|000| \#A04940|
+|小豆鼠|Azukinezu|062|069|069|014| \#715454|
+|天色|Ama-iro|085|032|000|000| \#0086CC|
+|亜麻色|Ama-iro|000|011|030|030| \#C7B897"|
+|飴色|Ame-iro|000|068|090|020| \#CD6118|
+|菖蒲色|Ayame-iro|030|055|005|000| \#B168A8|
+|洗柿|Araigaki|000|025|030|005| \#F0B694"|
+|洗朱|Araishu|000|038|048|018| \#D0826C|
+|退紅|Arazome|000|030|020|010| \#FFB3A7"|
+|淡藤色|Awafuji-iro|020|018|000|000| \#D2D0E8"|
+|杏色|Anzu-iro|000|045|060|000| \#F4A466|
+|威光茶|Ikoucha|034|036|066|000| \#A8A256|
+|苺色|Ichigo-iro|034|078|052|000| \#BB5561|
+|一斤染|Ikkonzome|001|020|009|000| \#FCD4D5"|
+|今紫|Imamurasaki|029|055|000|053| \#563779|
+|今様色|Imayou-iro|023|078|045|000| \#D0576B|
+|岩井茶|Iwaicha|071|060|085|000| \#6F6F43|
+|不言色|Iwanu-iro|000|018|060|000| \#FFD768"|
+|鶯色|Uguisu-iro|023|000|090|050| \#838B0D|
+|鶯茶|Uguisucha|000|019|073|056| \#715C1F|
+|鬱金色|Ukon-iro|000|019|095|000| \#F7C229|
+|薄青|Usuao|040|000|040|005| \#A0CEA8"|
+|薄浅葱|Usuasagi|040|000|015|000| \#A2D7DD"|
+|薄色|Usu-iro|025|035|020|000| \#CEB4B9"|
+|薄柿|Usugaki|000|019|018|017| \#D4ACAD"|
+|浅黄|Usuki|000|011|032|007| \#EDD3A1"|
+|淡黄蘗|Usukihada|000|002|030|005| \#F9F1C0"|
+|薄紅|Usukurenai|000|064|032|024| \#B15C65|
+|淡香|Usuko|000|021|044|005| \#F3BF88"|
+|薄桜|Usuzakura|000|005|001|002| \#FCF5F7"|
+|薄墨色|Usuzumi-iro|000|000|001|036| \#A3A3A2"|
+|薄花色|Usuhana-iro|052|025|000|000| \#82A9DA"|
+|薄藤色|Usufuji-iro|025|023|000|000| \#C7C3E1"|
+|淡紅藤|Usubenifuji|008|030|000|000| \#E9C3DC"|
+|薄水色|Usumizu-iro|030|000|015|000| \#BCE1DF"|
+|薄緑|Usumidori|025|000|025|000| \#CAE5CD"|
+|薄柳|Usuyanagi|013|000|040|005| \#E0E7AA"|
+|空五倍子色|Utsubushi-iro|000|013|031|038| \#9D896C|
+|卯の花色|Unohana-iro|001|000|004|002| \#FBFBF6"|
+|梅重|Umegasane|000|080|040|000| \#E9546B|
+|梅染|Umezome|000|023|034|029| \#B48A76|
+|梅鼠|Umenezumi|008|035|015|025| \#AD7984|
+|梅紫|Umemurasaki|045|080|037|000| \#493759|
+|裏葉柳|Urahayanagi|011|000|020|015| \#C1D8AC"|
+|裏葉色|Uraha-iro|030|000|030|020| \#A4C2A9"|
+|裏柳|Urayanagi|011|000|020|015| \#C1D8AC"|
+|江戸茶|Edocha|000|032|055|020| \#CD8C5C|
+|江戸紫|Edomurasaki|024|046|000|040| \#745399|
+|葡萄色|Ebi-iro|020|080|000|060| \#6E1E51|
+|海老色|Ebi-iro|000|080|040|050| \#932E40|
+|葡萄染|Ebizome|000|047|007|052| \#7A4171|
+|葡萄茶|Ebicha|000|099|063|064| \#640125|
+|海老茶|Ebicha|000|059|056|058| \#6C2C2F|
+|遠州茶|Enshucha|000|036|048|021| \#CA8269|
+|臙脂色|Enji-iro|000|095|036|045| \#9B003F|
+|臙脂鼠|Enji-nezu|000|035|009|060| \#85646C|
+|鉛丹色|Entan-iro|000|054|066|007| \#EC6D51|
+|老竹色|Oitake-iro|019|000|031|043| \#769164|
+|老緑|Oimidori|045|000|060|070| \#405C36|
+|楝色|Ouchi-iro|043|043|005|000| \#A596C7"|
+|黄土色|Odo-iro|000|032|090|025| \#CE9B0E|
+|黄丹|Oni|000|049|070|007| \#EE7948|
+|鸚緑|Ouryoku|038|000|010|015| \#9FBB00|
+|乙女色|Otome-iro|000|045|034|000| \#F9D0C5"|
+|御納戸色|Onando-iro|080|000|020|050| \#007083|
+|御納戸茶|Onandocha|081|060|068|022| \#465D4C|
+|女郎花|Ominaeshi|000|000|027|005| \#F2F2B0"|
+|御召御納戸|Omeshionando|034|013|000|055| \#4C6473|
+|御召茶|Omeshicha|037|004|000|058| \#43676B|
+|織部|Oribe|068|000|090|070| \#125115|
+|柿色|Kaki-iro|000|068|090|010| \#DE6A1C|
+|柿渋色|Kakishibu-iro|035|065|065|000| \#BD7862|
+|杜若|Kakitsubata|074|088|045|009| \#5E3862|
+|褐色|Kachiiro|010|080|065|035| \#003847|
+|勝色|Katsu-iro|060|045|000|085| \#181B39|
+|樺色|Kaba-iro|030|080|095|000| \#C5591A|
+|樺茶|Kabacha|000|014|030|055| \#726250|
+|甕覗|Kamenozoki|025|000|006|003| \#C5E4ED"|
+|鴨の羽色|Kamonoha-iro|089|050|070|009| \#00695B|
+|茅色|Kaya-iro|000|015|040|030| \#C7B183"|
+|唐紅|Karakurenai|003|010|080|000| \#EA0032|
+|韓紅|Karakurenai|003|010|080|000| \#EA0032|
+|乾鮭色|Karasake-iro|000|050|030|005| \#EB9793"|
+|芥子色|Karashi-iro|000|016|063|018| \#D0AF4C|
+|唐茶|Karacha|050|070|010|000| \#A06705|
+|刈安|Kariyasu|000|015|095|000| \#FFED00"|
+|土器色|Kawarake-iro|000|038|057|024| \#C37854|
+|萱草色|Kanzo-iro|000|045|096|000| \#FDA900|
+|黄浅緑|Kiasamidori|053|019|079|000| \#8CB155|
+|黄色|Ki-iro|000|015|010|000| \#FFD900"|
+|黄唐茶|Kigaracha|000|024|062|027| \#B98C46|
+|黄枯茶|Kigaracha|000|022|040|054| \#765C47|
+|桔梗色|Kikyo-iro|072|080|000|000| \#624498|
+|麹塵|Kikujin|009|000|030|053| \#6E7955|
+|黄支子|Kikuchinashi|000|014|069|000| \#FFDB4F"|
+|黄朽葉|Kikuchiba|000|023|068|017| \#D3A243|
+|紀州茶|Kishucha|000|022|033|048| \#856859|
+|狐色|Kitsune-iro|020|050|090|000| \#D9972F|
+|黄橡|Kitsurubami|020|040|070|020| \#A27033|
+|生成色|Kinari-iro|000|005|010|005| \#F7EFE3"|
+|黄蘗|Kihada|003|000|070|000| \#FEF263"|
+|黄海松茶|Kimirucha|000|007|042|043| \#918754|
+|伽羅色|Kyara-iro|000|025|047|015| \#D8A373|
+|京藤|Kyoufuji|017|045|000|015| \#C08FB3"|
+|京紫|Kyomurasaki|040|080|000|040| \#772F6D|
+|金茶|Kincha|025|065|095|000| \#CE7A19|
+|銀色|Gin-iro|025|025|025|000| \#C0C0C0"|
+|銀朱|Ginshu|002|082|085|005| \#F12B00|
+|銀煤竹|Ginsusutake|054|058|076|010| \#82663A|
+|銀鼠|Ginnezumi|003|002|000|035| \#BBBCBF"|
+|草色|Kusa-iro|061|039|089|000| \#7B8D42|
+|孔雀青|Kujakuao|010|000|025|025| \#0086A2|
+|孔雀緑|Kujakumidori|010|000|063|015| \#008E74|
+|梔子色|Kuchinashi-iro|000|018|060|000| \#FFD768"|
+|支子色|Kuchinashi-iro|000|018|060|000| \#FFD768"|
+|朽葉色|Kuchiba-iro|000|021|051|043| \#917347|
+|涅色|Kuri-iro|080|085|081|019| \#433634|
+|栗色|Kuri-iro|000|060|094|054| \#762F07|
+|栗梅|Kiriume|005|078|075|055| \#6C1912|
+|栗皮色|Kurikawa-iro|058|074|072|030| \#6A4028|
+|栗皮茶|Kurikawacha|065|085|095|000| \#824522|
+|胡桃色|Kurumi-iro|000|034|055|034| \#A86F4C|
+|胡桃染|Kurumizome|000|013|019|035| \#A58F86"|
+|紅の八塩|kurenainoyashio|000|010|063|035| \#AD002D|
+|黒緋|Kuroake|054|075|065|014| \#86473F|
+|鉄色|Kurogane-iro|090|050|075|040| \#102E24|
+|黒橡|Kurotsurubami|020|025|025|075| \#322C28|
+|黒鳶|Kurotobi|000|030|030|074| \#432F2F|
+|黒紅|Kurobeni|006|022|000|080| \#302833|
+|黒紅梅|Kurobeniume|006|022|000|080| \#302833|
+|桑色|Kuwa-iro|020|030|050|000| \#DABC91"|
+|桑染|Kuwazome|020|030|050|000| \#DABC91"|
+|桑の実色|Kuwanomi-iro|045|090|000|000| \#550030|
+|群青色|Gunjou-iro|010|058|000|000| \#005BAA|
+|消炭色|Keshizumi-iro|000|010|020|080| \#595045|
+|憲法染|Kenpozome|068|068|077|031| \#574738|
+|月白|Geppaku|002|001|000|004| \#F6F7F8"|
+|玄|Gen|068|068|077|031| \#3E1E00|
+|濃藍|Koiai|060|045|000|085| \#002E4E|
+|香色|Kou-iro|000|014|036|006| \#EFCD9A"|
+|光悦茶|Kouetsucha|000|036|040|050| \#9A725C|
+|柑子色|Kouji-iro|007|068|080|000| \#FF5234|
+|香染|Kouzome|000|028|056|032| \#AD7D4C|
+|紅梅色|Kobai-iro|000|070|035|003| \#E86B79|
+|高麗納戸|Kourainando|095|078|085|010| \#104539|
+|黄櫨染|Korozen|000|066|077|015| \#D74B22|
+|深緋|Kokiake|030|010|095|000| \#C20024|
+|深支子|Kokikuchinashi|010|032|090|000| \#EFBB2C|
+|深縹|Kokihanada|063|044|000|055| \#2A4073|
+|深紫|Kokimurasaki|018|038|000|065| \#493759|
+|苔色|Koke-iro|030|000|080|050| \#78882D|
+|焦茶|Kogecha|075|080|090|000| \#6A4D32|
+|古代紫|Kodaimurasaki|025|050|000|040| \#8C6589|
+|琥珀色|Kohaku-iro|010|055|095|000| \#EA930A|
+|媚茶|Kobicha|000|013|038|056| \#716246|
+|昆布茶|Kobucha|056|062|073|000| \#6F6045|
+|小町鼠|Komachinezu|000|003|000|015| \#E5E2E4"|
+|小麦色|Komugi-iro|000|038|075|012| \#E4A343|
+|小紫|Komurasaki|040|080|000|070| \#4B0D43|
+|紺|Kon|010|050|000|080| \#001A43|
+|紺桔梗|Konkikyou|010|090|042|012| \#211E55|
+|紺青色|Konjou-iro|010|072|005|000| \#005499|
+|紺鼠|Konnezu|030|015|000|080| \#3F4551|
+|金春色|Konparu-iro|065|000|015|000| \#5AC2D9|
+|紺藤|Konfuji|060|030|000|010| \#6592C6|
+|紺碧|Konpeki|090|045|000|030| \#005B98|
+|胡粉色|Gofun-iro|000|000|001|000| \#FFFFFC"|
+|左伊多津万色|Saitaduma-iro|068|000|090|040| \#327131|
+|嵯峨鼠|Saganezu|000|030|023|040| \#B08D84"|
+|桜色|Sakura-iro|000|005|002|000| \#FEEEED"|
+|桜鼠|Sakuranezumi|020|025|020|000| \#D8C6BC"|
+|錆浅葱|Sabiasagi|037|000|001|043| \#5C9291|
+|錆御納戸|Sabionando|050|000|013|060| \#406F79|
+|錆鉄御納戸|Sabitetsuonando|019|001|000|065| \#485859|
+|錆納戸|Sabinando|050|000|013|060| \#406F79|
+|錆利休|Sabirikyu|000|020|040|060| \#877254|
+|珊瑚色|Sango-iro|000|060|053|000| \#EF8468|
+|珊瑚珠色|Shu-iro|005|085|064|000| \#EF454A|
+|柘榴色|Zakuro-iro|000|090|068|020| \#C92E36|
+|紫苑色|Shion-iro|045|045|000|005| \#968ABD"|
+|芝翫茶|Shikancha|000|050|050|030| \#BF795D|
+|紫紺|Shikon|050|090|020|050| \#400B36|
+|至極色|Shigoku-iro|030|060|000|090| \#2D0425|
+|宍色|Shishi-iro|000|028|038|006| \#EFAB93"|
+|紫檀色|Shitan-iro|000|080|020|070| \#6A1435|
+|漆黒|Sikkoku|045|045|045|010| \#080000|
+|東雲色|Shinonome-iro|000|040|053|005| \#F19072|
+|赤銅色|Shakudo-iro|000|090|079|060| \#7E0F09|
+|洒落柿|Sharegaki|000|023|042|003| \#F7BD8F"|
+|朱殷|Shuan|000|090|090|065| \#740A00|
+|朱色|Shu-iro|000|059|010|008| \#EF454A|
+|猩々緋|Shojohi|005|010|090|000| \#E7001D|
+|白藍|Shiraai|020|000|008|000| \#D4ECEE"|
+|白茶|Shiracha|020|025|040|000| \#DAC4A5"|
+|白百合色|Shirayuri-iro|000|000|005|002| \#FDFCF5"|
+|白|Shiro|000|000|001|000| \#FFFFFD"|
+|白菫色|Shirosumire-iro|010|008|000|000| \#E9EAF5"|
+|白橡|Shirotsurubami|000|009|027|020| \#CBB994"|
+|白鼠|Shironezumi|000|000|000|013| \#E6E6E6"|
+|白練|Shironeri|000|003|011|000| \#FCFAF2"|
+|白縹|Shirohanada|015|000|000|000| \#DFF2FC"|
+|深紅|Shinku|000|010|063|035| \#AD002D|
+|真紅|Shinku|000|010|063|035| \#AD002D|
+|真朱|Shinshu|002|082|085|020| \#D72500|
+|新橋色|Shinbashi-iro|065|000|015|000| \#5AC2D9|
+|深碧|Shinpeki|075|000|010|060| \#005E15|
+|純白|Junpaku|000|000|000|000| \#FFFFFF"|
+|甚三紅|Jinzamomi|000|085|064|015| \#D23F40|
+|蘇芳|Suō|052|086|063|000| \#7E2639|
+|蘇芳香|Suoko|040|090|065|000| \#B23E52|
+|煤竹色|Susutake-iro|000|030|030|072| \#70564A|
+|錫色|Suzu-iro|003|001|000|036| \#9EA1A3"|
+|雀色|Suzumeiro|000|050|059|047| \#864337|
+|雀茶|Suzumecha|000|070|053|050| \#954039|
+|素鼠|Sunezumi|000|000|000|055| \#737373|
+|墨色|Sumi-iro|090|080|085|080| \#000A02|
+|菫色|Sumire-iro|070|070|000|000| \#7065A3|
+|青漆|Seishitsu|060|000|080|080| \#184212|
+|青磁色|Seiji-iro|055|010|042|000| \#7EBEA5|
+|青白磁|Seihakuji|008|000|004|003| \#EBF4F4"|
+|青碧|Seiheki|046|001|000|048| \#478384|
+|青藍|Seiran|010|038|000|040| \#00558F|
+|赤褐色|Sekkashoku|000|039|048|059| \#683F36|
+|仙斎茶|Sensaicha|005|000|012|071| \#474B42|
+|千歳茶|Senzaicha|058|043|052|034| \#48493F|
+|千歳緑|Chitosemidori|081|055|010|015| \#335719|
+|煎茶色|Sencha-iro|000|029|043|045| \#8C6450|
+|鮮緑|Senryoku|060|000|080|008| \#6CBB5A|
+|蒼色|Soushoku|090|000|068|040| \#007655|
+|宗伝唐茶|Sodenkaracha|000|032|042|037| \#A16D5D|
+|承和色|Soga-iro|000|000|047|007| \#F3F47F"|
+|蘇比|Sohi|000|050|090|000| \#FBA027|
+|纁|Sohi|000|042|058|012| \#E0815E|
+|赭|Soho|000|080|080|020| \#CA4829|
+|空色|Sora-iro|060|015|000|000| \#73B8E2|
+|空色鼠|Soraironezu|015|000|000|025| \#B8C8D1"|
+|代赭色|Taisha-iro|040|070|085|000| \#B36C3C|
+|玉子色|Tamago-iro|000|016|060|000| \#FFDF85"|
+|淡黄|Tankou|000|008|044|003| \#F8E58C"|
+|淡紅色|Tankoushoku|000|020|000|000| \#FADCE9"|
+|胆礬色|Tanba-iro|080|000|040|040| \#007D7A|
+|蒲公英色|Tanpopo-iro|000|010|095|000| \#FFE200"|
+|橙色|Daidai-iro|000|050|010|007| \#EE7800|
+|団十郎茶|Danjurocha|000|046|064|038| \#9F563A|
+|千草色|Chigusa-iro|083|031|017|000| \#3A8FB7|
+|茶色|Cha-iro|000|047|056|041| \#965042|
+|茶褐色|Chakasshoku|000|037|051|060| \#664032|
+|長春色|Chōshun-iro|017|061|046|000| \#D88B83"|
+|丁子色|Chōji-iro|000|014|036|006| \#EFCD9A"|
+|丁子染|Chojizome|005|020|040|008| \#DDB87E|
+|丁子茶|Chojicha|000|026|041|029| \#B4866B|
+|鴨頭草|Tsukikusa|063|023|000|000| \#68A5DA|
+|躑躅色|Tutuji-iro|000|090|000|005| \#E02C87|
+|露草色|Tsuyukusa-iro|060|023|000|000| \#71A4D9|
+|鉄御納戸|Tetsuonando|068|042|034|019| \#455765|
+|鉄紺|Tetsukon|085|000|000|085| \#003149|
+|照柿|Terigaki|000|058|065|000| \#F89264|
+|藤黄|Tōō|000|022|092|002| \#F7C114|
+|玉蜀黍色|Toumorokoshi-iro|000|018|059|007| \#EEC362|
+|鴇浅葱|tokiasagi|000|026|028|028| \#B88884"|
+|朱鷺色|Toki-iro|004|045|034|000| \#F3A696"|
+|鴇色|Tokiiro|000|045|034|000| \#F3A696"|
+|ときがら茶|Tokigaracha|000|029|040|012| \#E09E87"|
+|鴇羽色|Tokiha-iro|000|050|030|000| \#F49E95"|
+|常盤色|Tokiwa-iro|010|000|046|052| \#007B43|
+|木賊色|Tokusa-iro|070|000|061|040| \#22825D|
+|砥粉色|Tonoko-iro|000|009|032|004| \#F4DDA5"|
+|殿茶|Tonocha|030|000|008|040| \#84A1A8"|
+|沈香茶|Tonocha|030|000|008|040| \#84A1A8"|
+|礪茶|Tonocha|000|030|047|038| \#9F6F55|
+|鳶色|Tobi-iro|069|090|010|000| \#7A380F|
+|鳥の子色|Torinoko-iro|000|005|020|005| \#F8EED1"|
+|丼鼠|Dobunezumi|000|006|004|065| \#595455|
+|苗色|Naeiro|013|000|044|021| \#B0CA71|
+|中紅花|Nakakurenai|000|060|020|000| \#EE869A"|
+|中紅|Nakabeni|000|075|056|000| \#EB6159|
+|茄子紺|Nasukon|000|045|002|049| \#824880|
+|菜種油色|Nataneabura-iro|020|025|090|000| \#DEC031|
+|撫子色|Nadeshiko-iro|000|021|015|007| \#EEBBCB"|
+|菜の花色|Nanohana-iro|005|015|010|000| \#FCD900"|
+|生壁色|Namakabe-iro|040|055|075|000| \#AA8C63|
+|鉛色|Namari-iro|002|001|000|051| \#7B7C7D|
+|納戸色|Nando-iro|010|011|000|040| \#008899|
+|丹色|Ni-iro|000|059|078|011| \#E45E32|
+|似紫|Nisemurasaki|000|032|017|068| \#513743|
+|鈍色|Nibi-iro|000|001|001|055| \#727171|
+|濡羽色|Nureba-iro|010|000|010|096| \#000B00|
+|根岸色|Negishi-iro|004|000|040|055| \#908E65|
+|鼠色|Nezumi-iro|000|000|000|065| \#7D7D7D|
+|熨斗目色|Noshime-iro|091|064|060|000| \#175B66|
+|熨斗目花色|Noshime-hanairo|045|017|000|053| \#426579|
+|灰色|Hai-iro|000|003|005|050| \#9F9D9A"|
+|灰桜|Haizakura|000|009|010|009| \#E8D3D1"|
+|灰茶|Haicha|000|036|061|040| \#98623C|
+|白銅色|Hakudou-iro|010|003|000|015| \#D3DBE2"|
+|半色|Hashita-iro|012|019|000|026| \#A69ABD"|
+|櫨染|Hajizome|000|024|079|015| \#D9A62E|
+|鳩羽色|Hatoba-iro|004|015|000|039| \#95859C"|
+|鳩羽鼠|Hatobanezumi|000|012|010|038| \#9E8B8E"|
+|花浅葱|Hanaasagi|090|032|023|000| \#1E88A8|
+|花色|Hana-iro|082|039|026|000| \#0086AD|
+|花紺青|Hanakonjou|090|065|000|048| \#062C54|
+|縹色|Hanada-iro|082|039|026|000| \#0086AD|
+|花葉色|Hanaba-iro|000|016|057|002| \#FBD26B"|
+|花萌葱|Hanamoegi|090|000|079|020| \#008D56|
+|花緑青|Hanarokusho|060|000|030|010| \#5AB5B2|
+|朱華|Hanezu|000|045|050|000| \#F4A57A|
+|榛摺|Harizuri|000|040|080|065| \#79520B|
+|梅幸茶|Baikoucha|045|031|082|000| \#AAA751|
+|薔薇色|Bara-iro|000|090|023|000| \#E73275|
+|肥後煤竹|Higosusutake|000|012|036|046| \#897858|
+|秘色|Hisoku|038|011|015|000| \#ABCED8"|
+|檜皮色|Hihada-iro|000|060|060|050| \#7B4334|
+|鶸色|Hiwa-iro|015|000|010|015| \#D6D000|
+|鶸茶|Hiwacha|000|003|031|045| \#8C8861|
+|鶸萌黄|Hiwamoegi|025|000|060|032| \#82AE46|
+|白群|Byakugun|038|003|000|018| \#83CCD2"|
+|白緑|byakuroku|020|000|025|000| \#DAEAD0"|
+|天鵞絨|veludo|080|000|080|075| \#00451E|
+|枇杷茶|Biwacha|000|029|055|032| \#AE7C4F|
+|檳榔子黒|Binroujiguro|050|013|000|010| \#00081A|
+|檳榔子染|Binroujizome|000|009|010|074| \#433D3C|
+|深藍|Fukaai|010|000|025|075| \#004150|
+|深川鼠|Fukagawanezumi|030|000|015|040| \#85A1A0"|
+|深藍色|fukakiaiiro|090|000|045|050| \#006A66|
+|深緑|Fukamidori|010|000|075|075| \#004025|
+|柴色|Fushi-iro|---|---|---|---| \#998C78|
+|柴染|Fushizome|000|021|038|030| \#B28C6E|
+|藤色|Fuji-iro|032|037|006|000| \#BAA7CC"|
+|藤煤竹|Fujisusutake|000|008|001|065| \#5A5359|
+|藤納戸|Fujinando|060|045|000|025| \#606DA1|
+|藤鼠|Fujinezumi|069|056|017|000| \#6E75A4|
+|藤紫|Fujimurasaki|050|050|000|000| \#8F82BC"|
+|二藍|Futaai|058|050|000|000| \#888ABC"|
+|二人静|Futarishizuka|025|050|000|070| \#583B55|
+|葡萄鼠|BudouNezumi|000|019|008|056| \#705B67|
+|碧色|Hekishoku|090|000|034|035| \#007F89|
+|紅赤|Beniaka|000|010|050|000| \#E5004F|
+|紅色|Beni-iro|010|010|053|010| \#C41A41|
+|紅鬱金|Beniukon|000|035|065|020| \#CB8347|
+|紅掛空色|Benikakesorairo|032|026|000|024| \#8491C3"|
+|紅掛花色|Benikakehanairo|033|032|000|039| \#68699B|
+|紅樺|Benikaba|038|090|095|000| \#B63D1B|
+|紅桔梗|Benikikyou|045|090|000|000| \#9C308D|
+|紅消鼠|Benikeshinezumi|000|013|012|068| \#524748|
+|紅柑子|Benikouji|013|080|095|002| \#CC5229|
+|紅唐|Benitou|000|085|064|015| \#D23F40|
+|紅鳶|Benitobi|000|053|059|040| \#9A493F|
+|紅鼠|Beninezu|037|056|056|000| \#A06F70|
+|紅緋|Benihi|000|075|082|009| \#F83929|
+|紅檜皮|Benihihada|000|042|047|052| \#7B4741|
+|紅鶸色|Benihiwa-iro|000|080|021|000| \#C9396D|
+|紅藤|Benifuji|019|050|000|000| \#CCA6BF"|
+|紅碧|Benimidori|032|026|000|024| \#8491C3"|
+|紅柄色|Bengara-iro|045|080|090|000| \#AA562E|
+|弁柄色|Bengara-iro|000|068|086|044| \#8F2E14|
+|牡丹色|Botan|012|075|004|000| \#E761A4|
+|舛花色|Masuhana-iro|037|013|000|043| \#5B7E91|
+|松葉色|Sensaicha|060|000|080|050| \#3F7735|
+|蜜柑色|Mikan-iro|000|045|010|006| \#F08300|
+|水浅葱|Mizuasagi|045|000|020|000| \#8CD2BC"|
+|水色|Mizu-iro|055|000|010|000| \#7FCCE3|
+|水柿|Mizugaki|036|067|059|000| \#B56C60|
+|み空色|Misora-iro|060|030|000|000| \#6C9BD2|
+|緑|Midori|065|000|037|030| \#3EB370|
+|湊鼠|Minatonezumi|063|038|040|000| \#77969A|
+|水縹|Mihanada|050|000|013|005| \#7EC7D8|
+|海松色|Miru-iro|026|000|070|070| \#596327|
+|海松茶|Mirucha|052|040|059|029| \#57543D|
+|麦藁色|Mugiwara-iro|000|017|055|015| \#E3C576|
+|虫襖|Mushiao|090|063|066|030| \#20604F|
+|蒸栗色|Mushikuri-iro|000|002|020|010| \#EFEACC"|
+|紫|Murasaki|011|053|000|040| \#884898|
+|紫式部|Murasakishikibu|020|080|000|040| \#90326D|
+|紫鳶|murasakitobi|000|032|021|063| \#5F414B|
+|滅紫|Messhi|000|026|004|065| \#594255|
+|萌木色|Moegi-iro|040|000|010|015| \#A7BD00|
+|萌葱色|Moegi-iro|080|000|065|050| \#006D4D|
+|萌黄色|Moegi-iro|050|000|010|010| \#86B81B|
+|木蘭|Mokuran|000|010|044|022| \#C7B370|
+|桃色|Momo-iro|000|055|025|000| \#F58F98"|
+|百塩茶|Momoshiocha|061|070|068|025| \#724938|
+|桃花色|Momohana-iro|000|045|030|000| \#F9AEA5"|
+|柳煤竹|Yanagisusutake|076|057|070|017| \#4A593D|
+|柳染|Yanagisome|020|000|030|028| \#93B881"|
+|柳茶|Yanagicha|013|000|050|040| \#A3A86C|
+|柳鼠|Yanaginezumi|006|000|012|016| \#C8D5BB"|
+|大和柿|Yamatogaki|000|038|050|005| \#EFAE7C|
+|山鳩色|Yamabato-iro|005|000|014|051| \#767C6B|
+|山吹色|Yamabuki-iro|000|036|095|000| \#F8B400|
+|山吹茶|Yamabukicha|000|024|075|022| \#C89932|
+|楊梅色|yamamomo-iro|000|023|060|030| \#C6A35B|
+|雄黄|Yuuou|000|045|090|005| \#EE9D19|
+|柚葉色|Yuzuha-iro|080|000|068|055| \#006543|
+|聴色|Yurushi-iro|000|025|010|000| \#FCD4D5"|
+|羊羹色|Youkan-iro|000|053|070|070| \#6D3C14|
+|洋紅色|Youkoushoku|000|010|063|008| \#DA003D|
+|吉岡染|Yoshiokazome|076|071|073|047| \#43341B|
+|駱駝色|Rakuda-iro|000|037|059|025| \#BF794E|
+|蘭茶|Rancha|017|044|089|000| \#D19826|
+|璃寛茶|Rikancha|000|012|069|058| \#6A5D21|
+|利休白茶|Rikyūshiracha|000|001|020|015| \#E6E3C5"|
+|利休茶|Rikyūcha|010|018|050|040| \#897845|
+|柳緑|Ryuuryoku|050|000|010|020| \#7BAA17|
+|竜胆色|Rindou-iro|069|096|009|000| \#6967AB|
+|瑠璃色|Ruri-iro|010|070|000|010| \#004898|
+|瑠璃紺|Rurikon|089|054|011|003| \#224B8F|
+|檸檬色|Remon-iro|007|013|083|000| \#ECDF2B"|
+|煉瓦色|Renga-iro|000|060|060|040| \#AA5C3F|
+|呂色|Roiro|000|000|000|010| \#0C0C0C|
+|緑青|Rokusho|060|000|045|015| \#5BAD92|
+|路考茶|Rokōcha|000|020|070|055| \#927A30|
+|若草色|Wakakusa-iro|038|000|010|005| \#ABC900|
+|若竹色|Wakatake-iro|060|000|060|000| \#7CC28E|
+|若菜色|Wakana-iro|026|000|070|000| \#CCDE68|
+|若苗色|Wakanae-iro|010|000|053|014| \#C7DC68|
+|若葉色|Wakaba-iro|040|000|070|005| \#A4CA68|
+|若緑|Wakamidori|039|000|055|005| \#A5CD89"|
+|若紫|Wakamurasaki|028|055|000|000| \#BE84B8"|
+|若芽色|Wakame-iro|013|000|050|000| \#E8EC98"|
+|山葵色|Wasabi-iro|045|000|045|010| \#8EC298"|
+|勿忘草|Wasurenagusa|040|010|000|005| \#9CC5E6"|
 
 
-## chinaz
-
-Colors from [tool.chinaz.com](http://tool.chinaz.com/tools/cj) :
-
-|Name|Roma|C|M|Y|K|RGB|
-|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-|<font color="#895B8A">古代紫</font>|---|---|---|---|---| \#895B8A|
-|<font color="#824880">茄子紺</font>|---|---|---|---|---| \#824880|
-|<font color="#915C8B">二藍</font>|---|---|---|---|---| \#915C8B|
-|<font color="#9D5B8B">京紫</font>|---|---|---|---|---| \#9D5B8B|
-|<font color="#7A4171">蒲葡</font>|---|---|---|---|---| \#7A4171|
-|<font color="#BC64A4">若紫</font>|---|---|---|---|---| \#BC64A4|
-|<font color="#B44C97">紅紫</font>|---|---|---|---|---| \#B44C97|
-|<font color="#AA4C8F">梅紫</font>|---|---|---|---|---| \#AA4C8F|
-|<font color="#CC7EB1">菖蒲色</font>|---|---|---|---|---| \#CC7EB1|
-|<font color="#CCA6BF">紅藤色</font>|---|---|---|---|---| \#CCA6BF|
-|<font color="#C4A3BF">浅紫</font>|---|---|---|---|---| \#C4A3BF|
-|<font color="#E7E7EB">紫水晶</font>|---|---|---|---|---| \#E7E7EB|
-|<font color="#DCD6D9">薄梅鼠</font>|---|---|---|---|---| \#DCD6D9|
-|<font color="#D3CFD9">暁鼠</font>|---|---|---|---|---| \#D3CFD9|
-|<font color="#D3CCD6">牡丹鼠</font>|---|---|---|---|---| \#D3CCD6|
-|<font color="#C8C2C6">霞色</font>|---|---|---|---|---| \#C8C2C6|
-|<font color="#A6A5C4">藤鼠</font>|---|---|---|---|---| \#A6A5C4|
-|<font color="#A69ABD">半色</font>|---|---|---|---|---| \#A69ABD|
-|<font color="#A89DAC">薄色</font>|---|---|---|---|---| \#A89DAC|
-|<font color="#9790A4">薄鼠</font>|---|---|---|---|---| \#9790A4|
-|<font color="#9E8B8E">鳩羽鼠</font>|---|---|---|---|---| \#9E8B8E|
-|<font color="#95859C">鳩羽色</font>|---|---|---|---|---| \#95859C|
-|<font color="#95949A">桔梗鼠</font>|---|---|---|---|---| \#95949A|
-|<font color="#71686C">紫鼠</font>|---|---|---|---|---| \#71686C|
-|<font color="#705B67">葡萄鼠</font>|---|---|---|---|---| \#705B67|
-|<font color="#634950">濃色</font>|---|---|---|---|---| \#634950|
-|<font color="#5F414B">紫鳶</font>|---|---|---|---|---| \#5F414B|
-|<font color="#4F455C">濃鼠</font>|---|---|---|---|---| \#4F455C|
-|<font color="#5A5359">藤煤竹</font>|---|---|---|---|---| \#5A5359|
-|<font color="#594255">滅紫</font>|---|---|---|---|---| \#594255|
-|<font color="#524748">紅消鼠</font>|---|---|---|---|---| \#524748|
-|<font color="#513743">似せ紫</font>|---|---|---|---|---| \#513743|
-|<font color="#E6EAE3">灰黄緑</font>|---|---|---|---|---| \#E6EAE3|
-|<font color="#D4DCD6">蕎麦切色</font>|---|---|---|---|---| \#D4DCD6|
-|<font color="#D4DCDA">薄雲鼠</font>|---|---|---|---|---| \#D4DCDA|
-|<font color="#D3CBC6">枯野色</font>|---|---|---|---|---| \#D3CBC6|
-|<font color="#C8C2BE">潤色</font>|---|---|---|---|---| \#C8C2BE|
-|<font color="#B3ADA0">利休白茶</font>|---|---|---|---|---| \#B3ADA0|
-|<font color="#A99E93">茶鼠</font>|---|---|---|---|---| \#A99E93|
-|<font color="#A58F86">胡桃染</font>|---|---|---|---|---| \#A58F86|
-|<font color="#928178">江戸鼠</font>|---|---|---|---|---| \#928178|
-|<font color="#887F7A">煤色</font>|---|---|---|---|---| \#887F7A|
-|<font color="#B4866B">丁子茶</font>|---|---|---|---|---| \#B4866B|
-|<font color="#B28C6E">柴染</font>|---|---|---|---|---| \#B28C6E|
-|<font color="#A16D5D">宗伝唐茶</font>|---|---|---|---|---| \#A16D5D|
-|<font color="#9F6F55">砺茶</font>|---|---|---|---|---| \#9F6F55|
-|<font color="#8C6450">煎茶色</font>|---|---|---|---|---| \#8C6450|
-|<font color="#856859">銀煤竹</font>|---|---|---|---|---| \#856859|
-|<font color="#765C47">黄枯茶</font>|---|---|---|---|---| \#765C47|
-|<font color="#6F514C">煤竹色</font>|---|---|---|---|---| \#6F514C|
-|<font color="#6F4B3E">焦茶</font>|---|---|---|---|---| \#6F4B3E|
-|<font color="#544A47">黒橡</font>|---|---|---|---|---| \#544A47|
-|<font color="#543F32">憲法色</font>|---|---|---|---|---| \#543F32|
-|<font color="#554738">涅色</font>|---|---|---|---|---| \#554738|
-|<font color="#433D3C">檳榔子染</font>|---|---|---|---|---| \#433D3C|
-|<font color="#432F2F">黒鳶</font>|---|---|---|---|---| \#432F2F|
-|<font color="#3F312B">赤墨</font>|---|---|---|---|---| \#3F312B|
-|<font color="#302833">黒紅</font>|---|---|---|---|---| \#302833|
-|<font color="#FFFFFF">白</font>|---|---|---|---|---| \#FFFFFF|
-|<font color="#FFFFFC">胡粉色</font>|---|---|---|---|---| \#FFFFFC|
-|<font color="#F7FCFE">卯の花色</font>|---|---|---|---|---| \#F7FCFE|
-|<font color="#F8FBF8">白磁</font>|---|---|---|---|---| \#F8FBF8|
-|<font color="#FBFAF5">生成り色</font>|---|---|---|---|---| \#FBFAF5|
-|<font color="#F3F3F3">乳白色</font>|---|---|---|---|---| \#F3F3F3|
-|<font color="#F3F3F2">白練</font>|---|---|---|---|---| \#F3F3F2|
-|<font color="#EAE5E3">素色</font>|---|---|---|---|---| \#EAE5E3|
-|<font color="#E5E4E6">白梅鼠</font>|---|---|---|---|---| \#E5E4E6|
-|<font color="#DCDDDD">白鼠</font>|---|---|---|---|---| \#DCDDDD|
-|<font color="#DDDCD6">絹鼠</font>|---|---|---|---|---| \#DDDCD6|
-|<font color="#C0C6C9">灰青</font>|---|---|---|---|---| \#C0C6C9|
-|<font color="#AFAFB0">銀鼠</font>|---|---|---|---|---| \#AFAFB0|
-|<font color="#ADADAD">薄鈍</font>|---|---|---|---|---| \#ADADAD|
-|<font color="#A3A3A2">薄墨色</font>|---|---|---|---|---| \#A3A3A2|
-|<font color="#9EA1A3">錫色</font>|---|---|---|---|---| \#9EA1A3|
-|<font color="#9FA0A0">素鼠</font>|---|---|---|---|---| \#9FA0A0|
-|<font color="#949495">鼠色</font>|---|---|---|---|---| \#949495|
-|<font color="#888084">源氏鼠</font>|---|---|---|---|---| \#888084|
-|<font color="#7D7D7D">灰色</font>|---|---|---|---|---| \#7D7D7D|
-|<font color="#7B7C7D">鉛色</font>|---|---|---|---|---| \#7B7C7D|
-|<font color="#727171">鈍色</font>|---|---|---|---|---| \#727171|
-|<font color="#595857">墨</font>|---|---|---|---|---| \#595857|
-|<font color="#595455">丼鼠</font>|---|---|---|---|---| \#595455|
-|<font color="#524E4D">消炭色</font>|---|---|---|---|---| \#524E4D|
-|<font color="#474A4D">藍墨茶</font>|---|---|---|---|---| \#474A4D|
-|<font color="#383C3C">羊羹色</font>|---|---|---|---|---| \#383C3C|
-|<font color="#2B2B2B">蝋色</font>|---|---|---|---|---| \#2B2B2B|
-|<font color="#2B2B2B">黒</font>|---|---|---|---|---| \#2B2B2B|
-|<font color="#180614">烏羽色</font>|---|---|---|---|---| \#180614|
-|<font color="#281A14">鉄黒</font>|---|---|---|---|---| \#281A14|
-|<font color="#000B00">濡羽色</font>|---|---|---|---|---| \#000B00|
-|<font color="#250D00">黒壇</font>|---|---|---|---|---| \#250D00|
-|<font color="#241A08">憲法黒茶</font>|---|---|---|---|---| \#241A08|
-|<font color="#16160E">暗黒色</font>|---|---|---|---|---| \#16160E|
-|<font color="#006E54">萌葱色</font>|---|---|---|---|---| \#006E54|
-|<font color="#00A381">花緑青</font>|---|---|---|---|---| \#00A381|
-|<font color="#38B48B">翡翠色</font>|---|---|---|---|---| \#38B48B|
-|<font color="#00A497">青緑</font>|---|---|---|---|---| \#00A497|
-|<font color="#80ABA9">水浅葱</font>|---|---|---|---|---| \#80ABA9|
-|<font color="#5C9291">錆浅葱</font>|---|---|---|---|---| \#5C9291|
-|<font color="#478384">青碧</font>|---|---|---|---|---| \#478384|
-|<font color="#43676B">御召茶</font>|---|---|---|---|---| \#43676B|
-|<font color="#80989B">湊鼠</font>|---|---|---|---|---| \#80989B|
-|<font color="#2C4F54">高麗納戸</font>|---|---|---|---|---| \#2C4F54|
-|<font color="#1F3134">百入茶</font>|---|---|---|---|---| \#1F3134|
-|<font color="#47585C">錆鼠</font>|---|---|---|---|---| \#47585C|
-|<font color="#485859">錆鉄御納戸</font>|---|---|---|---|---| \#485859|
-|<font color="#6C848D">藍鼠</font>|---|---|---|---|---| \#6C848D|
-|<font color="#53727D">錆御納戸</font>|---|---|---|---|---| \#53727D|
-|<font color="#5B7E91">舛花色</font>|---|---|---|---|---| \#5B7E91|
-|<font color="#426579">熨斗目花色</font>|---|---|---|---|---| \#426579|
-|<font color="#4C6473">御召御納戸</font>|---|---|---|---|---| \#4C6473|
-|<font color="#455765">鉄御納戸</font>|---|---|---|---|---| \#455765|
-|<font color="#44617B">紺鼠</font>|---|---|---|---|---| \#44617B|
-|<font color="#393F4C">藍鉄</font>|---|---|---|---|---| \#393F4C|
-|<font color="#393E4F">青褐</font>|---|---|---|---|---| \#393E4F|
-|<font color="#203744">褐返</font>|---|---|---|---|---| \#203744|
-|<font color="#4D4C61">褐色</font>|---|---|---|---|---| \#4D4C61|
-|<font color="#EAF4FC">月白</font>|---|---|---|---|---| \#EAF4FC|
-|<font color="#EAEDF7">白菫色</font>|---|---|---|---|---| \#EAEDF7|
-|<font color="#E8ECEF">白花色</font>|---|---|---|---|---| \#E8ECEF|
-|<font color="#EBF6F7">藍白</font>|---|---|---|---|---| \#EBF6F7|
-|<font color="#C1E4E9">白藍</font>|---|---|---|---|---| \#C1E4E9|
-|<font color="#BCE2E8">水色</font>|---|---|---|---|---| \#BCE2E8|
-|<font color="#A2D7DD">瓶覗</font>|---|---|---|---|---| \#A2D7DD|
-|<font color="#ABCED8">秘色色</font>|---|---|---|---|---| \#ABCED8|
-|<font color="#A0D8EF">空色</font>|---|---|---|---|---| \#A0D8EF|
-|<font color="#89C3EB">勿忘草色</font>|---|---|---|---|---| \#89C3EB|
-|<font color="#84A2D4">青藤色</font>|---|---|---|---|---| \#84A2D4|
-|<font color="#83CCD2">白群</font>|---|---|---|---|---| \#83CCD2|
-|<font color="#84B9CB">浅縹</font>|---|---|---|---|---| \#84B9CB|
-|<font color="#698AAB">薄花色</font>|---|---|---|---|---| \#698AAB|
-|<font color="#008899">納戸色</font>|---|---|---|---|---| \#008899|
-|<font color="#00A3AF">浅葱色</font>|---|---|---|---|---| \#00A3AF|
-|<font color="#2A83A2">花浅葱</font>|---|---|---|---|---| \#2A83A2|
-|<font color="#59B9C6">新橋色</font>|---|---|---|---|---| \#59B9C6|
-|<font color="#2CA9E1">天色</font>|---|---|---|---|---| \#2CA9E1|
-|<font color="#38A1DB">露草色</font>|---|---|---|---|---| \#38A1DB|
-|<font color="#0095D9">青</font>|---|---|---|---|---| \#0095D9|
-|<font color="#0094C8">薄藍</font>|---|---|---|---|---| \#0094C8|
-|<font color="#2792C3">縹色</font>|---|---|---|---|---| \#2792C3|
-|<font color="#007BBB">紺碧</font>|---|---|---|---|---| \#007BBB|
-|<font color="#5383C3">薄群青</font>|---|---|---|---|---| \#5383C3|
-|<font color="#5A79BA">薄花桜</font>|---|---|---|---|---| \#5A79BA|
-|<font color="#4C6CB3">群青色</font>|---|---|---|---|---| \#4C6CB3|
-|<font color="#3E62AD">杜若色</font>|---|---|---|---|---| \#3E62AD|
-|<font color="#1E50A2">瑠璃色</font>|---|---|---|---|---| \#1E50A2|
-|<font color="#507EA4">薄縹</font>|---|---|---|---|---| \#507EA4|
-|<font color="#19448E">瑠璃紺</font>|---|---|---|---|---| \#19448E|
-|<font color="#164A84">紺瑠璃</font>|---|---|---|---|---| \#164A84|
-|<font color="#165E83">藍色</font>|---|---|---|---|---| \#165E83|
-|<font color="#274A78">青藍</font>|---|---|---|---|---| \#274A78|
-|<font color="#2A4073">深縹</font>|---|---|---|---|---| \#2A4073|
-|<font color="#223A70">紺色</font>|---|---|---|---|---| \#223A70|
-|<font color="#192F60">紺青</font>|---|---|---|---|---| \#192F60|
-|<font color="#1C305C">留紺</font>|---|---|---|---|---| \#1C305C|
-|<font color="#0F2350">濃藍</font>|---|---|---|---|---| \#0F2350|
-|<font color="#17184B">鉄紺</font>|---|---|---|---|---| \#17184B|
-|<font color="#0D0015">漆黒</font>|---|---|---|---|---| \#0D0015|
-|<font color="#BBC8E6">淡藤色</font>|---|---|---|---|---| \#BBC8E6|
-|<font color="#BBBCDE">藤色</font>|---|---|---|---|---| \#BBBCDE|
-|<font color="#8491C3">紅掛空色</font>|---|---|---|---|---| \#8491C3|
-|<font color="#8491C3">紅碧</font>|---|---|---|---|---| \#8491C3|
-|<font color="#4D5AAF">紺桔梗</font>|---|---|---|---|---| \#4D5AAF|
-|<font color="#4D5AAF">花色</font>|---|---|---|---|---| \#4D5AAF|
-|<font color="#4A488E">紺藍</font>|---|---|---|---|---| \#4A488E|
-|<font color="#4D4398">紅桔梗</font>|---|---|---|---|---| \#4D4398|
-|<font color="#5654A2">桔梗色</font>|---|---|---|---|---| \#5654A2|
-|<font color="#706CAA">藤納戸</font>|---|---|---|---|---| \#706CAA|
-|<font color="#68699B">紅掛花色</font>|---|---|---|---|---| \#68699B|
-|<font color="#867BA9">紫苑色</font>|---|---|---|---|---| \#867BA9|
-|<font color="#DBD0E6">白藤色</font>|---|---|---|---|---| \#DBD0E6|
-|<font color="#A59ACA">藤紫</font>|---|---|---|---|---| \#A59ACA|
-|<font color="#7058A3">菫色</font>|---|---|---|---|---| \#7058A3|
-|<font color="#674598">青紫</font>|---|---|---|---|---| \#674598|
-|<font color="#674196">菖蒲色</font>|---|---|---|---|---| \#674196|
-|<font color="#9079AD">竜胆色</font>|---|---|---|---|---| \#9079AD|
-|<font color="#745399">江戸紫</font>|---|---|---|---|---| \#745399|
-|<font color="#65318E">本紫</font>|---|---|---|---|---| \#65318E|
-|<font color="#522F60">葡萄色</font>|---|---|---|---|---| \#522F60|
-|<font color="#493759">深紫</font>|---|---|---|---|---| \#493759|
-|<font color="#2E2930">紫黒</font>|---|---|---|---|---| \#2E2930|
-|<font color="#884898">紫</font>|---|---|---|---|---| \#884898|
-|<font color="#C0A2C7">薄葡萄</font>|---|---|---|---|---| \#C0A2C7|
-|<font color="#460E44">紫紺</font>|---|---|---|---|---| \#460E44|
-|<font color="#74325C">暗紅色</font>|---|---|---|---|---| \#74325C|
-|<font color="#55295B">桑の実色</font>|---|---|---|---|---| \#55295B|
-|<font color="#E6B422">黄金</font>|---|---|---|---|---| \#E6B422|
-|<font color="#D9A62E">櫨染</font>|---|---|---|---|---| \#D9A62E|
-|<font color="#D3A243">黄朽葉色</font>|---|---|---|---|---| \#D3A243|
-|<font color="#C89932">山吹茶</font>|---|---|---|---|---| \#C89932|
-|<font color="#D0AF4C">芥子色</font>|---|---|---|---|---| \#D0AF4C|
-|<font color="#8B968D">豆がら茶</font>|---|---|---|---|---| \#8B968D|
-|<font color="#6E7955">麹塵</font>|---|---|---|---|---| \#6E7955|
-|<font color="#767C6B">山鳩色</font>|---|---|---|---|---| \#767C6B|
-|<font color="#888E7E">利休鼠</font>|---|---|---|---|---| \#888E7E|
-|<font color="#5A544B">海松茶</font>|---|---|---|---|---| \#5A544B|
-|<font color="#56564B">藍海松茶</font>|---|---|---|---|---| \#56564B|
-|<font color="#56564B">藍媚茶</font>|---|---|---|---|---| \#56564B|
-|<font color="#494A41">千歳茶</font>|---|---|---|---|---| \#494A41|
-|<font color="#6B6F59">岩井茶</font>|---|---|---|---|---| \#6B6F59|
-|<font color="#474B42">仙斎茶</font>|---|---|---|---|---| \#474B42|
-|<font color="#333631">黒緑</font>|---|---|---|---|---| \#333631|
-|<font color="#5B6356">柳煤竹</font>|---|---|---|---|---| \#5B6356|
-|<font color="#726250">樺茶色</font>|---|---|---|---|---| \#726250|
-|<font color="#9D896C">空五倍子色</font>|---|---|---|---|---| \#9D896C|
-|<font color="#94846A">生壁色</font>|---|---|---|---|---| \#94846A|
-|<font color="#897858">肥後煤竹</font>|---|---|---|---|---| \#897858|
-|<font color="#716246">媚茶</font>|---|---|---|---|---| \#716246|
-|<font color="#CBB994">白橡</font>|---|---|---|---|---| \#CBB994|
-|<font color="#D6C6AF">亜麻色</font>|---|---|---|---|---| \#D6C6AF|
-|<font color="#BFA46F">榛色</font>|---|---|---|---|---| \#BFA46F|
-|<font color="#9E9478">灰汁色</font>|---|---|---|---|---| \#9E9478|
-|<font color="#A59564">利休茶</font>|---|---|---|---|---| \#A59564|
-|<font color="#715C1F">鶯茶</font>|---|---|---|---|---| \#715C1F|
-|<font color="#C7B370">木蘭色</font>|---|---|---|---|---| \#C7B370|
-|<font color="#DCD3B2">砂色</font>|---|---|---|---|---| \#DCD3B2|
-|<font color="#A19361">油色</font>|---|---|---|---|---| \#A19361|
-|<font color="#8F8667">利休色</font>|---|---|---|---|---| \#8F8667|
-|<font color="#887938">梅幸茶</font>|---|---|---|---|---| \#887938|
-|<font color="#6A5D21">璃寛茶</font>|---|---|---|---|---| \#6A5D21|
-|<font color="#918754">黄海松茶</font>|---|---|---|---|---| \#918754|
-|<font color="#A69425">菜種油色</font>|---|---|---|---|---| \#A69425|
-|<font color="#ADA250">青朽葉</font>|---|---|---|---|---| \#ADA250|
-|<font color="#938B4B">根岸色</font>|---|---|---|---|---| \#938B4B|
-|<font color="#8C8861">鶸茶</font>|---|---|---|---|---| \#8C8861|
-|<font color="#A1A46D">柳茶</font>|---|---|---|---|---| \#A1A46D|
-|<font color="#726D40">海松色</font>|---|---|---|---|---| \#726D40|
-|<font color="#928C36">鶯色</font>|---|---|---|---|---| \#928C36|
-|<font color="#DCCB18">緑黄色</font>|---|---|---|---|---| \#DCCB18|
-|<font color="#D7CF3A">鶸色</font>|---|---|---|---|---| \#D7CF3A|
-|<font color="#C5C56A">抹茶色</font>|---|---|---|---|---| \#C5C56A|
-|<font color="#C3D825">若草色</font>|---|---|---|---|---| \#C3D825|
-|<font color="#B8D200">黄緑</font>|---|---|---|---|---| \#B8D200|
-|<font color="#E0EBAF">若芽色</font>|---|---|---|---|---| \#E0EBAF|
-|<font color="#D8E698">若菜色</font>|---|---|---|---|---| \#D8E698|
-|<font color="#C7DC68">若苗色</font>|---|---|---|---|---| \#C7DC68|
-|<font color="#99AB4E">青丹</font>|---|---|---|---|---| \#99AB4E|
-|<font color="#7B8D42">草色</font>|---|---|---|---|---| \#7B8D42|
-|<font color="#69821B">苔色</font>|---|---|---|---|---| \#69821B|
-|<font color="#AACF53">萌黄</font>|---|---|---|---|---| \#AACF53|
-|<font color="#B0CA71">苗色</font>|---|---|---|---|---| \#B0CA71|
-|<font color="#B9D08B">若葉色</font>|---|---|---|---|---| \#B9D08B|
-|<font color="#839B5C">松葉色</font>|---|---|---|---|---| \#839B5C|
-|<font color="#CEE4AE">夏虫色</font>|---|---|---|---|---| \#CEE4AE|
-|<font color="#82AE46">鶸萌黄</font>|---|---|---|---|---| \#82AE46|
-|<font color="#A8C97F">柳色</font>|---|---|---|---|---| \#A8C97F|
-|<font color="#9BA88D">青白橡</font>|---|---|---|---|---| \#9BA88D|
-|<font color="#C8D5BB">柳鼠</font>|---|---|---|---|---| \#C8D5BB|
-|<font color="#C1D8AC">裏葉柳</font>|---|---|---|---|---| \#C1D8AC|
-|<font color="#A8BF93">山葵色</font>|---|---|---|---|---| \#A8BF93|
-|<font color="#769164">老竹色</font>|---|---|---|---|---| \#769164|
-|<font color="#D6E9CA">白緑</font>|---|---|---|---|---| \#D6E9CA|
-|<font color="#93CA76">淡萌黄</font>|---|---|---|---|---| \#93CA76|
-|<font color="#93B881">柳染</font>|---|---|---|---|---| \#93B881|
-|<font color="#BADCAD">薄萌葱</font>|---|---|---|---|---| \#BADCAD|
-|<font color="#97A791">深川鼠</font>|---|---|---|---|---| \#97A791|
-|<font color="#98D98E">若緑</font>|---|---|---|---|---| \#98D98E|
-|<font color="#88CB7F">浅緑</font>|---|---|---|---|---| \#88CB7F|
-|<font color="#69B076">薄緑</font>|---|---|---|---|---| \#69B076|
-|<font color="#6B7B6E">青鈍</font>|---|---|---|---|---| \#6B7B6E|
-|<font color="#BED2C3">青磁鼠</font>|---|---|---|---|---| \#BED2C3|
-|<font color="#93B69C">薄青</font>|---|---|---|---|---| \#93B69C|
-|<font color="#A6C8B2">錆青磁</font>|---|---|---|---|---| \#A6C8B2|
-|<font color="#47885E">緑青色</font>|---|---|---|---|---| \#47885E|
-|<font color="#316745">千歳緑</font>|---|---|---|---|---| \#316745|
-|<font color="#68BE8D">若竹色</font>|---|---|---|---|---| \#68BE8D|
-|<font color="#3EB370">緑</font>|---|---|---|---|---| \#3EB370|
-|<font color="#007B43">常磐色</font>|---|---|---|---|---| \#007B43|
-|<font color="#BED3CA">千草鼠</font>|---|---|---|---|---| \#BED3CA|
-|<font color="#92B5A9">千草色</font>|---|---|---|---|---| \#92B5A9|
-|<font color="#7EBEA5">青磁色</font>|---|---|---|---|---| \#7EBEA5|
-|<font color="#7EBEAB">青竹色</font>|---|---|---|---|---| \#7EBEAB|
-|<font color="#028760">常磐緑</font>|---|---|---|---|---| \#028760|
-|<font color="#3B7960">木賊色</font>|---|---|---|---|---| \#3B7960|
-|<font color="#2F5D50">天鵞絨</font>|---|---|---|---|---| \#2F5D50|
-|<font color="#3A5B52">虫襖</font>|---|---|---|---|---| \#3A5B52|
-|<font color="#475950">革色</font>|---|---|---|---|---| \#475950|
-|<font color="#00552E">深緑</font>|---|---|---|---|---| \#00552E|
-|<font color="#005243">鉄色</font>|---|---|---|---|---| \#005243|
-|<font color="#96514D">小豆色</font>|---|---|---|---|---| \#96514D|
-|<font color="#8D6449">枯茶</font>|---|---|---|---|---| \#8D6449|
-|<font color="#DEB068">饴色</font>|---|---|---|---|---| \#DEB068|
-|<font color="#BF794E">骆驼色</font>|---|---|---|---|---| \#BF794E|
-|<font color="#BC763C">土色</font>|---|---|---|---|---| \#BC763C|
-|<font color="#B98C46">黄唐色</font>|---|---|---|---|---| \#B98C46|
-|<font color="#B79B5B">桑染</font>|---|---|---|---|---| \#B79B5B|
-|<font color="#B77B57">栌色</font>|---|---|---|---|---| \#B77B57|
-|<font color="#B68D4C">黄橡</font>|---|---|---|---|---| \#B68D4C|
-|<font color="#AD7D4C">丁字染</font>|---|---|---|---|---| \#AD7D4C|
-|<font color="#AD7D4C">香染</font>|---|---|---|---|---| \#AD7D4C|
-|<font color="#AE7C4F">枇杷茶</font>|---|---|---|---|---| \#AE7C4F|
-|<font color="#AD7E4E">芝翫茶</font>|---|---|---|---|---| \#AD7E4E|
-|<font color="#AE7C58">焦香</font>|---|---|---|---|---| \#AE7C58|
-|<font color="#A86F4C">胡桃色</font>|---|---|---|---|---| \#A86F4C|
-|<font color="#946243">渋纸色</font>|---|---|---|---|---| \#946243|
-|<font color="#917347">朽葉色</font>|---|---|---|---|---| \#917347|
-|<font color="#956F29">桑茶</font>|---|---|---|---|---| \#956F29|
-|<font color="#8C7042">路考茶</font>|---|---|---|---|---| \#8C7042|
-|<font color="#7B6C3E">国防色</font>|---|---|---|---|---| \#7B6C3E|
-|<font color="#D8A373">伽羅色</font>|---|---|---|---|---| \#D8A373|
-|<font color="#CD8C5C">江戸茶</font>|---|---|---|---|---| \#CD8C5C|
-|<font color="#CD5E3C">樺色</font>|---|---|---|---|---| \#CD5E3C|
-|<font color="#CB8347">紅鬱金</font>|---|---|---|---|---| \#CB8347|
-|<font color="#C37854">土器色</font>|---|---|---|---|---| \#C37854|
-|<font color="#C38743">狐色</font>|---|---|---|---|---| \#C38743|
-|<font color="#C39143">黄土色</font>|---|---|---|---|---| \#C39143|
-|<font color="#BF783A">琥珀色</font>|---|---|---|---|---| \#BF783A|
-|<font color="#BB5535">赤茶</font>|---|---|---|---|---| \#BB5535|
-|<font color="#BB5520">代赭</font>|---|---|---|---|---| \#BB5520|
-|<font color="#B55233">煉瓦色</font>|---|---|---|---|---| \#B55233|
-|<font color="#AA4F37">雀茶</font>|---|---|---|---|---| \#AA4F37|
-|<font color="#9F563A">団十郎茶</font>|---|---|---|---|---| \#9F563A|
-|<font color="#9F563A">柿渋色</font>|---|---|---|---|---| \#9F563A|
-|<font color="#9A493F">紅鳶</font>|---|---|---|---|---| \#9A493F|
-|<font color="#98623C">灰茶</font>|---|---|---|---|---| \#98623C|
-|<font color="#965042">茶色</font>|---|---|---|---|---| \#965042|
-|<font color="#965036">檜皮色</font>|---|---|---|---|---| \#965036|
-|<font color="#95483F">鳶色</font>|---|---|---|---|---| \#95483F|
-|<font color="#954E2A">柿茶</font>|---|---|---|---|---| \#954E2A|
-|<font color="#8F2E14">弁柄色</font>|---|---|---|---|---| \#8F2E14|
-|<font color="#8A3319">赤錆色</font>|---|---|---|---|---| \#8A3319|
-|<font color="#8A3B00">褐色</font>|---|---|---|---|---| \#8A3B00|
-|<font color="#852E19">栗梅</font>|---|---|---|---|---| \#852E19|
-|<font color="#7B4741">紅檜皮</font>|---|---|---|---|---| \#7B4741|
-|<font color="#773C30">海老茶</font>|---|---|---|---|---| \#773C30|
-|<font color="#783C1D">唐茶</font>|---|---|---|---|---| \#783C1D|
-|<font color="#762F07">栗色</font>|---|---|---|---|---| \#762F07|
-|<font color="#752100">赤銅色</font>|---|---|---|---|---| \#752100|
-|<font color="#6C3524">錆色</font>|---|---|---|---|---| \#6C3524|
-|<font color="#683F36">赤褐色</font>|---|---|---|---|---| \#683F36|
-|<font color="#664032">茶褐色</font>|---|---|---|---|---| \#664032|
-|<font color="#6D3C32">栗皮茶</font>|---|---|---|---|---| \#6D3C32|
-|<font color="#583822">黒茶</font>|---|---|---|---|---| \#583822|
-|<font color="#6C2C2F">葡萄茶</font>|---|---|---|---|---| \#6C2C2F|
-|<font color="#640125">葡萄色</font>|---|---|---|---|---| \#640125|
-|<font color="#F8B862">萱草色</font>|---|---|---|---|---| \#F8B862|
-|<font color="#F6AD49">柑子色</font>|---|---|---|---|---| \#F6AD49|
-|<font color="#F39800">金茶</font>|---|---|---|---|---| \#F39800|
-|<font color="#F08300">蜜柑色</font>|---|---|---|---|---| \#F08300|
-|<font color="#EC6D51">鉛丹色</font>|---|---|---|---|---| \#EC6D51|
-|<font color="#EE7948">黄丹</font>|---|---|---|---|---| \#EE7948|
-|<font color="#ED6D3D">柿色</font>|---|---|---|---|---| \#ED6D3D|
-|<font color="#EC6800">黄赤</font>|---|---|---|---|---| \#EC6800|
-|<font color="#EC6800">人参色</font>|---|---|---|---|---| \#EC6800|
-|<font color="#EE7800">橙色</font>|---|---|---|---|---| \#EE7800|
-|<font color="#EB6238">照柿</font>|---|---|---|---|---| \#EB6238|
-|<font color="#EA5506">赤橙</font>|---|---|---|---|---| \#EA5506|
-|<font color="#EA5506">金赤</font>|---|---|---|---|---| \#EA5506|
-|<font color="#EB6101">朱色</font>|---|---|---|---|---| \#EB6101|
-|<font color="#E49E61">小麦色</font>|---|---|---|---|---| \#E49E61|
-|<font color="#E45E32">丹色</font>|---|---|---|---|---| \#E45E32|
-|<font color="#E17B34">黄茶</font>|---|---|---|---|---| \#E17B34|
-|<font color="#DD7A56">肉桂色</font>|---|---|---|---|---| \#DD7A56|
-|<font color="#DB8449">赤朽葉色</font>|---|---|---|---|---| \#DB8449|
-|<font color="#D66A35">黄櫨染</font>|---|---|---|---|---| \#D66A35|
-|<font color="#FFD900">蒲公英色</font>|---|---|---|---|---| \#FFD900|
-|<font color="#FFD900">黄色</font>|---|---|---|---|---| \#FFD900|
-|<font color="#FFEA00">中黄</font>|---|---|---|---|---| \#FFEA00|
-|<font color="#FFEC47">菜の花色</font>|---|---|---|---|---| \#FFEC47|
-|<font color="#FEF263">黄檗色</font>|---|---|---|---|---| \#FEF263|
-|<font color="#FCD575">卵色</font>|---|---|---|---|---| \#FCD575|
-|<font color="#FBD26B">花葉色</font>|---|---|---|---|---| \#FBD26B|
-|<font color="#F5E56B">刈安色</font>|---|---|---|---|---| \#F5E56B|
-|<font color="#EEC362">玉蜀黍色</font>|---|---|---|---|---| \#EEC362|
-|<font color="#EBD842">金糸雀色</font>|---|---|---|---|---| \#EBD842|
-|<font color="#FFDB4F">黄支子色</font>|---|---|---|---|---| \#FFDB4F|
-|<font color="#FBCA4D">支子色</font>|---|---|---|---|---| \#FBCA4D|
-|<font color="#FCC800">向日葵色</font>|---|---|---|---|---| \#FCC800|
-|<font color="#F8B500">山吹色</font>|---|---|---|---|---| \#F8B500|
-|<font color="#FABF14">鬱金色</font>|---|---|---|---|---| \#FABF14|
-|<font color="#F7C114">藤黄</font>|---|---|---|---|---| \#F7C114|
-|<font color="#E6B422">金色</font>|---|---|---|---|---| \#E6B422|
-|<font color="#FDEFF2">薄桜</font>|---|---|---|---|---| \#FDEFF2|
-|<font color="#E9DFE5">桜鼠</font>|---|---|---|---|---| \#E9DFE5|
-|<font color="#E4D2D8">鸨鼠</font>|---|---|---|---|---| \#E4D2D8|
-|<font color="#F6BFBC">虹色</font>|---|---|---|---|---| \#F6BFBC|
-|<font color="#F5B1AA">珊瑚色</font>|---|---|---|---|---| \#F5B1AA|
-|<font color="#F5B199">一斤染</font>|---|---|---|---|---| \#F5B199|
-|<font color="#EFAB93">宍色</font>|---|---|---|---|---| \#EFAB93|
-|<font color="#F2A0A1">红梅色</font>|---|---|---|---|---| \#F2A0A1|
-|<font color="#F0908D">薄红</font>|---|---|---|---|---| \#F0908D|
-|<font color="#EE827C">甚三红</font>|---|---|---|---|---| \#EE827C|
-|<font color="#F09199">桃色</font>|---|---|---|---|---| \#F09199|
-|<font color="#F4B3C2">鸨色</font>|---|---|---|---|---| \#F4B3C2|
-|<font color="#EEBBCB">撫子色</font>|---|---|---|---|---| \#EEBBCB|
-|<font color="#E8D3C7">灰梅</font>|---|---|---|---|---| \#E8D3C7|
-|<font color="#E8D3D1">灰桜</font>|---|---|---|---|---| \#E8D3D1|
-|<font color="#E6CDE3">淡红藤</font>|---|---|---|---|---| \#E6CDE3|
-|<font color="#E5ABBE">石竹色</font>|---|---|---|---|---| \#E5ABBE|
-|<font color="#E597B2">薄红梅</font>|---|---|---|---|---| \#E597B2|
-|<font color="#E198B4">桃花色</font>|---|---|---|---|---| \#E198B4|
-|<font color="#E4AB9B">水柿</font>|---|---|---|---|---| \#E4AB9B|
-|<font color="#E09E87">ときがら茶</font>|---|---|---|---|---| \#E09E87|
-|<font color="#D69090">退红</font>|---|---|---|---|---| \#D69090|
-|<font color="#D4ACAD">薄柿</font>|---|---|---|---|---| \#D4ACAD|
-|<font color="#C97586">长春色</font>|---|---|---|---|---| \#C97586|
-|<font color="#C099A0">梅鼠</font>|---|---|---|---|---| \#C099A0|
-|<font color="#B88884">鸨浅葱</font>|---|---|---|---|---| \#B88884|
-|<font color="#B48A76">梅染</font>|---|---|---|---|---| \#B48A76|
-|<font color="#A86965">苏芳香</font>|---|---|---|---|---| \#A86965|
-|<font color="#A25768">浅苏芳</font>|---|---|---|---|---| \#A25768|
-|<font color="#EC6D71">真朱</font>|---|---|---|---|---| \#EC6D71|
-|<font color="#EB6EA5">赤紫</font>|---|---|---|---|---| \#EB6EA5|
-|<font color="#E95295">躑躅色</font>|---|---|---|---|---| \#E95295|
-|<font color="#E7609E">牡丹色</font>|---|---|---|---|---| \#E7609E|
-|<font color="#D0576B">今样色</font>|---|---|---|---|---| \#D0576B|
-|<font color="#C85179">中红</font>|---|---|---|---|---| \#C85179|
-|<font color="#E9546B">蔷薇色</font>|---|---|---|---|---| \#E9546B|
-|<font color="#E95464">韩红</font>|---|---|---|---|---| \#E95464|
-|<font color="#C85554">银朱</font>|---|---|---|---|---| \#C85554|
-|<font color="#C53D43">赤红</font>|---|---|---|---|---| \#C53D43|
-|<font color="#E83929">红緋</font>|---|---|---|---|---| \#E83929|
-|<font color="#E60033">赤</font>|---|---|---|---|---| \#E60033|
-|<font color="#E2041B">猩緋</font>|---|---|---|---|---| \#E2041B|
-|<font color="#D7003A">红</font>|---|---|---|---|---| \#D7003A|
-|<font color="#C9171E">深緋</font>|---|---|---|---|---| \#C9171E|
-|<font color="#D3381C">绯色</font>|---|---|---|---|---| \#D3381C|
-|<font color="#BF242A">桜色</font>|---|---|---|---|---| \#BF242A|
-|<font color="#CE5242">赤丹</font>|---|---|---|---|---| \#CE5242|
-|<font color="#D9333F">红赤</font>|---|---|---|---|---| \#D9333F|
-|<font color="#B94047">胭脂</font>|---|---|---|---|---| \#B94047|
-|<font color="#BA2636">朱緋</font>|---|---|---|---|---| \#BA2636|
-|<font color="#B7282E">茜色</font>|---|---|---|---|---| \#B7282E|
-|<font color="#A73836">深海老茶</font>|---|---|---|---|---| \#A73836|
-|<font color="#9E3D3F">苏芳</font>|---|---|---|---|---| \#9E3D3F|
-|<font color="#A22041">真红</font>|---|---|---|---|---| \#A22041|
-|<font color="#A22041">浓红</font>|---|---|---|---|---| \#A22041|
-|<font color="#F8F4E6">象牙色</font>|---|---|---|---|---| \#F8F4E6|
-|<font color="#EDE4CD">练色</font>|---|---|---|---|---| \#EDE4CD|
-|<font color="#E9E4D4">灰白色</font>|---|---|---|---|---| \#E9E4D4|
-|<font color="#EDE1A9">蒸栗色</font>|---|---|---|---|---| \#EDE1A9|
-|<font color="#F2F2B0">女郎花</font>|---|---|---|---|---| \#F2F2B0|
-|<font color="#E4DC8A">枯草色</font>|---|---|---|---|---| \#E4DC8A|
-|<font color="#F8E58C">淡黄</font>|---|---|---|---|---| \#F8E58C|
-|<font color="#DDBB99">白茶</font>|---|---|---|---|---| \#DDBB99|
-|<font color="#D7A98C">赤白橡</font>|---|---|---|---|---| \#D7A98C|
-|<font color="#F2C9AC">洗柿</font>|---|---|---|---|---| \#F2C9AC|
-|<font color="#FFF1CF">鸟の子色</font>|---|---|---|---|---| \#FFF1CF|
-|<font color="#FDDEA5">蜂蜜色</font>|---|---|---|---|---| \#FDDEA5|
-|<font color="#FCE2C4">肌色</font>|---|---|---|---|---| \#FCE2C4|
-|<font color="#FDE8D0">薄卵色</font>|---|---|---|---|---| \#FDE8D0|
-|<font color="#F9C89B">雄黄</font>|---|---|---|---|---| \#F9C89B|
-|<font color="#F7BD8F">洒落柿</font>|---|---|---|---|---| \#F7BD8F|
-|<font color="#F6B894">赤香</font>|---|---|---|---|---| \#F6B894|
-|<font color="#F4DDA5">砥粉色</font>|---|---|---|---|---| \#F4DDA5|
-|<font color="#F1BF99">肉色</font>|---|---|---|---|---| \#F1BF99|
-|<font color="#F1BF99">人色</font>|---|---|---|---|---| \#F1BF99|
-|<font color="#EFCD9A">丁子色</font>|---|---|---|---|---| \#EFCD9A|
-|<font color="#EFCD9A">香色</font>|---|---|---|---|---| \#EFCD9A|
-|<font color="#F0CFA0">薄香</font>|---|---|---|---|---| \#F0CFA0|
-|<font color="#EDD3A1">浅黄</font>|---|---|---|---|---| \#EDD3A1|
-|<font color="#E0C38C">枯色</font>|---|---|---|---|---| \#E0C38C|
-|<font color="#F3BF88">淡香</font>|---|---|---|---|---| \#F3BF88|
-|<font color="#F7B977">杏色</font>|---|---|---|---|---| \#F7B977|
-|<font color="#F19072">东云色</font>|---|---|---|---|---| \#F19072|
-|<font color="#F19072">曙色</font>|---|---|---|---|---| \#F19072|
-|<font color="#EE836F">珊瑚朱色</font>|---|---|---|---|---| \#EE836F|
-|<font color="#EB9B6F">深支子</font>|---|---|---|---|---| \#EB9B6F|
-|<font color="#E0815E">纁</font>|---|---|---|---|---| \#E0815E|
-|<font color="#DF7163">浅绯</font>|---|---|---|---|---| \#DF7163|
-|<font color="#D57C6B">真赭</font>|---|---|---|---|---| \#D57C6B|
-|<font color="#D0826C">洗朱</font>|---|---|---|---|---| \#D0826C|
-|<font color="#CA8269">遠州茶</font>|---|---|---|---|---| \#CA8269|
-|<font color="#BB5548">红桦色</font>|---|---|---|---|---| \#BB5548|
-|<font color="#AB6953">赭</font>|---|---|---|---|---| \#AB6953|
 
 # CopyRight
 

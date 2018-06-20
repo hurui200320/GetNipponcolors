@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="961e6377-626a-4c99-b4bb-112a3faf302b" name="Default" comment="" />
+    <list default="true" id="961e6377-626a-4c99-b4bb-112a3faf302b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/GetNipponcolors/info/skyblond/getNipponcolors/ColordicGetter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GetNipponcolors/info/skyblond/getNipponcolors/IrocoreGetter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GetNipponcolors/info/skyblond/getNipponcolors/NipponColorsGetter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GetNipponcolors/info/skyblond/getNipponcolors/Tools.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Tools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GetNipponcolors/info/skyblond/getNipponcolors/ColorGetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GetNipponcolors/info/skyblond/getNipponcolors/ColorGetter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GetNipponcolors/info/skyblond/getNipponcolors/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GetNipponcolors/info/skyblond/getNipponcolors/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tool.chinaz.com.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www.colordic.org.json" beforeDir="false" afterPath="$PROJECT_DIR$/www.colordic.org.json" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,8 +30,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+            <state relative-caret-position="350">
+              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -27,11 +42,22 @@
       <file leaf-file-name="ColorGetter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorGetter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-50">
-              <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+            <state relative-caret-position="3950">
+              <caret line="175" column="18" lean-forward="true" selection-start-line="175" selection-start-column="18" selection-end-line="175" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#7285#7286#0" expanded="true" />
+                <element signature="e#7325#7326#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tools.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Tools.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -39,11 +65,9 @@
       <file leaf-file-name="ColorReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="-125">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#185#186#0" expanded="true" />
-                <element signature="e#204#205#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,7 +85,7 @@
       <file leaf-file-name="HttpRequest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/HttpRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1025">
+            <state relative-caret-position="567">
               <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -85,7 +109,11 @@
       <find>colors</find>
       <find>深藍色</find>
       <find>nades</find>
+      <find>done</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -93,8 +121,9 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/info/skyblond/getNipponcolors/HttpRequest.java" />
         <option value="$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Color.java" />
-        <option value="$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorGetter.java" />
         <option value="$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorReader.java" />
+        <option value="$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Tools.java" />
+        <option value="$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorGetter.java" />
         <option value="$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Main.java" />
       </list>
     </option>
@@ -114,11 +143,13 @@
     <option name="width" value="616" />
     <option name="height" value="1080" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -137,13 +168,19 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="getNipponcolors" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="GetNipponcolors" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GetNipponcolors" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="getNipponcolors" type="462c0819:PsiDirectoryNode" />
+              <item name="ColorGetter.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -208,43 +245,45 @@
       <option name="presentableId" value="Default" />
       <updated>1529379065975</updated>
       <workItem from="1529379069775" duration="22893000" />
+      <workItem from="1529418189031" duration="6721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22893000" />
+    <option name="totallyTimeSpent" value="29619000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.32925585" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info id="Image Layers" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32008156" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info id="Capture Tool" />
-      <window_info id="Designer" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32857144" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3510204" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12002153" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,15 +293,24 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/irocore.com.json">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorGetter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-50">
+        <state relative-caret-position="875">
           <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#7285#7286#0" expanded="true" />
+            <element signature="e#7325#7326#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -272,15 +320,13 @@
         <state>
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#185#186#0" expanded="true" />
-            <element signature="e#204#205#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Color.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="600">
           <caret line="24" column="54" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="54" />
         </state>
       </provider>
@@ -295,10 +341,158 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="24" column="54" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/HttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-125">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Tools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorGetter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3950">
+          <caret line="175" column="18" lean-forward="true" selection-start-line="175" selection-start-column="18" selection-end-line="175" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7285#7286#0" expanded="true" />
+            <element signature="e#7325#7326#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
+        <state relative-caret-position="336">
+          <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
           <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorGetter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="875">
+          <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7285#7286#0" expanded="true" />
+            <element signature="e#7325#7326#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="24" column="54" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/HttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1025">
+          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="24" column="54" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/HttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-125">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Tools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/ColorGetter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3950">
+          <caret line="175" column="18" lean-forward="true" selection-start-line="175" selection-start-column="18" selection-end-line="175" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7285#7286#0" expanded="true" />
+            <element signature="e#7325#7326#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/skyblond/getNipponcolors/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
