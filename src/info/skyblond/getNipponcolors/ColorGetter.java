@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class ColorGetter {
-    public static void readToFile() throws IOException, InterruptedException {
+    public static void readToFile() throws InterruptedException {
         Thread nipponColors = new Thread(new NipponColorsGetter());
         nipponColors.start();
 
@@ -57,7 +57,7 @@ class NipponColorsGetter implements Runnable{
                     continue;
                 String colorInfo = rawcolor.split(">")[3];
                 colorArrayList.add(new Color(colorInfo.split(", ")[0],colorInfo.split(", ")[1]));
-                //System.out.println(colorInfo);
+                System.out.print(",");
             }
 
             for(Color color : colorArrayList){
@@ -66,9 +66,9 @@ class NipponColorsGetter implements Runnable{
                     return;
                 String[] colorJson = respond.substring(1).split(",");
                 String index,cmyk,rgb;
-                index = colorJson[0].split("\":\"")[1];
-                cmyk = colorJson[1].split("\":\"")[1];
-                rgb = colorJson[2].split("\":\"")[1];
+                index = colorJson[0].split("\":\"")[1].trim();
+                cmyk = colorJson[1].split("\":\"")[1].trim();
+                rgb = colorJson[2].split("\":\"")[1].trim();
                 index = index.substring(0,index.length()-1).trim();
                 cmyk = cmyk.substring(0,cmyk.length()-1).trim();
                 rgb = rgb.substring(0,rgb.length()-2).trim();
@@ -77,7 +77,7 @@ class NipponColorsGetter implements Runnable{
 
                 color.setProperties(index,cmyk,rgb);
                 //System.out.println(color);//human understandable form
-                System.out.println(color);
+                System.out.print(".");
             }
 
             //System.out.println(colorArrayList.size());
@@ -96,11 +96,10 @@ class NipponColorsGetter implements Runnable{
             writer1.close();
             if(Thread.currentThread().isInterrupted())
                 return;
+            System.out.print("NipponColors Done.");
         } catch (IOException e) {
             e.printStackTrace();
             Thread.currentThread().interrupt();
-        }finally {
-            System.out.println("NipponColors Done.");
         }
     }
 }
@@ -118,7 +117,6 @@ class ColordicGetter implements Runnable{
             String[] colors2 = rawColors2.split("<td style=\"background-color:");
 
             ArrayList<Color> colorArrayList2 = new ArrayList<Color>();
-
             for (String s : colors2) {
                 if (!s.trim().startsWith("#"))
                     continue;
@@ -127,14 +125,15 @@ class ColordicGetter implements Runnable{
                 //    System.out.println(c);
                 String name, ramo, rgb;
                 Color color = new Color(colorInfo[2].substring(0, colorInfo[2].length() - 5), colorInfo[3].substring(0, colorInfo[3].length() - 6));
-                color.rgb = colorInfo[0].substring(1, 7).trim().toUpperCase();
-                color.url = colorInfo[1].split("\"")[3];
+                color.rgb = colorInfo[0].substring(1, 7).trim().toUpperCase().trim();
+                color.url = colorInfo[1].split("\"")[3].trim();
                 //System.out.println(color.url);
                 //System.out.println(color);
                 colorArrayList2.add(color);
-                //System.out.println(color);
+                System.out.print(",");
             }
             //Get CMYK
+            int num = 1;
             for (Color color : colorArrayList2) {
                 String raw = HttpRequest.sendGet(color.url, "");
                 if(Thread.currentThread().isInterrupted())
@@ -158,7 +157,9 @@ class ColordicGetter implements Runnable{
                     }
                 }
                 color.cmyk = cmyk;
-                System.out.println(color);
+                System.out.print(".");
+                color.index = num;
+                num++;
             }
 
             Path path2 = Paths.get("./www.colordic.org.json");
@@ -174,11 +175,10 @@ class ColordicGetter implements Runnable{
             writer2.close();
             if(Thread.currentThread().isInterrupted())
                 return;
+            System.out.print("colorDic Done.");
         }catch (IOException e){
             e.printStackTrace();
             Thread.currentThread().interrupt();
-        }finally {
-            System.out.println("colorDic Done.");
         }
     }
 }
@@ -203,13 +203,14 @@ class IrocoreGetter implements Runnable{
                 System.out.println(c);*/
                 String name, ramo, rgb;
                 Color color = new Color(colorInfo[1].substring(0, colorInfo[1].length() - 5), colorInfo[2].substring(0, colorInfo[2].length() - 6));
-                color.rgb = colorInfo[0].split("style=\"background:#")[1].split(";")[0];
+                color.rgb = colorInfo[0].split("style=\"background:#")[1].split(";")[0].substring(0,6).trim();
                 //System.out.println(s);
                 color.url = colorInfo[0].split("\"")[0];
                 colorArrayList3.add(color);
-                //System.out.println(color.url);
+                System.out.print(",");
             }
             //get CMYK value
+            int num = 1;
             for (Color color : colorArrayList3) {
                 String raw = HttpRequest.sendGet(color.url, "");
                 if (Thread.currentThread().isInterrupted())
@@ -228,7 +229,9 @@ class IrocoreGetter implements Runnable{
                     }
                 }
                 color.cmyk = cmyk;
-                //System.out.println(color);
+                color.index = num;
+                num++;
+                System.out.print(".");
             }
 
             Path path3 = Paths.get("./irocore.com.json");
@@ -244,11 +247,10 @@ class IrocoreGetter implements Runnable{
             writer3.close();
             if (Thread.currentThread().isInterrupted())
                 return;
+            System.out.print("Irocore Done.");
         }catch (IOException e){
             e.printStackTrace();
             Thread.currentThread().interrupt();
-        }finally {
-            System.out.println("Irocore Done.");
         }
     }
 

@@ -20,7 +20,7 @@ public class Color {
 
     @Override
     public String toString(){
-        String result = name + "( " + roma.toLowerCase() + " ): \n" +
+        String result = String.valueOf(index) + ". " + name + "( " + roma.toLowerCase() + " ): \n" +
                 "\tCMYK: \n" +
                     "\t\tCyan: " + cmyk.substring(0,3) + "\n" +
                     "\t\tMagenta: " + cmyk.substring(3,6) + "\n" +

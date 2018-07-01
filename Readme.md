@@ -4,15 +4,37 @@ This program can download nippon colors from 3 different webiste.
 
 Every website has a different statement with Nippon colors, not only nipponcolors.com, but also irocore.com and colordic.org. So I wrote this program to catch different colors from their website.
 
+# View
+
+You can view it [here](https://www.skyblond.info/pic/nipponcolors/).
+
 # How to use
 
 This program need Gson 2.8.5 to work, and I use IDEA for IDE, but you needn't run it when you need. This program use some simple tricks to split data. Once the website change, it won't work well.
 
 And since it single-thread, it will take a lot of time to run it. So I run it at 0513(UTC) on 2018 June 20th. Here is the table I collected. ```---```means no data or data broken.
 
-## NipponColors
+## Additional function
 
-![黑](./png/NipponColors.svg)
+Here are few function work with those data(basicly in ```Main.java```):
+
+##  toMarkdownTable
+
+This function accept an ArrayList and three Strings to print a markdown table(in source) which shows the basic infomation about each color. The section ```Colors(Tables)``` is an example.
+
+## toSVG
+
+This function accept an ArrayList and two Strings to write a svg file which you see in the section ```View```. Attention: I have rendering problem with chrome when using pure svg. Once I wrote a simple html file to show svgs, it works will.
+
+## toACT
+
+This function working with function ```takeColors```,```toACT``` accept an ArrayList and a String to write a Photoshop ACT file, which is color table you can import to photoshop. It has a 256 colors limit and every ACT file it generated will put the black an white at first, which means it can only turn 254 colors into ACT file in 1 time.
+
+```takColors```accept an ArrayList and a Integer array, returning an ArrayList which contains the color you specified in the Integer array(the index of those color, you can see them in View section). You can use this to pick up colors you want and then output as a ACT file so that it can be used in photoshop.
+
+# Colors(Tables)
+
+## NipponColors
 
 Colors from [nipponcolors.com](http://nipponcolors.com) :
 
