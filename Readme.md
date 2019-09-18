@@ -294,6 +294,7 @@ Colors from [nipponcolors.com](http://nipponcolors.com) :
 ## ColorDic
 
 ![黑](./png/ColorDic.svg)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fhurui200320%2FGetNipponcolors.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fhurui200320%2FGetNipponcolors?ref=badge_shield)
 
 Colors from [www.colordic.org](https://www.colordic.org/w/) :
 
@@ -1239,3 +1240,6 @@ Colors from [irocore.com](https://irocore.com) :
 You can use and edit everything in this repository freely,  copyright of all of these color data come from their website.
 
 [天空Blond](https://www.skyblond.info) © 2018
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fhurui200320%2FGetNipponcolors.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fhurui200320%2FGetNipponcolors?ref=badge_large)
